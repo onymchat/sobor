@@ -1,0 +1,22 @@
+# SEP-1. This file is half of the link between sobor.io and the account that
+# receives RSVPs: the site claims the account here, and the account claims the
+# site by setting its home_domain to sobor.io. Both halves are needed before a
+# wallet can tell a real RSVP request from a lookalike domain.
+
+VERSION="2.0.0"
+NETWORK_PASSPHRASE="Public Global Stellar Network ; September 2015"
+
+ACCOUNTS=[
+"GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR",
+]
+
+# URI_REQUEST_SIGNING_KEY is deliberately absent. SEP-7 lets a site sign its
+# payment URIs so wallets can show the request as verified; that needs a signing
+# key sobor does not have yet. Until it exists, the URIs carry no origin_domain,
+# because claiming an origin without the signature to back it is worse than
+# claiming none.
+
+[DOCUMENTATION]
+ORG_NAME="sobor"
+ORG_URL="https://sobor.io"
+ORG_DESCRIPTION="A five-day contest in Bar, Montenegro, 21-25 September 2026, to implement open seats in the Onym network. RSVPs are recorded as Stellar payments carrying a text memo."

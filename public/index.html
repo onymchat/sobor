@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>sobor — Build a seat. Homestead it.</title>
+<meta name="description" content="A five-day contest in Bar, Montenegro, 21–25 September 2026. Sixteen roles in the Onym network are open to implementation. Build one, run it, keep it."/>
+<meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)"/>
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)"/>
+<link rel="canonical" href="https://sobor.io/"/>
+<link rel="alternate" hreflang="en" href="https://sobor.io/"/>
+<link rel="alternate" hreflang="ru" href="https://sobor.io/ru/"/>
+<link rel="alternate" hreflang="cnr" href="https://sobor.io/cnr/"/>
+<link rel="alternate" hreflang="x-default" href="https://sobor.io/"/>
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://sobor.io/"/>
+<meta property="og:site_name" content="sobor"/>
+<meta property="og:locale" content="en"/>
+<meta property="og:title" content="sobor — Build a seat. Homestead it."/>
+<meta property="og:description" content="Five days in Bar. Sixteen roles in the Onym network are open to implementation; most have a contract and no code."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="/favicon.ico" sizes="48x48"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<script src="/assets/theme.js"></script>
+<script src="/assets/lang.js"></script>
+<link rel="stylesheet" href="/assets/sobor.css"/>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="sobor home">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+        <rect x=".5" y=".5" width="27" height="27" rx="6.2" fill="none" stroke="var(--on-hairline-strong)"></rect>
+        <g transform="rotate(45 14 14)" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+          <path d="M14 5.2A8.8 8.8 0 0 1 22.8 14"></path>
+          <path d="M14 22.8A8.8 8.8 0 0 1 5.2 14"></path>
+        </g>
+        <g fill="currentColor" opacity=".85">
+          <circle cx="18.6" cy="14" r="1.15"></circle><circle cx="17.25" cy="17.25" r="1.15"></circle>
+          <circle cx="14" cy="18.6" r="1.15"></circle><circle cx="10.75" cy="17.25" r="1.15"></circle>
+          <circle cx="9.4" cy="14" r="1.15"></circle><circle cx="10.75" cy="10.75" r="1.15"></circle>
+          <circle cx="14" cy="9.4" r="1.15"></circle><circle cx="17.25" cy="10.75" r="1.15"></circle>
+        </g>
+      </svg>
+      <span>sobor</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#contest">The contest</a>
+      <a href="#seats">Seats</a>
+      <a href="#rules">Rules</a>
+      <a href="#status">Status</a>
+    </nav>
+    <div class="nav-cta"><a class="btn-pill" href="#rsvp">RSVP</a></div>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="hero">
+    <div class="hero-eyebrow">MTL City · Montenegro · 21–25 September 2026</div>
+    <h1>Build a seat.<br>Homestead it.</h1>
+    <div class="hero-copy">
+      <p>Five days in Bar. Sixteen roles in the Onym network are open to implementation; most have a contract and no code. Pick it, build it, homestead it.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#rsvp">RSVP with a Stellar account</a>
+        <a href="#rules">Read the rules →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- The three open questions. When one settles, swap .tag.open for .tag.settled in
+       content/i18n.json's label and rewrite the paragraph. Do not soften these. -->
+  <section class="status" id="status">
+    <div class="wrap">
+      <div class="status-stamp">Open questions · updated 11 September 2026</div>
+      <div class="status-grid">
+        <div>
+          <span class="tag open">Venue — undetermined</span>
+          <p>The week is fixed. The room is not. We publish the address the day we sign for one.</p>
+        </div>
+        <div>
+          <span class="tag open">Arbiter — unnamed</span>
+          <p>The arbiter is not the organizer. They are named when the prize fund is secured — not before.</p>
+        </div>
+        <div>
+          <span class="tag open">Prize fund — €0 secured</span>
+          <p>The meter below reads what is actually in hand. No pledge is counted until it clears.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contest">
+    <div class="wrap">
+      <div class="eyebrow"><span>01</span><b>· The contest</b></div>
+      <h2>Five days.<br>One seat each.</h2>
+      <p class="section-lede">Teams of any size take one open role and implement it against its published contract. There is no track, no theme, and no pitch. A seat is filled when something runs and someone else can point their client at it.</p>
+      <div class="grid-4">
+        <div class="card">
+          <div class="kicker">01 · Build</div>
+          <h3>Read the contract</h3>
+          <p>Every seat is specified in public, technology-neutral prose. You are free to ignore the reference implementation entirely.</p>
+          <p class="aph">The contract is the brief.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">02 · Submit</div>
+          <h3>Hand over an endpoint</h3>
+          <p>A repository, a running instance, and the credentials to exercise it. Slides are not a submission.</p>
+          <p class="aph">Code nobody can run is a proposal.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">03 · Judge</div>
+          <h3>One arbiter, in writing</h3>
+          <p>Conformance first, then durability. Every verdict is published with its reasons, including the refusals.</p>
+          <p class="aph">The arbiter owes reasons, not applause.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">04 · Fill</div>
+          <h3>Homestead the seat</h3>
+          <p>You own what you built and whatever it earns. No assignment of rights, no equity, no claim by the organizer.</p>
+          <p class="aph">The week ends; the seat keeps working.</p>
+        </div>
+      </div>
+      <p class="after-grid" id="rules"><a href="#rules">Read the rules in full →</a></p>
+    </div>
+  </section>
+
+  <section class="band" id="seats">
+    <div class="wrap">
+      <div class="eyebrow"><span>02</span><b>· Seats</b></div>
+      <h2>Sixteen contracts.<br>Seven have code.</h2>
+      <p class="section-lede">Status is reported as the Foundation reports it — a contract in the repository is not an implementation, and one replaceable default deployment is not a market. All sixteen are below.</p>
+      <div class="grid-4 seats-grid">
+        <div class="card seat">
+          <h3>Discovery</h3>
+          <p>Filled means an index that finds compatible instances of every other seat. <a href="https://github.com/onymchat/onym-discovery">Reference implementation →</a></p>
+          <span class="chip green">Reference impl exists</span>
+        </div>
+        <div class="card seat">
+          <h3>Naming &amp; credentials</h3>
+          <p>Filled means someone issues names and can be held to the issuance.</p>
+          <span class="chip amber">In review · not wired in</span>
+        </div>
+        <div class="card seat">
+          <h3>Banking &amp; payments</h3>
+          <p>Filled means a payment path that never learns the message.</p>
+          <span class="chip amber">In review · no open-source impl</span>
+        </div>
+        <div class="card seat">
+          <h3>Device backup</h3>
+          <p>Filled means a restore that works without custody of the seed. <a href="https://github.com/onymchat/onym-backup">Reference implementation →</a></p>
+          <span class="chip green">Reference impl exists</span>
+        </div>
+        <div class="card seat">
+          <h3>Audit &amp; attestation</h3>
+          <p>Filled means a published examination someone signed their name to.</p>
+          <span class="chip blue">Draft spec</span>
+        </div>
+        <div class="card seat">
+          <h3>Recovery trustee</h3>
+          <p>Filled means a trustee whose fees, profiles and refusals are published.</p>
+          <span class="chip blue">Draft spec</span>
+        </div>
+        <div class="card seat">
+          <h3>Arbitration</h3>
+          <p>Filled means disputes settled by someone with no stake in either side.</p>
+          <span class="chip blue">Draft spec</span>
+        </div>
+        <div class="card seat">
+          <h3>Recruitment</h3>
+          <p>Filled means hiring inside the network, paid on milestones rather than on access.</p>
+          <span class="chip blue">Draft spec</span>
+        </div>
+        <div class="card seat">
+          <h3>Acquisition</h3>
+          <p>Filled means buying on a user’s behalf, per order, without holding the order.</p>
+          <span class="chip blue">Draft spec</span>
+        </div>
+        <div class="card seat">
+          <h3>Distribution</h3>
+          <p>Filled means campaigns that reach only the people who asked to be reached.</p>
+          <span class="chip blue">Draft spec</span>
+        </div>
+        <div class="card seat">
+          <h3>Charitable coordination</h3>
+          <p>Filled means donations routed, receipted and accounted for in public.</p>
+          <span class="chip blue">Draft spec</span>
+        </div>
+        <div class="card seat">
+          <h3>Message carriage</h3>
+          <p>Filled again means a second courier, so the default becomes a choice. It rides standard Nostr — any compliant relay already qualifies.</p>
+          <span class="chip green">Reference operator exists</span>
+        </div>
+        <div class="card seat">
+          <h3>Media storage</h3>
+          <p>Filled again means durable blobs held by someone who cannot read them. It rides standard Blossom — any compliant server already qualifies.</p>
+          <span class="chip green">Reference operator exists</span>
+        </div>
+        <div class="card seat">
+          <h3>Group verification</h3>
+          <p>Filled again means a second verifier that still never sees the member list. The Stellar contracts are published. <a href="https://github.com/onymchat/onym-contracts">onym-contracts →</a></p>
+          <span class="chip green">Reference operator exists</span>
+        </div>
+        <div class="card seat">
+          <h3>Interface</h3>
+          <p>Filled again means a client that is not ours. The window is not the gatekeeper — fork it, improve it, own it.</p>
+          <span class="chip green">Live on iOS &amp; Android</span>
+        </div>
+        <div class="card seat">
+          <h3>Moderation authority</h3>
+          <p>Filled means an authority that adjudicates reports and never enforces them itself. <a href="https://github.com/onymchat/onym-moderation">Rust reference implementation →</a></p>
+          <span class="chip green">Live on iOS · Android draft</span>
+        </div>
+      </div>
+      <p class="after-grid"><a href="https://onym.foundation/seats.html">Every seat contract at onym.foundation →</a></p>
+      <p class="after-grid">Identity is not a seat — it stays with the person. Anything missing can be proposed as a new one.</p>
+    </div>
+  </section>
+
+  <section class="band who">
+    <div class="wrap">
+      <div class="eyebrow"><span>03</span><b>· Who may come</b></div>
+      <h2>One signature.<br>No guest list.</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Pre-approved</h3>
+          <p>Your account already holds MTLAP or MTLAC. RSVP is one signature — we read the balance from the chain, per <a href="https://bsn.expert">bsn.expert</a>, and you are in.</p>
+          <div class="meta">SAMPLE · GA7QK4…M2XZD9</div>
+          <p class="aph">The chain is the invitation.</p>
+        </div>
+        <div class="card">
+          <h3>Everyone else</h3>
+          <p>Register interest with any Stellar account. We answer — or we answer honestly that there is nothing yet. There is no waiting list to be ranked on.</p>
+          <div class="meta">NO TOKEN REQUIRED · NO FEE</div>
+          <p class="aph">A key is enough to be counted.</p>
+        </div>
+      </div>
+
+      <div class="card rsvp" id="rsvp"
+           data-account="GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR" data-amount="0.0000001" data-event="sobor2026"
+           data-msg="sobor 2026 - RSVP" data-copy="Copy" data-copied="Copied">
+        <div class="kicker">RSVP</div>
+        <span class="rsvp-reg"><b>1</b> recorded so far · <b>1</b> pre-approved
+<span class="rsvp-synced">last read from the ledger 2026-09-11 15:16 UTC</span></span>
+
+        <div class="kicker kicker-seats">How are you coming</div>
+        <div class="rsvp-mode" role="radiogroup" aria-label="How are you coming">
+          <button class="pick" type="button" role="radio" aria-checked="true" data-mode="p">In person</button>
+          <button class="pick" type="button" role="radio" aria-checked="false" data-mode="r">Remote</button>
+        </div>
+
+        <div class="kicker kicker-seats">Seats you would work on — optional</div>
+        <div class="rsvp-seats" role="group" aria-label="Seats you would work on">
+            <button class="pick" type="button" aria-pressed="false" data-bit="0">Discovery</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="1">Naming &amp; credentials</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="2">Banking &amp; payments</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="3">Device backup</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="4">Audit &amp; attestation</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="5">Recovery trustee</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="6">Arbitration</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="7">Recruitment</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="8">Acquisition</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="9">Distribution</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="10">Charitable coordination</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="11">Message carriage</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="12">Media storage</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="13">Group verification</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="14">Interface</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="15">Moderation authority</button>
+        </div>
+
+        <div class="kicker kicker-seats">What goes on the ledger</div>
+        <div class="rsvp-row">
+          <output class="rsvp-memo" id="rsvp-memo" for="rsvp">sobor2026 p 0000</output>
+          <a class="btn btn-primary" id="rsvp-go" href="web+stellar:pay?destination=GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR&amp;amount=0.0000001&amp;asset_code=XLM&amp;memo=sobor2026%20p%200000&amp;memo_type=MEMO_TEXT&amp;msg=sobor%202026%20-%20RSVP">Open in wallet</a>
+        </div>
+        <p class="rsvp-note">Opens your Stellar wallet with the payment prefilled. You sign it; we never see a key.</p>
+
+        <details class="drop">
+          <summary>Or send it by hand</summary>
+          <dl class="kv">
+            <dt>To</dt><dd><code>GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR</code><button class="copy" type="button" data-copy="GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR">Copy</button></dd>
+            <dt>Amount</dt><dd><code>0.0000001 XLM</code><button class="copy" type="button" data-copy="0.0000001">Copy</button></dd>
+            <dt>Memo</dt><dd><code id="rsvp-memo2">sobor2026 p 0000</code><button class="copy" type="button" data-copy-memo>Copy</button></dd>
+          </dl>
+        </details>
+
+        <details class="drop">
+          <summary>How to read this memo</summary>
+          <p>One line of text on a public ledger. The first field names the event, the second is p for in person or r for remote, and the third is a sixteen-bit hex mask — one bit per seat, in the order below, lowest bit first. Anyone can decode it without asking us.</p>
+          <ol class="bits" start="0">
+            <li><code>0</code> Discovery</li>
+            <li><code>1</code> Naming &amp; credentials</li>
+            <li><code>2</code> Banking &amp; payments</li>
+            <li><code>3</code> Device backup</li>
+            <li><code>4</code> Audit &amp; attestation</li>
+            <li><code>5</code> Recovery trustee</li>
+            <li><code>6</code> Arbitration</li>
+            <li><code>7</code> Recruitment</li>
+            <li><code>8</code> Acquisition</li>
+            <li><code>9</code> Distribution</li>
+            <li><code>10</code> Charitable coordination</li>
+            <li><code>11</code> Message carriage</li>
+            <li><code>12</code> Media storage</li>
+            <li><code>13</code> Group verification</li>
+            <li><code>14</code> Interface</li>
+            <li><code>15</code> Moderation authority</li>
+          </ol>
+        </details>
+
+        <div class="rsvp-foot">
+          <p class="rsvp-note">There is no form and no database. The transaction is the RSVP, and the ledger is the register — readable by anyone, including people who do not trust us.</p>
+          <p class="rsvp-out"><a id="rsvp-out" href="web+stellar:pay?destination=GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR&amp;amount=0.0000001&amp;asset_code=XLM&amp;memo=sobor2026%20out&amp;memo_type=MEMO_TEXT&amp;msg=sobor%202026%20-%20RSVP">Withdraw a previous RSVP →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="eyebrow"><span>04</span><b>· The prize fund</b></div>
+      <div class="fund">
+        <div class="fund-label">Secured, to date</div>
+        <!-- When money clears: replace the amount, change the caption, and set --so-meter. -->
+        <div class="fund-figure">
+          <b>€0</b>
+          <span>of a target not yet published</span>
+        </div>
+        <div class="meter" role="img" aria-label="Prize fund: nothing secured yet"><i></i></div>
+        <div class="fund-cols">
+          <p>Nothing is pledged, so nothing is promised. Every payment that clears is listed here with its date and its amount; a pledge that has not cleared is not a number on this page.</p>
+          <p>The arbiter is named once the fund is secured, and not a day earlier. The arbiter is not the organizer, and the organizer does not vote.</p>
+        </div>
+        <p class="aph">An unfunded prize is a rumour.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div>
+      <h2>Bring a laptop.<br>Homestead the seat.</h2>
+      <div class="closing-actions">
+        <a class="btn btn-primary" href="#rsvp">RSVP with a Stellar account</a>
+        <a href="#rules">Read the rules →</a>
+      </div>
+      <p class="when">21–25 September 2026 · Bar, Montenegro · venue to follow</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-l">
+      <div class="foot-copy">© 2026 · sobor.io · an Onym event</div>
+      <div class="foot-sign">A seat is not granted. It is homesteaded.</div>
+    </div>
+    <div class="foot-r">
+      <div class="foot-links">
+        <a href="https://onym.app">onym.app</a>
+        <a href="https://onym.foundation">onym.foundation</a>
+        <a href="https://bsn.expert">bsn.expert</a>
+      </div>
+      <nav class="lang" aria-label="Language">
+        <a class="pick is-on" href="/" lang="en" hreflang="en" data-lang="en" title="English" aria-current="true">EN</a>
+        <a class="pick" href="/ru/" lang="ru" hreflang="ru" data-lang="ru" title="Русский">RU</a>
+        <a class="pick" href="/cnr/" lang="cnr" hreflang="cnr" data-lang="cnr" title="Crnogorski">CNR</a>
+      </nav>
+      <!-- Lives in the footer so that on a narrow screen it can simply sit there
+           instead of floating over the text. Above 850px it is fixed again. -->
+      <div class="theme" role="group" aria-label="Colour theme">
+        <button type="button" data-theme-set="auto" aria-pressed="true">AUTO</button>
+        <button type="button" data-theme-set="light" aria-pressed="false">LIGHT</button>
+        <button type="button" data-theme-set="dark" aria-pressed="false">DARK</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/sobor.js" defer></script>
+</body>
+</html>

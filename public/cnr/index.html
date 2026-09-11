@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="cnr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>sobor — Napravi mjesto. Zauzmi ga.</title>
+<meta name="description" content="Petodnevno takmičenje u Baru, Crna Gora, 21–25. septembra 2026. Šesnaest uloga u Onym mreži otvoreno je za implementaciju. Napravi jednu, pokreni je, zadrži je."/>
+<meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)"/>
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)"/>
+<link rel="canonical" href="https://sobor.io/cnr/"/>
+<link rel="alternate" hreflang="en" href="https://sobor.io/"/>
+<link rel="alternate" hreflang="ru" href="https://sobor.io/ru/"/>
+<link rel="alternate" hreflang="cnr" href="https://sobor.io/cnr/"/>
+<link rel="alternate" hreflang="x-default" href="https://sobor.io/"/>
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://sobor.io/cnr/"/>
+<meta property="og:site_name" content="sobor"/>
+<meta property="og:locale" content="cnr"/>
+<meta property="og:title" content="sobor — Napravi mjesto. Zauzmi ga."/>
+<meta property="og:description" content="Pet dana u Baru. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="/favicon.ico" sizes="48x48"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<script src="/assets/theme.js"></script>
+<script src="/assets/lang.js"></script>
+<link rel="stylesheet" href="/assets/sobor.css"/>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/cnr/" aria-label="sobor — početna">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+        <rect x=".5" y=".5" width="27" height="27" rx="6.2" fill="none" stroke="var(--on-hairline-strong)"></rect>
+        <g transform="rotate(45 14 14)" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+          <path d="M14 5.2A8.8 8.8 0 0 1 22.8 14"></path>
+          <path d="M14 22.8A8.8 8.8 0 0 1 5.2 14"></path>
+        </g>
+        <g fill="currentColor" opacity=".85">
+          <circle cx="18.6" cy="14" r="1.15"></circle><circle cx="17.25" cy="17.25" r="1.15"></circle>
+          <circle cx="14" cy="18.6" r="1.15"></circle><circle cx="10.75" cy="17.25" r="1.15"></circle>
+          <circle cx="9.4" cy="14" r="1.15"></circle><circle cx="10.75" cy="10.75" r="1.15"></circle>
+          <circle cx="14" cy="9.4" r="1.15"></circle><circle cx="17.25" cy="10.75" r="1.15"></circle>
+        </g>
+      </svg>
+      <span>sobor</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#contest">Takmičenje</a>
+      <a href="#seats">Mjesta</a>
+      <a href="#rules">Pravila</a>
+      <a href="#status">Status</a>
+    </nav>
+    <div class="nav-cta"><a class="btn-pill" href="#rsvp">Prijavi se</a></div>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="hero">
+    <div class="hero-eyebrow">MTL City · Crna Gora · 21–25. septembra 2026</div>
+    <h1>Napravi mjesto.<br>Zauzmi ga.</h1>
+    <div class="hero-copy">
+      <p>Pet dana u Baru. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod. Izaberi, napravi, zauzmi.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#rsvp">Prijavi se Stellar nalogom</a>
+        <a href="#rules">Pročitaj pravila →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- The three open questions. When one settles, swap .tag.open for .tag.settled in
+       content/i18n.json's label and rewrite the paragraph. Do not soften these. -->
+  <section class="status" id="status">
+    <div class="wrap">
+      <div class="status-stamp">Otvorena pitanja · ažurirano 11. septembra 2026.</div>
+      <div class="status-grid">
+        <div>
+          <span class="tag open">Lokacija — nije određena</span>
+          <p>Sedmica je određena. Prostor nije. Adresu objavljujemo onog dana kad potpišemo ugovor.</p>
+        </div>
+        <div>
+          <span class="tag open">Arbitar — nije imenovan</span>
+          <p>Arbitar nije organizator. Biće imenovan kad nagradni fond bude obezbijeđen — ne prije.</p>
+        </div>
+        <div>
+          <span class="tag open">Nagradni fond — obezbijeđeno €0</span>
+          <p>Brojač ispod pokazuje ono što je stvarno primljeno. Obećanje se ne računa dok sredstva ne stignu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contest">
+    <div class="wrap">
+      <div class="eyebrow"><span>01</span><b>· Takmičenje</b></div>
+      <h2>Pet dana.<br>Po jedno mjesto.</h2>
+      <p class="section-lede">Tim bilo koje veličine uzima jednu otvorenu ulogu i implementira je prema objavljenom ugovoru. Nema kategorija, nema teme, nema prezentacija. Mjesto je zauzeto kad nešto radi i kad neko sa strane može usmjeriti svoj klijent na njega.</p>
+      <div class="grid-4">
+        <div class="card">
+          <div class="kicker">01 · Pravi</div>
+          <h3>Pročitaj ugovor</h3>
+          <p>Svako mjesto opisano je javno i neutralno prema tehnologiji. Referentnu implementaciju smiješ potpuno ignorisati.</p>
+          <p class="aph">Ugovor je zadatak.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">02 · Predaj</div>
+          <h3>Predaj adresu koja radi</h3>
+          <p>Repozitorijum, pokrenuta instanca i pristupi da se provjeri. Slajdovi nisu rad.</p>
+          <p class="aph">Kod koji niko ne može pokrenuti je predlog.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">03 · Sudi</div>
+          <h3>Jedan arbitar, pisano</h3>
+          <p>Prvo usklađenost s ugovorom, pa trajnost. Svaka odluka objavljuje se s obrazloženjem, uključujući i odbijanja.</p>
+          <p class="aph">Arbitar duguje obrazloženje, ne aplauz.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">04 · Zauzmi</div>
+          <h3>Zauzmi mjesto</h3>
+          <p>Tvoje je ono što si napravio i sve što to zaradi. Bez prenosa prava, bez udjela, bez potraživanja organizatora.</p>
+          <p class="aph">Sedmica se završava; mjesto nastavlja da radi.</p>
+        </div>
+      </div>
+      <p class="after-grid" id="rules"><a href="#rules">Pročitaj pravila u cjelini →</a></p>
+    </div>
+  </section>
+
+  <section class="band" id="seats">
+    <div class="wrap">
+      <div class="eyebrow"><span>02</span><b>· Mjesta</b></div>
+      <h2>Šesnaest ugovora.<br>Sedam ima kod.</h2>
+      <p class="section-lede">Status je naveden onako kako ga navodi Fondacija: ugovor u repozitorijumu nije implementacija, a jedna zamjenjiva podrazumijevana instalacija nije tržište. Svih šesnaest je ispod.</p>
+      <div class="grid-4 seats-grid">
+        <div class="card seat">
+          <h3>Katalog</h3>
+          <p>Zauzeto znači indeks koji pronalazi kompatibilne instance svih ostalih mjesta. <a href="https://github.com/onymchat/onym-discovery">Referentna implementacija →</a></p>
+          <span class="chip green">Postoji referentna implementacija</span>
+        </div>
+        <div class="card seat">
+          <h3>Imena i akreditivi</h3>
+          <p>Zauzeto znači da neko izdaje imena i odgovara za izdavanje.</p>
+          <span class="chip amber">U razmatranju · nije povezano</span>
+        </div>
+        <div class="card seat">
+          <h3>Banka i plaćanja</h3>
+          <p>Zauzeto znači put plaćanja koji nikad ne sazna sadržaj poruke.</p>
+          <span class="chip amber">U razmatranju · nema otvorene implementacije</span>
+        </div>
+        <div class="card seat">
+          <h3>Rezervna kopija</h3>
+          <p>Zauzeto znači povraćaj koji radi, a seed fraza ostaje samo kod vlasnika. <a href="https://github.com/onymchat/onym-backup">Referentna implementacija →</a></p>
+          <span class="chip green">Postoji referentna implementacija</span>
+        </div>
+        <div class="card seat">
+          <h3>Revizija i atestiranje</h3>
+          <p>Zauzeto znači objavljena provjera pod kojom se neko potpisao svojim imenom.</p>
+          <span class="chip blue">Nacrt specifikacije</span>
+        </div>
+        <div class="card seat">
+          <h3>Povjerenik za oporavak</h3>
+          <p>Zauzeto znači povjerenik čije su cijene, profili i odbijanja objavljeni.</p>
+          <span class="chip blue">Nacrt specifikacije</span>
+        </div>
+        <div class="card seat">
+          <h3>Arbitraža</h3>
+          <p>Zauzeto znači da sporove rješava neko ko nema interes ni na jednoj strani.</p>
+          <span class="chip blue">Nacrt specifikacije</span>
+        </div>
+        <div class="card seat">
+          <h3>Regrutacija</h3>
+          <p>Zauzeto znači zapošljavanje unutar mreže, plaćeno po fazama, a ne po pristupu.</p>
+          <span class="chip blue">Nacrt specifikacije</span>
+        </div>
+        <div class="card seat">
+          <h3>Akvizicija</h3>
+          <p>Zauzeto znači kupovinu u ime korisnika, po narudžbi, bez zadržavanja same narudžbe.</p>
+          <span class="chip blue">Nacrt specifikacije</span>
+        </div>
+        <div class="card seat">
+          <h3>Distribucija</h3>
+          <p>Zauzeto znači kampanje koje stižu samo do onih koji su to sami tražili.</p>
+          <span class="chip blue">Nacrt specifikacije</span>
+        </div>
+        <div class="card seat">
+          <h3>Dobrotvorna koordinacija</h3>
+          <p>Zauzeto znači donacije koje se usmjeravaju, potvrđuju i javno knjiže.</p>
+          <span class="chip blue">Nacrt specifikacije</span>
+        </div>
+        <div class="card seat">
+          <h3>Kurir</h3>
+          <p>Ponovo zauzeto znači drugi kurir, pa podrazumijevani postaje izbor. Radi na standardnom Nostru — svaki usklađen relej već ispunjava uslov.</p>
+          <span class="chip green">Postoji referentni operater</span>
+        </div>
+        <div class="card seat">
+          <h3>Skladište medija</h3>
+          <p>Ponovo zauzeto znači trajne fajlove kod nekoga ko ih ne može pročitati. Radi na standardnom Blossomu — svaki usklađen server već ispunjava uslov.</p>
+          <span class="chip green">Postoji referentni operater</span>
+        </div>
+        <div class="card seat">
+          <h3>Notar</h3>
+          <p>Ponovo zauzeto znači drugi ovjerivač kojem i dalje nije vidljiv spisak članova. Stellar ugovori su objavljeni. <a href="https://github.com/onymchat/onym-contracts">onym-contracts →</a></p>
+          <span class="chip green">Postoji referentni operater</span>
+        </div>
+        <div class="card seat">
+          <h3>Interfejs</h3>
+          <p>Ponovo zauzeto znači klijent koji nije naš. Prozor nije čuvar kapije — forkuj ga, popravi ga, posjeduj ga.</p>
+          <span class="chip green">Radi na iOS-u i Androidu</span>
+        </div>
+        <div class="card seat">
+          <h3>Tijelo za moderaciju</h3>
+          <p>Zauzeto znači tijelo koje odlučuje o prijavama i nikad samo ne sprovodi odluke. <a href="https://github.com/onymchat/onym-moderation">Referentna implementacija u Rustu →</a></p>
+          <span class="chip green">Radi na iOS-u · Android u nacrtu</span>
+        </div>
+      </div>
+      <p class="after-grid"><a href="https://onym.foundation/seats.html">Svi ugovori mjesta na onym.foundation →</a></p>
+      <p class="after-grid">Identitet nije mjesto — ostaje kod čovjeka. Što nedostaje, može se predložiti kao novo.</p>
+    </div>
+  </section>
+
+  <section class="band who">
+    <div class="wrap">
+      <div class="eyebrow"><span>03</span><b>· Ko može doći</b></div>
+      <h2>Jedan potpis.<br>Bez spiska gostiju.</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Već odobreni</h3>
+          <p>Tvoj nalog već drži MTLAP ili MTLAC. Prijava je jedan potpis — stanje čitamo iz mreže, prema <a href="https://bsn.expert">bsn.expert</a>, i unutra si.</p>
+          <div class="meta">PRIMJER · GA7QK4…M2XZD9</div>
+          <p class="aph">Pozivnica je sama mreža.</p>
+        </div>
+        <div class="card">
+          <h3>Svi ostali</h3>
+          <p>Prijavi interesovanje bilo kojim Stellar nalogom. Odgovaramo — ili pošteno odgovaramo da još ničega nema. Ne postoji lista čekanja na kojoj te rangiraju.</p>
+          <div class="meta">TOKEN NIJE POTREBAN · BEZ NAKNADE</div>
+          <p class="aph">Ključ je dovoljan da te izbroje.</p>
+        </div>
+      </div>
+
+      <div class="card rsvp" id="rsvp"
+           data-account="GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR" data-amount="0.0000001" data-event="sobor2026"
+           data-msg="sobor 2026 - prijava" data-copy="Kopiraj" data-copied="Kopirano">
+        <div class="kicker">Prijava</div>
+        <span class="rsvp-reg"><b>1</b> prijava do sada · <b>1</b> od toga odobreni
+<span class="rsvp-synced">posljednje čitanje registra 2026-09-11 15:16 UTC</span></span>
+
+        <div class="kicker kicker-seats">Kako dolaziš</div>
+        <div class="rsvp-mode" role="radiogroup" aria-label="Kako dolaziš">
+          <button class="pick" type="button" role="radio" aria-checked="true" data-mode="p">Lično</button>
+          <button class="pick" type="button" role="radio" aria-checked="false" data-mode="r">Na daljinu</button>
+        </div>
+
+        <div class="kicker kicker-seats">Mjesta na kojima bi radio — neobavezno</div>
+        <div class="rsvp-seats" role="group" aria-label="Mjesta na kojima bi radio">
+            <button class="pick" type="button" aria-pressed="false" data-bit="0">Katalog</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="1">Imena i akreditivi</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="2">Banka i plaćanja</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="3">Rezervna kopija</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="4">Revizija i atestiranje</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="5">Povjerenik za oporavak</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="6">Arbitraža</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="7">Regrutacija</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="8">Akvizicija</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="9">Distribucija</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="10">Dobrotvorna koordinacija</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="11">Kurir</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="12">Skladište medija</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="13">Notar</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="14">Interfejs</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="15">Tijelo za moderaciju</button>
+        </div>
+
+        <div class="kicker kicker-seats">Što ide u registar</div>
+        <div class="rsvp-row">
+          <output class="rsvp-memo" id="rsvp-memo" for="rsvp">sobor2026 p 0000</output>
+          <a class="btn btn-primary" id="rsvp-go" href="web+stellar:pay?destination=GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR&amp;amount=0.0000001&amp;asset_code=XLM&amp;memo=sobor2026%20p%200000&amp;memo_type=MEMO_TEXT&amp;msg=sobor%202026%20-%20prijava">Otvori u novčaniku</a>
+        </div>
+        <p class="rsvp-note">Otvara tvoj Stellar novčanik s već popunjenim plaćanjem. Ti potpisuješ; ključ nikad ne vidimo.</p>
+
+        <details class="drop">
+          <summary>Ili pošalji ručno</summary>
+          <dl class="kv">
+            <dt>Kome</dt><dd><code>GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR</code><button class="copy" type="button" data-copy="GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR">Kopiraj</button></dd>
+            <dt>Iznos</dt><dd><code>0.0000001 XLM</code><button class="copy" type="button" data-copy="0.0000001">Kopiraj</button></dd>
+            <dt>Memo</dt><dd><code id="rsvp-memo2">sobor2026 p 0000</code><button class="copy" type="button" data-copy-memo>Kopiraj</button></dd>
+          </dl>
+        </details>
+
+        <details class="drop">
+          <summary>Kako se čita ovaj memo</summary>
+          <p>Jedan red teksta u javnom registru. Prvo polje imenuje događaj, drugo je p za lično ili r za na daljinu, a treće je šesnaestobitna hex maska — po jedan bit za svako mjesto, redom ispod, najniži bit prvi. Svako to može dekodirati bez pitanja nas.</p>
+          <ol class="bits" start="0">
+            <li><code>0</code> Katalog</li>
+            <li><code>1</code> Imena i akreditivi</li>
+            <li><code>2</code> Banka i plaćanja</li>
+            <li><code>3</code> Rezervna kopija</li>
+            <li><code>4</code> Revizija i atestiranje</li>
+            <li><code>5</code> Povjerenik za oporavak</li>
+            <li><code>6</code> Arbitraža</li>
+            <li><code>7</code> Regrutacija</li>
+            <li><code>8</code> Akvizicija</li>
+            <li><code>9</code> Distribucija</li>
+            <li><code>10</code> Dobrotvorna koordinacija</li>
+            <li><code>11</code> Kurir</li>
+            <li><code>12</code> Skladište medija</li>
+            <li><code>13</code> Notar</li>
+            <li><code>14</code> Interfejs</li>
+            <li><code>15</code> Tijelo za moderaciju</li>
+          </ol>
+        </details>
+
+        <div class="rsvp-foot">
+          <p class="rsvp-note">Nema formulara ni baze podataka. Prijava je sama transakcija, a registar je mreža — može ga pročitati svako, uključujući i one koji nam ne vjeruju.</p>
+          <p class="rsvp-out"><a id="rsvp-out" href="web+stellar:pay?destination=GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR&amp;amount=0.0000001&amp;asset_code=XLM&amp;memo=sobor2026%20out&amp;memo_type=MEMO_TEXT&amp;msg=sobor%202026%20-%20prijava">Povuci ranije podnesenu prijavu →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="eyebrow"><span>04</span><b>· Nagradni fond</b></div>
+      <div class="fund">
+        <div class="fund-label">Obezbijeđeno do danas</div>
+        <!-- When money clears: replace the amount, change the caption, and set --so-meter. -->
+        <div class="fund-figure">
+          <b>€0</b>
+          <span>od cilja koji još nije objavljen</span>
+        </div>
+        <div class="meter" role="img" aria-label="Nagradni fond: još ništa nije obezbijeđeno"><i></i></div>
+        <div class="fund-cols">
+          <p>Ništa nije obećano, jer ništa nije uplaćeno. Svaka uplata koja stigne biće navedena ovdje s datumom i iznosom; obećanje koje nije stiglo na račun nije broj na ovoj stranici.</p>
+          <p>Arbitar se imenuje kad fond bude obezbijeđen, i nijedan dan ranije. Arbitar nije organizator, a organizator ne glasa.</p>
+        </div>
+        <p class="aph">Nepokrivena nagrada je glasina.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div>
+      <h2>Ponesi laptop.<br>Zauzmi mjesto.</h2>
+      <div class="closing-actions">
+        <a class="btn btn-primary" href="#rsvp">Prijavi se Stellar nalogom</a>
+        <a href="#rules">Pročitaj pravila →</a>
+      </div>
+      <p class="when">21–25. septembra 2026. · Bar, Crna Gora · lokacija slijedi</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-l">
+      <div class="foot-copy">© 2026 · sobor.io · Onym događaj</div>
+      <div class="foot-sign">Mjesto se ne dodjeljuje. Ono se zauzima.</div>
+    </div>
+    <div class="foot-r">
+      <div class="foot-links">
+        <a href="https://onym.app">onym.app</a>
+        <a href="https://onym.foundation">onym.foundation</a>
+        <a href="https://bsn.expert">bsn.expert</a>
+      </div>
+      <nav class="lang" aria-label="Jezik">
+        <a class="pick" href="/" lang="en" hreflang="en" data-lang="en" title="English">EN</a>
+        <a class="pick" href="/ru/" lang="ru" hreflang="ru" data-lang="ru" title="Русский">RU</a>
+        <a class="pick is-on" href="/cnr/" lang="cnr" hreflang="cnr" data-lang="cnr" title="Crnogorski" aria-current="true">CNR</a>
+      </nav>
+      <!-- Lives in the footer so that on a narrow screen it can simply sit there
+           instead of floating over the text. Above 850px it is fixed again. -->
+      <div class="theme" role="group" aria-label="Tema boja">
+        <button type="button" data-theme-set="auto" aria-pressed="true">AUTO</button>
+        <button type="button" data-theme-set="light" aria-pressed="false">SVIJETLA</button>
+        <button type="button" data-theme-set="dark" aria-pressed="false">TAMNA</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/sobor.js" defer></script>
+</body>
+</html>

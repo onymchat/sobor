@@ -1,0 +1,669 @@
+{
+  "_note": "Source of truth for every string on sobor.io. Edit here, then run tools/build.py. Russian terminology follows onym.app/ru: Курьер = message carriage, Нотариус = group verification, Личность = identity.",
+  "en": {
+    "lang": "en",
+    "dir": "/",
+    "label": "EN",
+    "title_label": "English",
+    "title": "sobor — Build a seat. Homestead it.",
+    "description": "A five-day contest in Bar, Montenegro, 21–25 September 2026. Sixteen roles in the Onym network are open to implementation. Build one, run it, keep it.",
+    "og_description": "Five days in Bar. Sixteen roles in the Onym network are open to implementation; most have a contract and no code.",
+    "nav": {
+      "contest": "The contest",
+      "seats": "Seats",
+      "rules": "Rules",
+      "status": "Status",
+      "rsvp": "RSVP",
+      "home": "sobor home"
+    },
+    "hero": {
+      "eyebrow": "MTL City · Montenegro · 21–25 September 2026",
+      "h1a": "Build a seat.",
+      "h1b": "Homestead it.",
+      "lede": "Five days in Bar. Sixteen roles in the Onym network are open to implementation; most have a contract and no code. Pick it, build it, homestead it.",
+      "cta": "RSVP with a Stellar account",
+      "rules": "Read the rules →"
+    },
+    "status": {
+      "stamp": "Open questions · updated 11 September 2026",
+      "venue_tag": "Venue — undetermined",
+      "venue_p": "The week is fixed. The room is not. We publish the address the day we sign for one.",
+      "arbiter_tag": "Arbiter — unnamed",
+      "arbiter_p": "The arbiter is not the organizer. They are named when the prize fund is secured — not before.",
+      "fund_tag": "Prize fund — €0 secured",
+      "fund_p": "The meter below reads what is actually in hand. No pledge is counted until it clears."
+    },
+    "contest": {
+      "eyebrow": "The contest",
+      "h2a": "Five days.",
+      "h2b": "One seat each.",
+      "lede": "Teams of any size take one open role and implement it against its published contract. There is no track, no theme, and no pitch. A seat is filled when something runs and someone else can point their client at it.",
+      "more": "Read the rules in full →",
+      "cards": [
+        {
+          "k": "Build",
+          "h": "Read the contract",
+          "p": "Every seat is specified in public, technology-neutral prose. You are free to ignore the reference implementation entirely.",
+          "a": "The contract is the brief."
+        },
+        {
+          "k": "Submit",
+          "h": "Hand over an endpoint",
+          "p": "A repository, a running instance, and the credentials to exercise it. Slides are not a submission.",
+          "a": "Code nobody can run is a proposal."
+        },
+        {
+          "k": "Judge",
+          "h": "One arbiter, in writing",
+          "p": "Conformance first, then durability. Every verdict is published with its reasons, including the refusals.",
+          "a": "The arbiter owes reasons, not applause."
+        },
+        {
+          "k": "Fill",
+          "h": "Homestead the seat",
+          "p": "You own what you built and whatever it earns. No assignment of rights, no equity, no claim by the organizer.",
+          "a": "The week ends; the seat keeps working."
+        }
+      ]
+    },
+    "seats": {
+      "eyebrow": "Seats",
+      "h2a": "Sixteen contracts.",
+      "h2b": "Seven have code.",
+      "lede": "Status is reported as the Foundation reports it — a contract in the repository is not an implementation, and one replaceable default deployment is not a market. All sixteen are below.",
+      "more": "Every seat contract at onym.foundation →",
+      "note": "Identity is not a seat — it stays with the person. Anything missing can be proposed as a new one.",
+      "chips": {
+        "impl": "Reference impl exists",
+        "operator": "Reference operator exists",
+        "review_unwired": "In review · not wired in",
+        "review_noimpl": "In review · no open-source impl",
+        "draft": "Draft spec",
+        "live_both": "Live on iOS & Android",
+        "live_ios": "Live on iOS · Android draft"
+      },
+      "link_impl": "Reference implementation →",
+      "link_contracts": "onym-contracts →",
+      "link_rust": "Rust reference implementation →",
+      "items": [
+        {
+          "h": "Discovery",
+          "p": "Filled means an index that finds compatible instances of every other seat."
+        },
+        {
+          "h": "Naming & credentials",
+          "p": "Filled means someone issues names and can be held to the issuance."
+        },
+        {
+          "h": "Banking & payments",
+          "p": "Filled means a payment path that never learns the message."
+        },
+        {
+          "h": "Device backup",
+          "p": "Filled means a restore that works without custody of the seed."
+        },
+        {
+          "h": "Audit & attestation",
+          "p": "Filled means a published examination someone signed their name to."
+        },
+        {
+          "h": "Recovery trustee",
+          "p": "Filled means a trustee whose fees, profiles and refusals are published."
+        },
+        {
+          "h": "Arbitration",
+          "p": "Filled means disputes settled by someone with no stake in either side."
+        },
+        {
+          "h": "Recruitment",
+          "p": "Filled means hiring inside the network, paid on milestones rather than on access."
+        },
+        {
+          "h": "Acquisition",
+          "p": "Filled means buying on a user’s behalf, per order, without holding the order."
+        },
+        {
+          "h": "Distribution",
+          "p": "Filled means campaigns that reach only the people who asked to be reached."
+        },
+        {
+          "h": "Charitable coordination",
+          "p": "Filled means donations routed, receipted and accounted for in public."
+        },
+        {
+          "h": "Message carriage",
+          "p": "Filled again means a second courier, so the default becomes a choice. It rides standard Nostr — any compliant relay already qualifies."
+        },
+        {
+          "h": "Media storage",
+          "p": "Filled again means durable blobs held by someone who cannot read them. It rides standard Blossom — any compliant server already qualifies."
+        },
+        {
+          "h": "Group verification",
+          "p": "Filled again means a second verifier that still never sees the member list. The Stellar contracts are published."
+        },
+        {
+          "h": "Interface",
+          "p": "Filled again means a client that is not ours. The window is not the gatekeeper — fork it, improve it, own it."
+        },
+        {
+          "h": "Moderation authority",
+          "p": "Filled means an authority that adjudicates reports and never enforces them itself."
+        }
+      ]
+    },
+    "who": {
+      "eyebrow": "Who may come",
+      "h2a": "One signature.",
+      "h2b": "No guest list.",
+      "pre_h": "Pre-approved",
+      "pre_p1": "Your account already holds MTLAP or MTLAC. RSVP is one signature — we read the balance from the chain, per ",
+      "pre_p2": ", and you are in.",
+      "pre_meta": "SAMPLE · GA7QK4…M2XZD9",
+      "pre_a": "The chain is the invitation.",
+      "else_h": "Everyone else",
+      "else_p": "Register interest with any Stellar account. We answer — or we answer honestly that there is nothing yet. There is no waiting list to be ranked on.",
+      "else_meta": "NO TOKEN REQUIRED · NO FEE",
+      "else_a": "A key is enough to be counted."
+    },
+    "rsvp": {
+      "kicker": "RSVP",
+      "seats_kicker": "Seats you would work on — optional",
+      "seats_aria": "Seats you would work on",
+      "mode_kicker": "How are you coming",
+      "mode_person": "In person",
+      "mode_remote": "Remote",
+      "memo_kicker": "What goes on the ledger",
+      "open_wallet": "Open in wallet",
+      "manual": "Or send it by hand",
+      "f_to": "To",
+      "f_amount": "Amount",
+      "f_memo": "Memo",
+      "copy": "Copy",
+      "copied": "Copied",
+      "withdraw": "Withdraw a previous RSVP →",
+      "decode": "How to read this memo",
+      "decode_p": "One line of text on a public ledger. The first field names the event, the second is p for in person or r for remote, and the third is a sixteen-bit hex mask — one bit per seat, in the order below, lowest bit first. Anyone can decode it without asking us.",
+      "unset_tag": "SOBOR account — not published",
+      "unset_p": "The account that receives RSVPs is not published yet, so there is nothing to sign against. This section goes live the day the key is announced.",
+      "wallet_note": "Opens your Stellar wallet with the payment prefilled. You sign it; we never see a key.",
+      "ledger_note": "There is no form and no database. The transaction is the RSVP, and the ledger is the register — readable by anyone, including people who do not trust us.",
+      "msg": "sobor 2026 - RSVP",
+      "empty_register": "No RSVPs recorded yet.",
+      "register": "recorded so far",
+      "synced": "last read from the ledger",
+      "pre_approved": "pre-approved"
+    },
+    "fund": {
+      "eyebrow": "The prize fund",
+      "label": "Secured, to date",
+      "amount": "€0",
+      "caption": "of a target not yet published",
+      "meter_aria": "Prize fund: nothing secured yet",
+      "p1": "Nothing is pledged, so nothing is promised. Every payment that clears is listed here with its date and its amount; a pledge that has not cleared is not a number on this page.",
+      "p2": "The arbiter is named once the fund is secured, and not a day earlier. The arbiter is not the organizer, and the organizer does not vote.",
+      "a": "An unfunded prize is a rumour."
+    },
+    "closing": {
+      "h2a": "Bring a laptop.",
+      "h2b": "Homestead the seat.",
+      "when": "21–25 September 2026 · Bar, Montenegro · venue to follow"
+    },
+    "footer": {
+      "copy": "© 2026 · sobor.io · an Onym event",
+      "sign": "A seat is not granted. It is homesteaded.",
+      "lang_aria": "Language"
+    },
+    "theme": {
+      "aria": "Colour theme",
+      "auto": "AUTO",
+      "light": "LIGHT",
+      "dark": "DARK"
+    }
+  },
+  "ru": {
+    "lang": "ru",
+    "dir": "/ru/",
+    "label": "RU",
+    "title_label": "Русский",
+    "title": "sobor — Построй место. Homestead it.",
+    "description": "Пятидневный конкурс в Баре, Черногория, 21–25 сентября 2026. Шестнадцать ролей в сети Onym открыты для реализации. Построй одну, запусти её, оставь себе.",
+    "og_description": "Пять дней в Баре. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода.",
+    "nav": {
+      "contest": "Конкурс",
+      "seats": "Места",
+      "rules": "Правила",
+      "status": "Статус",
+      "rsvp": "Участвовать",
+      "home": "sobor — на главную"
+    },
+    "hero": {
+      "eyebrow": "MTL City · Черногория · 21–25 сентября 2026",
+      "h1a": "Построй место.",
+      "h1b": "Homestead it.",
+      "lede": "Пять дней в Баре. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода. Выбери, построй, займи.",
+      "cta": "Участвовать со счётом Stellar",
+      "rules": "Читать правила →",
+      "h1b_lang": "en"
+    },
+    "status": {
+      "stamp": "Открытые вопросы · обновлено 11 сентября 2026",
+      "venue_tag": "Площадка — не определена",
+      "venue_p": "Неделя назначена. Помещение — нет. Адрес опубликуем в тот день, когда подпишем договор.",
+      "arbiter_tag": "Арбитр — не назван",
+      "arbiter_p": "Арбитр — не организатор. Его назовут, когда призовой фонд будет обеспечен, — и не раньше.",
+      "fund_tag": "Призовой фонд — обеспечено €0",
+      "fund_p": "Счётчик ниже показывает то, что действительно получено. Обещание не считается, пока деньги не пришли."
+    },
+    "contest": {
+      "eyebrow": "Конкурс",
+      "h2a": "Пять дней.",
+      "h2b": "По одному месту.",
+      "lede": "Команда любого размера берёт одну открытую роль и реализует её по опубликованному контракту. Ни треков, ни темы, ни питчей. Место занято, когда что-то работает и кто-то посторонний может направить туда свой клиент.",
+      "more": "Читать правила целиком →",
+      "cards": [
+        {
+          "k": "Строй",
+          "h": "Прочитай контракт",
+          "p": "Каждое место описано публично и нейтрально к технологиям. Эталонную реализацию можно полностью игнорировать.",
+          "a": "Контракт — это и есть задание."
+        },
+        {
+          "k": "Сдавай",
+          "h": "Передай рабочий адрес",
+          "p": "Репозиторий, запущенный экземпляр и доступы, чтобы его проверить. Слайды — не работа.",
+          "a": "Код, который никто не может запустить, — это предложение."
+        },
+        {
+          "k": "Суди",
+          "h": "Один арбитр, письменно",
+          "p": "Сначала соответствие контракту, потом надёжность. Каждое решение публикуется с обоснованием, включая отказы.",
+          "a": "Арбитр должен обоснование, а не аплодисменты."
+        },
+        {
+          "k": "Занимай",
+          "h": "Займи место",
+          "p": "Тебе принадлежит то, что ты построил, и всё, что оно заработает. Никакой передачи прав, никаких долей, никаких претензий организатора.",
+          "a": "Неделя кончается — место продолжает работать."
+        }
+      ]
+    },
+    "seats": {
+      "eyebrow": "Места",
+      "h2a": "Шестнадцать контрактов.",
+      "h2b": "У семи есть код.",
+      "lede": "Статус указан так, как его указывает Фонд: контракт в репозитории — ещё не реализация, а один заменяемый вариант по умолчанию — ещё не рынок. Все шестнадцать — ниже.",
+      "more": "Все контракты мест на onym.foundation →",
+      "note": "Личность — не место, она остаётся у человека. Чего не хватает, можно предложить как новое.",
+      "chips": {
+        "impl": "Есть эталонная реализация",
+        "operator": "Есть эталонный оператор",
+        "review_unwired": "На рассмотрении · не подключено",
+        "review_noimpl": "На рассмотрении · нет открытой реализации",
+        "draft": "Черновик спецификации",
+        "live_both": "Работает на iOS и Android",
+        "live_ios": "Работает на iOS · Android в черновике"
+      },
+      "link_impl": "Эталонная реализация →",
+      "link_contracts": "onym-contracts →",
+      "link_rust": "Эталонная реализация на Rust →",
+      "items": [
+        {
+          "h": "Каталог",
+          "p": "Занято — значит есть указатель, который находит совместимые экземпляры всех остальных мест."
+        },
+        {
+          "h": "Имена и удостоверения",
+          "p": "Занято — значит кто-то выдаёт имена и отвечает за выдачу."
+        },
+        {
+          "h": "Банк и платежи",
+          "p": "Занято — значит платёж проходит, ни разу не узнав содержания сообщения."
+        },
+        {
+          "h": "Резервная копия",
+          "p": "Занято — значит восстановление работает, а seed-фраза остаётся только у владельца."
+        },
+        {
+          "h": "Аудит и аттестация",
+          "p": "Занято — значит опубликована проверка, под которой кто-то подписался своим именем."
+        },
+        {
+          "h": "Доверенный для восстановления",
+          "p": "Занято — значит у доверенного опубликованы тарифы, профили и отказы."
+        },
+        {
+          "h": "Арбитраж",
+          "p": "Занято — значит споры решает тот, у кого нет интереса ни на одной стороне."
+        },
+        {
+          "h": "Подбор участников",
+          "p": "Занято — значит наём внутри сети оплачивается по этапам, а не за доступ."
+        },
+        {
+          "h": "Привлечение",
+          "p": "Занято — значит покупка совершается от имени пользователя, по одному заказу, не удерживая сам заказ."
+        },
+        {
+          "h": "Дистрибуция",
+          "p": "Занято — значит кампания доходит только до тех, кто сам попросил."
+        },
+        {
+          "h": "Благотворительность",
+          "p": "Занято — значит пожертвования маршрутизируются, подтверждаются и публично учитываются."
+        },
+        {
+          "h": "Курьер",
+          "p": "Занято ещё раз — значит появился второй курьер и умолчание стало выбором. Работает на обычном Nostr: подойдёт любой совместимый релей."
+        },
+        {
+          "h": "Хранилище медиа",
+          "p": "Занято ещё раз — значит долговечные файлы хранит тот, кто не может их прочитать. Работает на обычном Blossom: подойдёт любой совместимый сервер."
+        },
+        {
+          "h": "Нотариус",
+          "p": "Занято ещё раз — значит появился второй проверяющий, которому по-прежнему не виден список участников. Контракты Stellar опубликованы."
+        },
+        {
+          "h": "Интерфейс",
+          "p": "Занято ещё раз — значит появился клиент, сделанный не нами. Окно — не контролёр: форкай, улучшай, владей."
+        },
+        {
+          "h": "Модерационная инстанция",
+          "p": "Занято — значит инстанция разбирает жалобы и никогда не исполняет решения сама."
+        }
+      ]
+    },
+    "who": {
+      "eyebrow": "Кто может приехать",
+      "h2a": "Одна подпись.",
+      "h2b": "Без списка гостей.",
+      "pre_h": "Уже одобрены",
+      "pre_p1": "На вашем счету уже есть MTLAP или MTLAC. Участие — это одна подпись: баланс мы читаем из сети, по данным ",
+      "pre_p2": ", и вы в списке.",
+      "pre_meta": "ПРИМЕР · GA7QK4…M2XZD9",
+      "pre_a": "Приглашение — это сама сеть.",
+      "else_h": "Все остальные",
+      "else_p": "Заявите интерес с любым счётом Stellar. Мы ответим — или честно ответим, что пока ничего нет. Очереди, в которой вас ранжируют, не существует.",
+      "else_meta": "ТОКЕН НЕ НУЖЕН · БЕЗ ВЗНОСА",
+      "else_a": "Ключа достаточно, чтобы вас посчитали."
+    },
+    "rsvp": {
+      "kicker": "Участие",
+      "seats_kicker": "Места, над которыми вы бы работали — необязательно",
+      "seats_aria": "Места, над которыми вы бы работали",
+      "mode_kicker": "Как вы приедете",
+      "mode_person": "Лично",
+      "mode_remote": "Удалённо",
+      "memo_kicker": "Что попадёт в реестр",
+      "open_wallet": "Открыть в кошельке",
+      "manual": "Или отправьте вручную",
+      "f_to": "Кому",
+      "f_amount": "Сумма",
+      "f_memo": "Мемо",
+      "copy": "Копировать",
+      "copied": "Скопировано",
+      "withdraw": "Отозвать поданную заявку →",
+      "decode": "Как читать это мемо",
+      "decode_p": "Одна строка текста в публичном реестре. Первое поле — событие, второе — p, если лично, или r, если удалённо, третье — шестнадцатибитная маска в hex: по одному биту на место, в порядке ниже, младший бит первый. Расшифровать может кто угодно, не спрашивая нас.",
+      "unset_tag": "Счёт SOBOR — не опубликован",
+      "unset_p": "Счёт, который принимает заявки, ещё не опубликован, так что подписывать нечего. Этот блок заработает в день, когда ключ объявят.",
+      "wallet_note": "Открывает кошелёк Stellar с уже заполненным платежом. Подписываете вы; ключа мы не видим никогда.",
+      "ledger_note": "Ни анкеты, ни базы данных. Заявка — это сама транзакция, а реестр — это сеть: его может прочитать любой, в том числе тот, кто нам не доверяет.",
+      "msg": "sobor 2026 - заявка",
+      "empty_register": "Заявок пока нет.",
+      "register": "заявок подано",
+      "synced": "последнее чтение реестра",
+      "pre_approved": "из них одобрены"
+    },
+    "fund": {
+      "eyebrow": "Призовой фонд",
+      "label": "Обеспечено на сегодня",
+      "amount": "€0",
+      "caption": "из цели, которая ещё не объявлена",
+      "meter_aria": "Призовой фонд: пока ничего не обеспечено",
+      "p1": "Ничего не обещано, потому что ничего не внесено. Каждый поступивший платёж будет указан здесь с датой и суммой; обещание, которое не дошло до счёта, — не число на этой странице.",
+      "p2": "Арбитра назовут, когда фонд будет обеспечен, и ни днём раньше. Арбитр — не организатор, а организатор не голосует.",
+      "a": "Необеспеченный приз — это слух."
+    },
+    "closing": {
+      "h2a": "Возьми ноутбук.",
+      "h2b": "Построй место.",
+      "when": "21–25 сентября 2026 · Бар, Черногория · площадка будет объявлена",
+      "h2c": "Homestead it!",
+      "h2c_lang": "en"
+    },
+    "footer": {
+      "copy": "© 2026 · sobor.io · событие Onym",
+      "sign": "Место не выдают. Его занимают.",
+      "lang_aria": "Язык"
+    },
+    "theme": {
+      "aria": "Цветовая тема",
+      "auto": "АВТО",
+      "light": "СВЕТЛАЯ",
+      "dark": "ТЁМНАЯ"
+    }
+  },
+  "cnr": {
+    "lang": "cnr",
+    "dir": "/cnr/",
+    "label": "CNR",
+    "title_label": "Crnogorski",
+    "title": "sobor — Napravi mjesto. Zauzmi ga.",
+    "description": "Petodnevno takmičenje u Baru, Crna Gora, 21–25. septembra 2026. Šesnaest uloga u Onym mreži otvoreno je za implementaciju. Napravi jednu, pokreni je, zadrži je.",
+    "og_description": "Pet dana u Baru. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod.",
+    "nav": {
+      "contest": "Takmičenje",
+      "seats": "Mjesta",
+      "rules": "Pravila",
+      "status": "Status",
+      "rsvp": "Prijavi se",
+      "home": "sobor — početna"
+    },
+    "hero": {
+      "eyebrow": "MTL City · Crna Gora · 21–25. septembra 2026",
+      "h1a": "Napravi mjesto.",
+      "h1b": "Zauzmi ga.",
+      "lede": "Pet dana u Baru. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod. Izaberi, napravi, zauzmi.",
+      "cta": "Prijavi se Stellar nalogom",
+      "rules": "Pročitaj pravila →"
+    },
+    "status": {
+      "stamp": "Otvorena pitanja · ažurirano 11. septembra 2026.",
+      "venue_tag": "Lokacija — nije određena",
+      "venue_p": "Sedmica je određena. Prostor nije. Adresu objavljujemo onog dana kad potpišemo ugovor.",
+      "arbiter_tag": "Arbitar — nije imenovan",
+      "arbiter_p": "Arbitar nije organizator. Biće imenovan kad nagradni fond bude obezbijeđen — ne prije.",
+      "fund_tag": "Nagradni fond — obezbijeđeno €0",
+      "fund_p": "Brojač ispod pokazuje ono što je stvarno primljeno. Obećanje se ne računa dok sredstva ne stignu."
+    },
+    "contest": {
+      "eyebrow": "Takmičenje",
+      "h2a": "Pet dana.",
+      "h2b": "Po jedno mjesto.",
+      "lede": "Tim bilo koje veličine uzima jednu otvorenu ulogu i implementira je prema objavljenom ugovoru. Nema kategorija, nema teme, nema prezentacija. Mjesto je zauzeto kad nešto radi i kad neko sa strane može usmjeriti svoj klijent na njega.",
+      "more": "Pročitaj pravila u cjelini →",
+      "cards": [
+        {
+          "k": "Pravi",
+          "h": "Pročitaj ugovor",
+          "p": "Svako mjesto opisano je javno i neutralno prema tehnologiji. Referentnu implementaciju smiješ potpuno ignorisati.",
+          "a": "Ugovor je zadatak."
+        },
+        {
+          "k": "Predaj",
+          "h": "Predaj adresu koja radi",
+          "p": "Repozitorijum, pokrenuta instanca i pristupi da se provjeri. Slajdovi nisu rad.",
+          "a": "Kod koji niko ne može pokrenuti je predlog."
+        },
+        {
+          "k": "Sudi",
+          "h": "Jedan arbitar, pisano",
+          "p": "Prvo usklađenost s ugovorom, pa trajnost. Svaka odluka objavljuje se s obrazloženjem, uključujući i odbijanja.",
+          "a": "Arbitar duguje obrazloženje, ne aplauz."
+        },
+        {
+          "k": "Zauzmi",
+          "h": "Zauzmi mjesto",
+          "p": "Tvoje je ono što si napravio i sve što to zaradi. Bez prenosa prava, bez udjela, bez potraživanja organizatora.",
+          "a": "Sedmica se završava; mjesto nastavlja da radi."
+        }
+      ]
+    },
+    "seats": {
+      "eyebrow": "Mjesta",
+      "h2a": "Šesnaest ugovora.",
+      "h2b": "Sedam ima kod.",
+      "lede": "Status je naveden onako kako ga navodi Fondacija: ugovor u repozitorijumu nije implementacija, a jedna zamjenjiva podrazumijevana instalacija nije tržište. Svih šesnaest je ispod.",
+      "more": "Svi ugovori mjesta na onym.foundation →",
+      "note": "Identitet nije mjesto — ostaje kod čovjeka. Što nedostaje, može se predložiti kao novo.",
+      "chips": {
+        "impl": "Postoji referentna implementacija",
+        "operator": "Postoji referentni operater",
+        "review_unwired": "U razmatranju · nije povezano",
+        "review_noimpl": "U razmatranju · nema otvorene implementacije",
+        "draft": "Nacrt specifikacije",
+        "live_both": "Radi na iOS-u i Androidu",
+        "live_ios": "Radi na iOS-u · Android u nacrtu"
+      },
+      "link_impl": "Referentna implementacija →",
+      "link_contracts": "onym-contracts →",
+      "link_rust": "Referentna implementacija u Rustu →",
+      "items": [
+        {
+          "h": "Katalog",
+          "p": "Zauzeto znači indeks koji pronalazi kompatibilne instance svih ostalih mjesta."
+        },
+        {
+          "h": "Imena i akreditivi",
+          "p": "Zauzeto znači da neko izdaje imena i odgovara za izdavanje."
+        },
+        {
+          "h": "Banka i plaćanja",
+          "p": "Zauzeto znači put plaćanja koji nikad ne sazna sadržaj poruke."
+        },
+        {
+          "h": "Rezervna kopija",
+          "p": "Zauzeto znači povraćaj koji radi, a seed fraza ostaje samo kod vlasnika."
+        },
+        {
+          "h": "Revizija i atestiranje",
+          "p": "Zauzeto znači objavljena provjera pod kojom se neko potpisao svojim imenom."
+        },
+        {
+          "h": "Povjerenik za oporavak",
+          "p": "Zauzeto znači povjerenik čije su cijene, profili i odbijanja objavljeni."
+        },
+        {
+          "h": "Arbitraža",
+          "p": "Zauzeto znači da sporove rješava neko ko nema interes ni na jednoj strani."
+        },
+        {
+          "h": "Regrutacija",
+          "p": "Zauzeto znači zapošljavanje unutar mreže, plaćeno po fazama, a ne po pristupu."
+        },
+        {
+          "h": "Akvizicija",
+          "p": "Zauzeto znači kupovinu u ime korisnika, po narudžbi, bez zadržavanja same narudžbe."
+        },
+        {
+          "h": "Distribucija",
+          "p": "Zauzeto znači kampanje koje stižu samo do onih koji su to sami tražili."
+        },
+        {
+          "h": "Dobrotvorna koordinacija",
+          "p": "Zauzeto znači donacije koje se usmjeravaju, potvrđuju i javno knjiže."
+        },
+        {
+          "h": "Kurir",
+          "p": "Ponovo zauzeto znači drugi kurir, pa podrazumijevani postaje izbor. Radi na standardnom Nostru — svaki usklađen relej već ispunjava uslov."
+        },
+        {
+          "h": "Skladište medija",
+          "p": "Ponovo zauzeto znači trajne fajlove kod nekoga ko ih ne može pročitati. Radi na standardnom Blossomu — svaki usklađen server već ispunjava uslov."
+        },
+        {
+          "h": "Notar",
+          "p": "Ponovo zauzeto znači drugi ovjerivač kojem i dalje nije vidljiv spisak članova. Stellar ugovori su objavljeni."
+        },
+        {
+          "h": "Interfejs",
+          "p": "Ponovo zauzeto znači klijent koji nije naš. Prozor nije čuvar kapije — forkuj ga, popravi ga, posjeduj ga."
+        },
+        {
+          "h": "Tijelo za moderaciju",
+          "p": "Zauzeto znači tijelo koje odlučuje o prijavama i nikad samo ne sprovodi odluke."
+        }
+      ]
+    },
+    "who": {
+      "eyebrow": "Ko može doći",
+      "h2a": "Jedan potpis.",
+      "h2b": "Bez spiska gostiju.",
+      "pre_h": "Već odobreni",
+      "pre_p1": "Tvoj nalog već drži MTLAP ili MTLAC. Prijava je jedan potpis — stanje čitamo iz mreže, prema ",
+      "pre_p2": ", i unutra si.",
+      "pre_meta": "PRIMJER · GA7QK4…M2XZD9",
+      "pre_a": "Pozivnica je sama mreža.",
+      "else_h": "Svi ostali",
+      "else_p": "Prijavi interesovanje bilo kojim Stellar nalogom. Odgovaramo — ili pošteno odgovaramo da još ničega nema. Ne postoji lista čekanja na kojoj te rangiraju.",
+      "else_meta": "TOKEN NIJE POTREBAN · BEZ NAKNADE",
+      "else_a": "Ključ je dovoljan da te izbroje."
+    },
+    "rsvp": {
+      "kicker": "Prijava",
+      "seats_kicker": "Mjesta na kojima bi radio — neobavezno",
+      "seats_aria": "Mjesta na kojima bi radio",
+      "mode_kicker": "Kako dolaziš",
+      "mode_person": "Lično",
+      "mode_remote": "Na daljinu",
+      "memo_kicker": "Što ide u registar",
+      "open_wallet": "Otvori u novčaniku",
+      "manual": "Ili pošalji ručno",
+      "f_to": "Kome",
+      "f_amount": "Iznos",
+      "f_memo": "Memo",
+      "copy": "Kopiraj",
+      "copied": "Kopirano",
+      "withdraw": "Povuci ranije podnesenu prijavu →",
+      "decode": "Kako se čita ovaj memo",
+      "decode_p": "Jedan red teksta u javnom registru. Prvo polje imenuje događaj, drugo je p za lično ili r za na daljinu, a treće je šesnaestobitna hex maska — po jedan bit za svako mjesto, redom ispod, najniži bit prvi. Svako to može dekodirati bez pitanja nas.",
+      "unset_tag": "SOBOR nalog — nije objavljen",
+      "unset_p": "Nalog koji prima prijave još nije objavljen, pa nema se šta potpisati. Ovaj dio počinje da radi onog dana kad ključ bude objavljen.",
+      "wallet_note": "Otvara tvoj Stellar novčanik s već popunjenim plaćanjem. Ti potpisuješ; ključ nikad ne vidimo.",
+      "ledger_note": "Nema formulara ni baze podataka. Prijava je sama transakcija, a registar je mreža — može ga pročitati svako, uključujući i one koji nam ne vjeruju.",
+      "msg": "sobor 2026 - prijava",
+      "empty_register": "Još nema prijava.",
+      "register": "prijava do sada",
+      "synced": "posljednje čitanje registra",
+      "pre_approved": "od toga odobreni"
+    },
+    "fund": {
+      "eyebrow": "Nagradni fond",
+      "label": "Obezbijeđeno do danas",
+      "amount": "€0",
+      "caption": "od cilja koji još nije objavljen",
+      "meter_aria": "Nagradni fond: još ništa nije obezbijeđeno",
+      "p1": "Ništa nije obećano, jer ništa nije uplaćeno. Svaka uplata koja stigne biće navedena ovdje s datumom i iznosom; obećanje koje nije stiglo na račun nije broj na ovoj stranici.",
+      "p2": "Arbitar se imenuje kad fond bude obezbijeđen, i nijedan dan ranije. Arbitar nije organizator, a organizator ne glasa.",
+      "a": "Nepokrivena nagrada je glasina."
+    },
+    "closing": {
+      "h2a": "Ponesi laptop.",
+      "h2b": "Zauzmi mjesto.",
+      "when": "21–25. septembra 2026. · Bar, Crna Gora · lokacija slijedi"
+    },
+    "footer": {
+      "copy": "© 2026 · sobor.io · Onym događaj",
+      "sign": "Mjesto se ne dodjeljuje. Ono se zauzima.",
+      "lang_aria": "Jezik"
+    },
+    "theme": {
+      "aria": "Tema boja",
+      "auto": "AUTO",
+      "light": "SVIJETLA",
+      "dark": "TAMNA"
+    }
+  }
+}

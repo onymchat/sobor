@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/onym-design-system-2d6ac2c8-44d1-4cfa-bf71-de5aeaf42684/styles.css">
+<style>
+:root, [data-theme="dark"] {
+  --on-bg:#000000; --on-surface:#0e0e10; --on-surface2:#17171a; --on-surface3:#1f1f23;
+  --on-text:#f2f2f4; --on-text2:rgba(242,242,244,.62); --on-text3:rgba(242,242,244,.40);
+  --on-hairline:rgba(255,255,255,.07); --on-hairline-strong:rgba(255,255,255,.12);
+  --on-blue:#3fa8ff; --on-green:#34c759; --on-red:#ff453a; --on-on-accent:#000000;
+  --on-accent-orange:#ff7a45; --on-accent-blue:#3fa8ff; --on-accent-green:#3dd66e;
+  --on-accent-purple:#b278ff; --on-accent-pink:#ff4d6d; --on-accent-yellow:#ffc93c;
+  --on-glass:rgba(58,58,62,.48); --on-glass-bd:rgba(255,255,255,.13); --on-glass-hi:rgba(255,255,255,.12);
+  --on-glass-shadow:0 12px 34px -8px rgba(0,0,0,.65);
+  --on-radius-card:14px; --on-radius-field:12px; --on-radius-pill:999px;
+  --on-font:-apple-system, BlinkMacSystemFont, system-ui, "Helvetica Neue", sans-serif;
+  --on-font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
+  --nav-bg:rgba(14,14,16,.72);
+  --so-warm:rgba(240,179,94,1);
+}
+[data-theme="light"] {
+  --on-bg:#ffffff; --on-surface:#f5f5f7; --on-surface2:#ffffff; --on-surface3:#ebebef;
+  --on-text:#0a0a0c; --on-text2:rgba(10,10,12,.62); --on-text3:rgba(10,10,12,.42);
+  --on-hairline:rgba(0,0,0,.06); --on-hairline-strong:rgba(0,0,0,.12);
+  --on-blue:#1f86e0; --on-green:#1fa84a; --on-red:#e5392e; --on-on-accent:#ffffff;
+  --on-glass:rgba(255,255,255,.55); --on-glass-bd:rgba(0,0,0,.08); --on-glass-hi:rgba(255,255,255,.9);
+  --on-glass-shadow:0 10px 32px -6px rgba(24,24,40,.22);
+  --nav-bg:rgba(245,245,247,.72);
+  --so-warm:rgba(176,116,28,1);
+}
+html { scroll-behavior:smooth }
+* { box-sizing:border-box }
+body { margin:0; background:#0a0a0b; font-family:var(--on-font); -webkit-font-smoothing:antialiased }
+h1,h2,h3,h4,p { margin:0 }
+a { color:inherit; text-decoration-line:underline; text-decoration-thickness:1px; text-decoration-color:var(--on-hairline-strong); text-underline-offset:3px; transition:color .22s cubic-bezier(.2,.7,.2,1), text-decoration-color .22s cubic-bezier(.2,.7,.2,1) }
+a:hover { color:var(--on-blue); text-decoration-color:var(--on-blue) }
+button { font:inherit; color:inherit; background:none; border:0; cursor:pointer; transition:all .22s cubic-bezier(.2,.7,.2,1) }
+input { font:inherit; color:inherit }
+:focus-visible { outline:2px solid var(--on-blue); outline-offset:3px }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto } *,*::before,*::after { transition:none !important; animation:none !important } }
+</style>
+</helmet>
+
+<section style="display:flex;flex-wrap:nowrap;align-items:flex-start;gap:64px;width:max-content;padding:56px 56px 120px;background:#0a0a0b;min-height:100vh">
+
+  <div id="1a" style="flex:0 0 auto;width:1440px">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;font-family:ui-monospace, SFMono-Regular, Menlo, monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,242,244,.45)">
+      <span style="border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:3px 9px;color:rgba(242,242,244,.8)">1a</span>
+      <span>Home · 1440 · dark</span>
+    </div>
+
+    <div data-theme="dark" data-screen-label="Home 1440 dark" style="width:1440px;background:var(--on-surface);color:var(--on-text);font-family:var(--on-font);position:relative;border:1px solid rgba(255,255,255,.12);overflow:hidden">
+
+      <header style="position:sticky;top:0;z-index:20;height:58px;background:var(--nav-bg);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px);border-bottom:1px solid var(--on-hairline)">
+        <div style="width:min(1180px,calc(100% - 48px));margin:0 auto;height:100%;display:flex;align-items:center;gap:40px">
+          <a href="#1a" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+            <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true" style="display:block;color:var(--on-text)">
+              <rect x=".5" y=".5" width="27" height="27" rx="6.2" fill="none" stroke="var(--on-hairline-strong)"></rect>
+              <g transform="rotate(45 14 14)" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+                <path d="M14 5.2A8.8 8.8 0 0 1 22.8 14"></path>
+                <path d="M14 22.8A8.8 8.8 0 0 1 5.2 14"></path>
+              </g>
+              <g fill="currentColor" opacity=".85">
+                <circle cx="18.6" cy="14" r="1.15"></circle><circle cx="17.25" cy="17.25" r="1.15"></circle>
+                <circle cx="14" cy="18.6" r="1.15"></circle><circle cx="10.75" cy="17.25" r="1.15"></circle>
+                <circle cx="9.4" cy="14" r="1.15"></circle><circle cx="10.75" cy="10.75" r="1.15"></circle>
+                <circle cx="14" cy="9.4" r="1.15"></circle><circle cx="17.25" cy="10.75" r="1.15"></circle>
+              </g>
+            </svg>
+            <span style="font-size:19px;font-weight:600;letter-spacing:-.04em">sobor</span>
+          </a>
+          <nav style="display:flex;gap:28px;font-size:14.5px;color:var(--on-text2)">
+            <a href="#1a-contest" style="text-decoration:none">The contest</a>
+            <a href="#1a-seats" style="text-decoration:none">Seats</a>
+            <a href="#1a-rules" style="text-decoration:none">Rules</a>
+            <a href="#1a-status" style="text-decoration:none">Status</a>
+          </nav>
+          <div style="margin-left:auto">
+            <button type="button" style="border:1px solid var(--on-hairline-strong);border-radius:999px;padding:7px 16px;font-size:13.5px;font-weight:600;letter-spacing:-.01em" style-hover="border-color:var(--on-text)">RSVP</button>
+          </div>
+        </div>
+      </header>
+
+      <div style="width:min(1180px,calc(100% - 48px));margin:0 auto;min-height:842px;display:flex;flex-direction:column;justify-content:center;padding:96px 0 88px">
+        <div style="font-family:var(--on-font-mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-text3)">MTL City · Montenegro · 21–25 September 2026</div>
+        <h1 style="margin-top:34px;font-size:138px;line-height:.88;letter-spacing:-.065em;font-weight:600;max-width:1100px;text-wrap:balance">Build a seat.<br>Homestead it.</h1>
+        <div style="margin-top:56px;display:grid;grid-template-columns:minmax(0,620px) auto;gap:48px;align-items:end">
+          <p style="font-size:30px;line-height:1.25;letter-spacing:-.02em;color:var(--on-text2);max-width:56ch">Five days in Bar. Sixteen roles in the Onym network are open to implementation; most have a contract and no code. Pick it, build it, homestead it.</p>
+          <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+            <button type="button" style="min-height:44px;padding:0 20px;border-radius:14px;font-size:15px;font-weight:600;background:var(--on-blue);color:var(--on-on-accent);box-shadow:0 9px 24px color-mix(in srgb, var(--on-blue) 25%, transparent)">RSVP with a Stellar account</button>
+            <a href="#1a-rules" style="font-size:15px;color:var(--on-text2)">Read the rules →</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="1a-status" style="border-top:1px solid var(--on-hairline-strong);border-bottom:1px solid var(--on-hairline-strong);background:var(--on-bg)">
+        <div style="width:min(1180px,calc(100% - 48px));margin:0 auto;padding:52px 0 56px">
+          <div style="font-family:var(--on-font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-text3)">Open questions · updated 11 September 2026</div>
+          <div style="margin-top:34px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px">
+            <div>
+              <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--on-hairline-strong);padding:3px 9px;border-radius:999px;font-family:var(--on-font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2)"><span style="width:6px;height:6px;border-radius:999px;border:1px solid var(--on-red);opacity:.55"></span>Venue — undetermined</span>
+              <p style="margin-top:16px;font-size:20px;line-height:1.45;color:var(--on-text2);max-width:34ch">The week is fixed. The room is not. We publish the address the day we sign for one.</p>
+            </div>
+            <div>
+              <sc-if value="{{ arbiterOpen }}" hint-placeholder-val="{{ true }}">
+                <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--on-hairline-strong);padding:3px 9px;border-radius:999px;font-family:var(--on-font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2)"><span style="width:6px;height:6px;border-radius:999px;border:1px solid var(--on-red);opacity:.55"></span>Arbiter — unnamed</span>
+                <p style="margin-top:16px;font-size:20px;line-height:1.45;color:var(--on-text2);max-width:34ch">The arbiter is not the organizer. They are named when the prize fund is secured — not before.</p>
+              </sc-if>
+              <sc-if value="{{ arbiterNamed }}">
+                <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--on-hairline-strong);padding:3px 9px;border-radius:999px;font-family:var(--on-font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2)"><span style="width:6px;height:6px;border-radius:999px;border:1px solid var(--on-green);opacity:.55"></span>Arbiter — named</span>
+                <p style="margin-top:16px;font-size:20px;line-height:1.45;color:var(--on-text2);max-width:34ch">Named on the status page, with the conflicts they declared. Still not the organizer.</p>
+              </sc-if>
+            </div>
+            <div>
+              <sc-if value="{{ fundOpen }}" hint-placeholder-val="{{ true }}">
+                <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--on-hairline-strong);padding:3px 9px;border-radius:999px;font-family:var(--on-font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2)"><span style="width:6px;height:6px;border-radius:999px;border:1px solid var(--on-red);opacity:.55"></span>Prize fund — €0 secured</span>
+              </sc-if>
+              <sc-if value="{{ fundRaised }}">
+                <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--on-hairline-strong);padding:3px 9px;border-radius:999px;font-family:var(--on-font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2)"><span style="width:6px;height:6px;border-radius:999px;border:1px solid var(--on-green);opacity:.55"></span>Prize fund — {{ fundLabel }} secured</span>
+              </sc-if>
+              <p style="margin-top:16px;font-size:20px;line-height:1.45;color:var(--on-text2);max-width:34ch">The meter below reads what is actually in hand. No pledge is counted until it clears.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="1a-contest" style="width:min(1180px,calc(100% - 48px));margin:0 auto;padding:120px 0">
+        <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--on-font-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-text3)"><span>01</span><span style="color:var(--on-text2)">· The contest</span></div>
+        <h2 style="margin-top:26px;font-size:88px;line-height:.95;letter-spacing:-.055em;font-weight:600;max-width:900px;text-wrap:balance">Five days.<br>One seat each.</h2>
+        <p style="margin-top:28px;font-size:20px;line-height:1.45;color:var(--on-text2);max-width:62ch">Teams of any size take one open role and implement it against its published contract. There is no track, no theme, and no pitch. A seat is filled when something runs and someone else can point their client at it.</p>
+        <div style="margin-top:56px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px">
+          <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px">
+            <div style="font-family:var(--on-font-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3)">01 · Build</div>
+            <h3 style="margin-top:18px;font-size:30px;letter-spacing:-.035em;font-weight:600;line-height:1.02">Read the contract</h3>
+            <p style="margin-top:14px;font-size:15px;line-height:1.48;color:var(--on-text2);max-width:44ch">Every seat is specified in public, technology-neutral prose. You are free to ignore the reference implementation entirely.</p>
+            <p style="margin-top:16px;font-size:15px;line-height:1.48;font-weight:700">The contract is the brief.</p>
+          </div>
+          <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px">
+            <div style="font-family:var(--on-font-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3)">02 · Submit</div>
+            <h3 style="margin-top:18px;font-size:30px;letter-spacing:-.035em;font-weight:600;line-height:1.02">Hand over an endpoint</h3>
+            <p style="margin-top:14px;font-size:15px;line-height:1.48;color:var(--on-text2);max-width:44ch">A repository, a running instance, and the credentials to exercise it. Slides are not a submission.</p>
+            <p style="margin-top:16px;font-size:15px;line-height:1.48;font-weight:700">Code nobody can run is a proposal.</p>
+          </div>
+          <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px">
+            <div style="font-family:var(--on-font-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3)">03 · Judge</div>
+            <h3 style="margin-top:18px;font-size:30px;letter-spacing:-.035em;font-weight:600;line-height:1.02">One arbiter, in writing</h3>
+            <p style="margin-top:14px;font-size:15px;line-height:1.48;color:var(--on-text2);max-width:44ch">Conformance first, then durability. Every verdict is published with its reasons, including the refusals.</p>
+            <p style="margin-top:16px;font-size:15px;line-height:1.48;font-weight:700">The arbiter owes reasons, not applause.</p>
+          </div>
+          <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px">
+            <div style="font-family:var(--on-font-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3)">04 · Fill</div>
+            <h3 style="margin-top:18px;font-size:30px;letter-spacing:-.035em;font-weight:600;line-height:1.02">Homestead the seat</h3>
+            <p style="margin-top:14px;font-size:15px;line-height:1.48;color:var(--on-text2);max-width:44ch">You own what you built and whatever it earns. No assignment of rights, no equity, no claim by the organizer.</p>
+            <p style="margin-top:16px;font-size:15px;line-height:1.48;font-weight:700">The week ends; the seat keeps working.</p>
+          </div>
+        </div>
+        <p id="1a-rules" style="margin-top:40px;font-size:15px;color:var(--on-text2)"><a href="#1a-rules">Read the rules in full →</a></p>
+      </section>
+
+      <section id="1a-seats" style="border-top:1px solid var(--on-hairline-strong)">
+        <div style="width:min(1180px,calc(100% - 48px));margin:0 auto;padding:120px 0">
+          <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--on-font-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-text3)"><span>02</span><span style="color:var(--on-text2)">· Seats</span></div>
+          <h2 style="margin-top:26px;font-size:88px;line-height:.95;letter-spacing:-.055em;font-weight:600;max-width:900px;text-wrap:balance">Sixteen contracts.<br>Seven have code.</h2>
+          <p style="margin-top:28px;font-size:20px;line-height:1.45;color:var(--on-text2);max-width:62ch">Status is reported as the Foundation reports it — a contract in the repository is not an implementation, and one replaceable default deployment is not a market. All sixteen are below.</p>
+          <div style="margin-top:56px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px">
+
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Discovery</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means an index that finds compatible instances of every other seat. <a href="https://github.com/onymchat/onym-discovery">Reference implementation →</a></p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Reference impl exists</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Naming &amp; credentials</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means someone issues names and can be held to the issuance.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-accent-yellow) 14%, transparent);border-radius:999px;padding:4px 10px">In review · not wired in</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Banking &amp; payments</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means a payment path that never learns the message.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-accent-yellow) 14%, transparent);border-radius:999px;padding:4px 10px">In review · no open-source impl</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Device backup</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means a restore that works without custody of the seed. <a href="https://github.com/onymchat/onym-backup">Reference implementation →</a></p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Reference impl exists</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Audit &amp; attestation</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means a published examination someone signed their name to.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Recovery trustee</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means a trustee whose fees, profiles and refusals are published.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Arbitration</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means disputes settled by someone with no stake in either side.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Recruitment</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means hiring inside the network, paid on milestones rather than on access.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Acquisition</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means buying on a user&rsquo;s behalf, per order, without holding the order.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Distribution</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means campaigns that reach only the people who asked to be reached.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Charitable coordination</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means donations routed, receipted and accounted for in public.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Message carriage</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled again means a second courier, so the default becomes a choice. It rides standard Nostr — any compliant relay already qualifies.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Reference operator exists</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Media storage</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled again means durable blobs held by someone who cannot read them. It rides standard Blossom — any compliant server already qualifies.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Reference operator exists</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Group verification</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled again means a second verifier that still never sees the member list. The Stellar contracts are published. <a href="https://github.com/onymchat/onym-contracts">onym-contracts →</a></p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Reference operator exists</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Interface</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled again means a client that is not ours. The window is not the gatekeeper — fork it, improve it, own it.</p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Live on iOS &amp; Android</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px">
+              <h3 style="font-size:26px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Moderation authority</h3>
+              <p style="font-size:15px;line-height:1.48;color:var(--on-text2)">Filled means an authority that adjudicates reports and never enforces them itself. <a href="https://github.com/onymchat/onym-moderation">Rust reference implementation →</a></p>
+              <span style="margin-top:auto;align-self:flex-start;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Live on iOS · Android draft</span>
+            </div>
+          </div>
+          <p style="margin-top:40px;font-size:15px;color:var(--on-text2)"><a href="https://onym.foundation/seats.html">Every seat contract at onym.foundation →</a></p>
+          <p style="margin-top:14px;font-size:15px;line-height:1.45;color:var(--on-text3);max-width:62ch">Identity is not a seat — it stays with the person. Anything missing can be proposed as a new one.</p>
+        </div>
+      </section>
+
+      <section style="border-top:1px solid var(--on-hairline-strong)">
+        <div style="width:min(1180px,calc(100% - 48px));margin:0 auto;padding:120px 0">
+          <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--on-font-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-text3)"><span>03</span><span style="color:var(--on-text2)">· Who may come</span></div>
+          <h2 style="margin-top:26px;font-size:88px;line-height:.95;letter-spacing:-.055em;font-weight:600;max-width:900px;text-wrap:balance">One signature.<br>No guest list.</h2>
+          <div style="margin-top:56px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px">
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:26px">
+              <h3 style="font-size:30px;letter-spacing:-.035em;font-weight:600;line-height:1.02">Pre-approved</h3>
+              <p style="margin-top:14px;font-size:15px;line-height:1.48;color:var(--on-text2);max-width:56ch">Your account already holds MTLAP or MTLAC. RSVP is one signature — we read the balance from the chain, per bsn.expert, and you are in.</p>
+              <div style="margin-top:20px;font-family:var(--on-font-mono);font-size:13px;color:var(--on-text3);border-top:1px solid var(--on-hairline);padding-top:16px">SAMPLE · GA7QK4…M2XZD9</div>
+              <p style="margin-top:16px;font-size:15px;line-height:1.48;font-weight:700">The chain is the invitation.</p>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:26px">
+              <h3 style="font-size:30px;letter-spacing:-.035em;font-weight:600;line-height:1.02">Everyone else</h3>
+              <p style="margin-top:14px;font-size:15px;line-height:1.48;color:var(--on-text2);max-width:56ch">Register interest with any Stellar account. We answer — or we answer honestly that there is nothing yet. There is no waiting list to be ranked on.</p>
+              <div style="margin-top:20px;font-family:var(--on-font-mono);font-size:13px;color:var(--on-text3);border-top:1px solid var(--on-hairline);padding-top:16px">NO TOKEN REQUIRED · NO FEE</div>
+              <p style="margin-top:16px;font-size:15px;line-height:1.48;font-weight:700">A key is enough to be counted.</p>
+            </div>
+          </div>
+
+          <sc-if value="{{ showRsvp }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-top:18px;background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:26px">
+              <div style="font-family:var(--on-font-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3)">RSVP</div>
+              <div style="margin-top:20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center">
+                <div style="min-height:50px;padding:13px 14px;border-radius:14px;background:var(--on-surface3);border:1px solid var(--on-hairline-strong);font-family:var(--on-font-mono);font-size:14px;color:var(--on-text3)">G…  paste a public key, or sign in your wallet</div>
+                <button type="button" style="min-height:50px;padding:0 20px;border-radius:14px;font-size:15px;font-weight:600;background:var(--on-blue);color:var(--on-on-accent);box-shadow:0 9px 24px color-mix(in srgb, var(--on-blue) 25%, transparent)">Sign to RSVP</button>
+              </div>
+              <div style="margin-top:22px;font-family:var(--on-font-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3)">Seats you would work on — optional</div>
+              <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px">
+                <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;background:var(--on-text);color:var(--on-surface);border:1px solid var(--on-text)">Discovery</button>
+                <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;background:transparent;border:1px solid var(--on-hairline-strong)" style-hover="border-color:var(--on-text)">Naming &amp; credentials</button>
+                <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;background:transparent;border:1px solid var(--on-hairline-strong)" style-hover="border-color:var(--on-text)">Banking &amp; payments</button>
+                <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;background:var(--on-text);color:var(--on-surface);border:1px solid var(--on-text)">Device backup</button>
+                <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;background:transparent;border:1px solid var(--on-hairline-strong)" style-hover="border-color:var(--on-text)">Audit &amp; attestation</button>
+                <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;background:transparent;border:1px solid var(--on-hairline-strong)" style-hover="border-color:var(--on-text)">Recovery trustee</button>
+                <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;background:transparent;border:1px solid var(--on-hairline-strong)" style-hover="border-color:var(--on-text)">Message carriage</button>
+                <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;background:transparent;border:1px solid var(--on-hairline-strong)" style-hover="border-color:var(--on-text)">Interface</button>
+              </div>
+              <p style="margin-top:22px;font-size:15px;line-height:1.48;color:var(--on-text2);max-width:64ch">We keep the account, the signature and the seats you ticked. Nothing else — there is no form, because there is nothing else we need.</p>
+            </div>
+          </sc-if>
+        </div>
+      </section>
+
+      <section style="border-top:1px solid var(--on-hairline-strong)">
+        <div style="width:min(1180px,calc(100% - 48px));margin:0 auto;padding:120px 0">
+          <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--on-font-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-text3)"><span>04</span><span style="color:var(--on-text2)">· The prize fund</span></div>
+          <div style="margin-top:34px;border:1px solid rgba(240,179,94,.45);border-radius:14px;background:linear-gradient(180deg, rgba(240,179,94,.10) 0%, var(--on-surface2) 70%);padding:44px;font-family:var(--on-font-mono)">
+            <div style="font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-text2)">Secured, to date</div>
+            <sc-if value="{{ fundOpen }}" hint-placeholder-val="{{ true }}">
+              <div style="margin-top:18px;display:flex;align-items:baseline;gap:14px">
+                <span style="font-size:70px;line-height:.98;letter-spacing:-.05em;font-weight:600">€0</span>
+                <span style="font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-text2)">of a target not yet published</span>
+              </div>
+              <div style="margin-top:26px;height:8px;border-radius:999px;background:var(--on-surface3);overflow:hidden">
+                <div style="width:0%;height:100%;background:var(--so-warm)"></div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ fundRaised }}">
+              <div style="margin-top:18px;display:flex;align-items:baseline;gap:14px">
+                <span style="font-size:70px;line-height:.98;letter-spacing:-.05em;font-weight:600">{{ fundLabel }}</span>
+                <span style="font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-text2)">in hand, cleared</span>
+              </div>
+              <div style="margin-top:26px;height:8px;border-radius:999px;background:var(--on-surface3);overflow:hidden">
+                <div style="{{ meterStyle }}"></div>
+              </div>
+            </sc-if>
+            <div style="margin-top:34px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;font-size:14px;line-height:1.5;color:var(--on-text2)">
+              <p style="max-width:52ch">Nothing is pledged, so nothing is promised. Every payment that clears is listed here with its date and its amount; a pledge that has not cleared is not a number on this page.</p>
+              <p style="max-width:52ch">The arbiter is named once the fund is secured, and not a day earlier. The arbiter is not the organizer, and the organizer does not vote.</p>
+            </div>
+            <p style="margin-top:30px;font-size:15px;font-weight:700">An unfunded prize is a rumour.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="border-top:1px solid var(--on-hairline-strong);text-align:center">
+        <div style="width:min(820px,calc(100% - 48px));margin:0 auto;padding:150px 0">
+          <h2 style="font-size:88px;line-height:.95;letter-spacing:-.055em;font-weight:600;text-wrap:balance">Bring a laptop.<br>Homestead the seat.</h2>
+          <div style="margin-top:40px;display:flex;justify-content:center;gap:14px;align-items:center">
+            <button type="button" style="min-height:44px;padding:0 20px;border-radius:14px;font-size:15px;font-weight:600;background:var(--on-blue);color:var(--on-on-accent);box-shadow:0 9px 24px color-mix(in srgb, var(--on-blue) 25%, transparent)">RSVP with a Stellar account</button>
+            <a href="#1a-rules" style="font-size:15px;color:var(--on-text2)">Read the rules →</a>
+          </div>
+          <p style="margin-top:28px;font-size:15px;color:var(--on-text3);font-family:var(--on-font-mono);letter-spacing:.04em">21–25 September 2026 · Bar, Montenegro · venue to follow</p>
+        </div>
+      </section>
+
+      <footer style="border-top:1px solid var(--on-hairline-strong);background:var(--on-bg)">
+        <div style="width:min(1180px,calc(100% - 48px));margin:0 auto;padding:44px 0 56px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:start">
+          <div style="display:flex;flex-direction:column;gap:18px">
+            <div style="font-size:14px;color:var(--on-text2)">© 2026 · sobor.io · an Onym event</div>
+            <div style="font-family:var(--on-font-mono);font-size:13px;letter-spacing:.02em;color:var(--on-text)">A seat is not granted. It is homesteaded.</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:20px">
+            <div style="display:flex;gap:22px;font-size:14px;color:var(--on-text2)">
+              <a href="https://onym.app">onym.app</a>
+              <a href="https://onym.foundation">onym.foundation</a>
+              <a href="https://bsn.expert">bsn.expert</a>
+            </div>
+            <div style="display:flex;gap:6px;font-family:var(--on-font-mono)">
+              <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;letter-spacing:.1em;background:var(--on-text);color:var(--on-surface);border:1px solid var(--on-text)">EN</button>
+              <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;letter-spacing:.1em;background:transparent;border:1px solid var(--on-hairline-strong)" style-hover="border-color:var(--on-text)">RU</button>
+              <button type="button" title="Crnogorski" style="padding:6px 14px;border-radius:999px;font-size:12.5px;letter-spacing:.1em;background:transparent;border:1px solid var(--on-hairline-strong)" style-hover="border-color:var(--on-text)">CNR</button>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <div style="position:absolute;right:24px;bottom:24px;display:flex;gap:2px;padding:4px;border-radius:999px;background:var(--on-glass);border:.5px solid var(--on-glass-bd);backdrop-filter:blur(20px) saturate(1.6);-webkit-backdrop-filter:blur(20px) saturate(1.6);box-shadow:var(--on-glass-shadow);font-family:var(--on-font-mono);font-size:11px;letter-spacing:.12em">
+        <button type="button" data-set-theme="auto" onClick="{{ setTheme }}" style="padding:6px 12px;border-radius:999px;color:var(--on-text2)">AUTO</button>
+        <button type="button" data-set-theme="light" onClick="{{ setTheme }}" style="padding:6px 12px;border-radius:999px;color:var(--on-text2)">LIGHT</button>
+        <button type="button" data-set-theme="dark" onClick="{{ setTheme }}" style="padding:6px 12px;border-radius:999px;color:var(--on-blue)">DARK</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="1b" style="flex:0 0 auto;width:390px">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;font-family:ui-monospace, SFMono-Regular, Menlo, monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,242,244,.45)">
+      <span style="border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:3px 9px;color:rgba(242,242,244,.8)">1b</span>
+      <span>Home · 390 · light</span>
+    </div>
+
+    <div data-theme="light" data-screen-label="Home 390 light" style="width:390px;background:var(--on-surface);color:var(--on-text);font-family:var(--on-font);position:relative;border:1px solid rgba(255,255,255,.12);overflow:hidden">
+
+      <header style="position:sticky;top:0;z-index:20;height:52px;background:var(--nav-bg);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px);border-bottom:1px solid var(--on-hairline)">
+        <div style="width:calc(100% - 36px);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between">
+          <a href="#1b" style="display:flex;align-items:center;gap:9px;text-decoration:none">
+            <svg width="24" height="24" viewBox="0 0 28 28" aria-hidden="true" style="display:block;color:var(--on-text)">
+              <rect x=".5" y=".5" width="27" height="27" rx="6.2" fill="none" stroke="var(--on-hairline-strong)"></rect>
+              <g transform="rotate(45 14 14)" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+                <path d="M14 5.2A8.8 8.8 0 0 1 22.8 14"></path>
+                <path d="M14 22.8A8.8 8.8 0 0 1 5.2 14"></path>
+              </g>
+              <g fill="currentColor" opacity=".85">
+                <circle cx="18.6" cy="14" r="1.15"></circle><circle cx="17.25" cy="17.25" r="1.15"></circle>
+                <circle cx="14" cy="18.6" r="1.15"></circle><circle cx="10.75" cy="17.25" r="1.15"></circle>
+                <circle cx="9.4" cy="14" r="1.15"></circle><circle cx="10.75" cy="10.75" r="1.15"></circle>
+                <circle cx="14" cy="9.4" r="1.15"></circle><circle cx="17.25" cy="10.75" r="1.15"></circle>
+              </g>
+            </svg>
+            <span style="font-size:18px;font-weight:600;letter-spacing:-.04em">sobor</span>
+          </a>
+          <button type="button" style="border:1px solid var(--on-hairline-strong);border-radius:999px;padding:6px 15px;font-size:13px;font-weight:600">RSVP</button>
+        </div>
+      </header>
+
+      <div style="width:calc(100% - 36px);margin:0 auto;padding:56px 0 52px">
+        <div style="font-family:var(--on-font-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3);line-height:1.6">MTL City · Montenegro<br>21–25 September 2026</div>
+        <h1 style="margin-top:24px;font-size:74px;line-height:.88;letter-spacing:-.06em;font-weight:600;text-wrap:balance">Build a seat.<br>Homestead it.</h1>
+        <p style="margin-top:26px;font-size:20px;line-height:1.25;letter-spacing:-.02em;color:var(--on-text2)">Five days in Bar. Sixteen roles in the Onym network are open to implementation; most have a contract and no code. Pick it, build it, homestead it.</p>
+        <div style="margin-top:28px;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+          <button type="button" style="min-height:44px;width:100%;padding:0 20px;border-radius:14px;font-size:15px;font-weight:600;background:var(--on-blue);color:var(--on-on-accent);box-shadow:0 9px 24px color-mix(in srgb, var(--on-blue) 25%, transparent)">RSVP with a Stellar account</button>
+          <a href="#1b" style="font-size:15px;color:var(--on-text2)">Read the rules →</a>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--on-hairline-strong);border-bottom:1px solid var(--on-hairline-strong);background:var(--on-bg)">
+        <div style="width:calc(100% - 36px);margin:0 auto;padding:32px 0 36px;display:flex;flex-direction:column;gap:26px">
+          <div style="font-family:var(--on-font-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3)">Open questions · updated 11 September 2026</div>
+          <div>
+            <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--on-hairline-strong);padding:3px 9px;border-radius:999px;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2)"><span style="width:6px;height:6px;border-radius:999px;border:1px solid var(--on-red);opacity:.55"></span>Venue — undetermined</span>
+            <p style="margin-top:12px;font-size:17px;line-height:1.4;color:var(--on-text2)">The week is fixed. The room is not. We publish the address the day we sign for one.</p>
+          </div>
+          <div>
+            <sc-if value="{{ arbiterOpen }}" hint-placeholder-val="{{ true }}">
+              <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--on-hairline-strong);padding:3px 9px;border-radius:999px;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2)"><span style="width:6px;height:6px;border-radius:999px;border:1px solid var(--on-red);opacity:.55"></span>Arbiter — unnamed</span>
+              <p style="margin-top:12px;font-size:17px;line-height:1.4;color:var(--on-text2)">The arbiter is not the organizer. They are named when the prize fund is secured — not before.</p>
+            </sc-if>
+            <sc-if value="{{ arbiterNamed }}">
+              <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--on-hairline-strong);padding:3px 9px;border-radius:999px;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2)"><span style="width:6px;height:6px;border-radius:999px;border:1px solid var(--on-green);opacity:.55"></span>Arbiter — named</span>
+              <p style="margin-top:12px;font-size:17px;line-height:1.4;color:var(--on-text2)">Named on the status page, with the conflicts they declared. Still not the organizer.</p>
+            </sc-if>
+          </div>
+          <div>
+            <sc-if value="{{ fundOpen }}" hint-placeholder-val="{{ true }}">
+              <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--on-hairline-strong);padding:3px 9px;border-radius:999px;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2)"><span style="width:6px;height:6px;border-radius:999px;border:1px solid var(--on-red);opacity:.55"></span>Prize fund — €0 secured</span>
+            </sc-if>
+            <sc-if value="{{ fundRaised }}">
+              <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--on-hairline-strong);padding:3px 9px;border-radius:999px;font-family:var(--on-font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2)"><span style="width:6px;height:6px;border-radius:999px;border:1px solid var(--on-green);opacity:.55"></span>Prize fund — {{ fundLabel }} secured</span>
+            </sc-if>
+            <p style="margin-top:12px;font-size:17px;line-height:1.4;color:var(--on-text2)">The meter below reads what is actually in hand. No pledge is counted until it clears.</p>
+          </div>
+        </div>
+      </div>
+
+      <section style="width:calc(100% - 36px);margin:0 auto;padding:90px 0">
+        <div style="display:flex;align-items:baseline;gap:12px;font-family:var(--on-font-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3)"><span>01</span><span style="color:var(--on-text2)">· The contest</span></div>
+        <h2 style="margin-top:20px;font-size:48px;line-height:.95;letter-spacing:-.05em;font-weight:600;text-wrap:balance">Five days.<br>One seat each.</h2>
+        <p style="margin-top:20px;font-size:17px;line-height:1.45;color:var(--on-text2)">Teams of any size take one open role and implement it against its published contract. There is no track, no theme, and no pitch. A seat is filled when something runs and someone else can point their client at it.</p>
+        <div style="margin-top:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+          <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+            <div style="font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text3)">01 · Build</div>
+            <h3 style="margin-top:12px;font-size:22px;letter-spacing:-.035em;font-weight:600;line-height:1.05">Read the contract</h3>
+            <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Every seat is specified in public, technology-neutral prose. You are free to ignore the reference implementation entirely.</p>
+            <p style="margin-top:12px;font-size:14px;font-weight:700">The contract is the brief.</p>
+          </div>
+          <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+            <div style="font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text3)">02 · Submit</div>
+            <h3 style="margin-top:12px;font-size:22px;letter-spacing:-.035em;font-weight:600;line-height:1.05">Hand over an endpoint</h3>
+            <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">A repository, a running instance, and the credentials to exercise it. Slides are not a submission.</p>
+            <p style="margin-top:12px;font-size:14px;font-weight:700">Code nobody can run is a proposal.</p>
+          </div>
+          <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+            <div style="font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text3)">03 · Judge</div>
+            <h3 style="margin-top:12px;font-size:22px;letter-spacing:-.035em;font-weight:600;line-height:1.05">One arbiter, in writing</h3>
+            <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Conformance first, then durability. Every verdict is published with its reasons, including the refusals.</p>
+            <p style="margin-top:12px;font-size:14px;font-weight:700">The arbiter owes reasons, not applause.</p>
+          </div>
+          <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+            <div style="font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text3)">04 · Fill</div>
+            <h3 style="margin-top:12px;font-size:22px;letter-spacing:-.035em;font-weight:600;line-height:1.05">Homestead the seat</h3>
+            <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">You own what you built and whatever it earns. No assignment of rights, no equity, no claim by the organizer.</p>
+            <p style="margin-top:12px;font-size:14px;font-weight:700">The week ends; the seat keeps working.</p>
+          </div>
+        </div>
+        <p style="margin-top:28px;font-size:15px;color:var(--on-text2)"><a href="#1b">Read the rules in full →</a></p>
+      </section>
+
+      <section style="border-top:1px solid var(--on-hairline-strong)">
+        <div style="width:calc(100% - 36px);margin:0 auto;padding:90px 0">
+          <div style="display:flex;align-items:baseline;gap:12px;font-family:var(--on-font-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3)"><span>02</span><span style="color:var(--on-text2)">· Seats</span></div>
+          <h2 style="margin-top:20px;font-size:48px;line-height:.95;letter-spacing:-.05em;font-weight:600;text-wrap:balance">Sixteen contracts.<br>Seven have code.</h2>
+          <p style="margin-top:20px;font-size:17px;line-height:1.45;color:var(--on-text2)">Status is reported as the Foundation reports it — a contract in the repository is not an implementation, and one replaceable default deployment is not a market. All sixteen are below.</p>
+          <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Discovery</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means an index that finds compatible instances of every other seat. <a href="https://github.com/onymchat/onym-discovery">Reference implementation →</a></p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Reference impl exists</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Naming &amp; credentials</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means someone issues names and can be held to the issuance.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-accent-yellow) 14%, transparent);border-radius:999px;padding:4px 10px">In review · not wired in</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Banking &amp; payments</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means a payment path that never learns the message.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-accent-yellow) 14%, transparent);border-radius:999px;padding:4px 10px">In review · no open-source impl</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Device backup</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means a restore that works without custody of the seed. <a href="https://github.com/onymchat/onym-backup">Reference implementation →</a></p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Reference impl exists</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Audit &amp; attestation</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means a published examination someone signed their name to.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Recovery trustee</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means a trustee whose fees, profiles and refusals are published.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Arbitration</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means disputes settled by someone with no stake in either side.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Recruitment</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means hiring inside the network, paid on milestones rather than on access.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Acquisition</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means buying on a user&rsquo;s behalf, per order, without holding the order.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Distribution</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means campaigns that reach only the people who asked to be reached.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Charitable coordination</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means donations routed, receipted and accounted for in public.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-blue) 14%, transparent);border-radius:999px;padding:4px 10px">Draft spec</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Message carriage</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled again means a second courier, so the default becomes a choice. It rides standard Nostr — any compliant relay already qualifies.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Reference operator exists</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Media storage</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled again means durable blobs held by someone who cannot read them. It rides standard Blossom — any compliant server already qualifies.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Reference operator exists</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Group verification</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled again means a second verifier that still never sees the member list. The Stellar contracts are published. <a href="https://github.com/onymchat/onym-contracts">onym-contracts →</a></p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Reference operator exists</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Interface</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled again means a client that is not ours. The window is not the gatekeeper — fork it, improve it, own it.</p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Live on iOS &amp; Android</span>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:18px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Moderation authority</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Filled means an authority that adjudicates reports and never enforces them itself. <a href="https://github.com/onymchat/onym-moderation">Rust reference implementation →</a></p>
+              <span style="display:inline-block;margin-top:14px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text2);background:color-mix(in srgb, var(--on-green) 14%, transparent);border-radius:999px;padding:4px 10px">Live on iOS · Android draft</span>
+            </div>
+          </div>
+          <p style="margin-top:28px;font-size:15px;color:var(--on-text2)"><a href="https://onym.foundation/seats.html">Every seat contract →</a></p>
+          <p style="margin-top:12px;font-size:14px;line-height:1.45;color:var(--on-text3)">Identity is not a seat — it stays with the person.</p>
+        </div>
+      </section>
+
+      <section style="border-top:1px solid var(--on-hairline-strong)">
+        <div style="width:calc(100% - 36px);margin:0 auto;padding:90px 0">
+          <div style="display:flex;align-items:baseline;gap:12px;font-family:var(--on-font-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3)"><span>03</span><span style="color:var(--on-text2)">· Who may come</span></div>
+          <h2 style="margin-top:20px;font-size:48px;line-height:.95;letter-spacing:-.05em;font-weight:600;text-wrap:balance">One signature.<br>No guest list.</h2>
+          <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:20px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Pre-approved</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Your account already holds MTLAP or MTLAC. RSVP is one signature — we read the balance from the chain, per bsn.expert, and you are in.</p>
+              <div style="margin-top:16px;border-top:1px solid var(--on-hairline);padding-top:14px;font-family:var(--on-font-mono);font-size:12px;color:var(--on-text3)">SAMPLE · GA7QK4…M2XZD9</div>
+              <p style="margin-top:12px;font-size:14px;font-weight:700">The chain is the invitation.</p>
+            </div>
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:20px">
+              <h3 style="font-size:24px;letter-spacing:-.035em;font-weight:600;line-height:1.04">Everyone else</h3>
+              <p style="margin-top:10px;font-size:14px;line-height:1.45;color:var(--on-text2)">Register interest with any Stellar account. We answer — or we answer honestly that there is nothing yet. There is no waiting list to be ranked on.</p>
+              <div style="margin-top:16px;border-top:1px solid var(--on-hairline);padding-top:14px;font-family:var(--on-font-mono);font-size:12px;color:var(--on-text3)">NO TOKEN REQUIRED · NO FEE</div>
+              <p style="margin-top:12px;font-size:14px;font-weight:700">A key is enough to be counted.</p>
+            </div>
+            <sc-if value="{{ showRsvp }}" hint-placeholder-val="{{ true }}">
+            <div style="background:var(--on-surface2);border:1px solid var(--on-hairline);border-radius:14px;padding:20px">
+              <div style="font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text3)">RSVP</div>
+              <div style="margin-top:14px;min-height:50px;padding:13px 14px;border-radius:14px;background:var(--on-surface3);border:1px solid var(--on-hairline-strong);font-family:var(--on-font-mono);font-size:13px;color:var(--on-text3)">G…  paste a public key</div>
+              <button type="button" style="margin-top:10px;min-height:50px;width:100%;border-radius:14px;font-size:15px;font-weight:600;background:var(--on-blue);color:var(--on-on-accent);box-shadow:0 9px 24px color-mix(in srgb, var(--on-blue) 25%, transparent)">Sign to RSVP</button>
+              <div style="margin-top:18px;font-family:var(--on-font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-text3)">Seats you would work on — optional</div>
+              <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:7px">
+                <button type="button" style="padding:6px 13px;border-radius:999px;font-size:12px;background:var(--on-text);color:var(--on-surface);border:1px solid var(--on-text)">Discovery</button>
+                <button type="button" style="padding:6px 13px;border-radius:999px;font-size:12px;background:transparent;border:1px solid var(--on-hairline-strong)">Naming &amp; credentials</button>
+                <button type="button" style="padding:6px 13px;border-radius:999px;font-size:12px;background:transparent;border:1px solid var(--on-hairline-strong)">Banking &amp; payments</button>
+                <button type="button" style="padding:6px 13px;border-radius:999px;font-size:12px;background:var(--on-text);color:var(--on-surface);border:1px solid var(--on-text)">Device backup</button>
+                <button type="button" style="padding:6px 13px;border-radius:999px;font-size:12px;background:transparent;border:1px solid var(--on-hairline-strong)">Audit &amp; attestation</button>
+                <button type="button" style="padding:6px 13px;border-radius:999px;font-size:12px;background:transparent;border:1px solid var(--on-hairline-strong)">Recovery trustee</button>
+                <button type="button" style="padding:6px 13px;border-radius:999px;font-size:12px;background:transparent;border:1px solid var(--on-hairline-strong)">Message carriage</button>
+                <button type="button" style="padding:6px 13px;border-radius:999px;font-size:12px;background:transparent;border:1px solid var(--on-hairline-strong)">Interface</button>
+              </div>
+              <p style="margin-top:18px;font-size:14px;line-height:1.45;color:var(--on-text2)">We keep the account, the signature and the seats you ticked. Nothing else — there is no form, because there is nothing else we need.</p>
+            </div>
+            </sc-if>
+          </div>
+        </div>
+      </section>
+
+      <section style="border-top:1px solid var(--on-hairline-strong)">
+        <div style="width:calc(100% - 36px);margin:0 auto;padding:90px 0">
+          <div style="display:flex;align-items:baseline;gap:12px;font-family:var(--on-font-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text3)"><span>04</span><span style="color:var(--on-text2)">· The prize fund</span></div>
+          <div style="margin-top:24px;border:1px solid rgba(240,179,94,.45);border-radius:14px;background:linear-gradient(180deg, rgba(240,179,94,.10) 0%, var(--on-surface2) 70%);padding:24px;font-family:var(--on-font-mono)">
+            <div style="font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text2)">Secured, to date</div>
+            <sc-if value="{{ fundOpen }}" hint-placeholder-val="{{ true }}">
+              <div style="margin-top:14px;font-size:52px;line-height:.98;letter-spacing:-.05em;font-weight:600">€0</div>
+              <div style="margin-top:8px;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text2)">of a target not yet published</div>
+              <div style="margin-top:20px;height:8px;border-radius:999px;background:var(--on-surface3);overflow:hidden">
+                <div style="width:0%;height:100%;background:var(--so-warm)"></div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ fundRaised }}">
+              <div style="margin-top:14px;font-size:52px;line-height:.98;letter-spacing:-.05em;font-weight:600">{{ fundLabel }}</div>
+              <div style="margin-top:8px;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-text2)">in hand, cleared</div>
+              <div style="margin-top:20px;height:8px;border-radius:999px;background:var(--on-surface3);overflow:hidden">
+                <div style="{{ meterStyle }}"></div>
+              </div>
+            </sc-if>
+            <p style="margin-top:22px;font-size:13px;line-height:1.5;color:var(--on-text2)">Nothing is pledged, so nothing is promised. Every payment that clears is listed here with its date and its amount; a pledge that has not cleared is not a number on this page.</p>
+            <p style="margin-top:12px;font-size:13px;line-height:1.5;color:var(--on-text2)">The arbiter is named once the fund is secured, and not a day earlier. The arbiter is not the organizer, and the organizer does not vote.</p>
+            <p style="margin-top:20px;font-size:14px;font-weight:700">An unfunded prize is a rumour.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="border-top:1px solid var(--on-hairline-strong);text-align:center">
+        <div style="width:calc(100% - 36px);margin:0 auto;padding:96px 0">
+          <h2 style="font-size:48px;line-height:.95;letter-spacing:-.05em;font-weight:600;text-wrap:balance">Bring a laptop.<br>Homestead the seat.</h2>
+          <button type="button" style="margin-top:28px;min-height:44px;width:100%;border-radius:14px;font-size:15px;font-weight:600;background:var(--on-blue);color:var(--on-on-accent);box-shadow:0 9px 24px color-mix(in srgb, var(--on-blue) 25%, transparent)">RSVP with a Stellar account</button>
+          <p style="margin-top:18px;font-size:15px;color:var(--on-text2)"><a href="#1b">Read the rules →</a></p>
+          <p style="margin-top:20px;font-family:var(--on-font-mono);font-size:12px;letter-spacing:.04em;color:var(--on-text3);line-height:1.6">21–25 September 2026 · Bar, Montenegro<br>venue to follow</p>
+        </div>
+      </section>
+
+      <footer style="border-top:1px solid var(--on-hairline-strong);background:var(--on-bg)">
+        <div style="width:calc(100% - 36px);margin:0 auto;padding:32px 0 96px;display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:18px;font-size:13.5px;color:var(--on-text2);flex-wrap:wrap">
+            <a href="https://onym.app">onym.app</a>
+            <a href="https://onym.foundation">onym.foundation</a>
+            <a href="https://bsn.expert">bsn.expert</a>
+          </div>
+          <div style="display:flex;gap:6px;font-family:var(--on-font-mono)">
+            <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;letter-spacing:.1em;background:var(--on-text);color:var(--on-surface);border:1px solid var(--on-text)">EN</button>
+            <button type="button" style="padding:6px 14px;border-radius:999px;font-size:12.5px;letter-spacing:.1em;background:transparent;border:1px solid var(--on-hairline-strong)">RU</button>
+            <button type="button" title="Crnogorski" style="padding:6px 14px;border-radius:999px;font-size:12.5px;letter-spacing:.1em;background:transparent;border:1px solid var(--on-hairline-strong)">CNR</button>
+          </div>
+          <div style="font-size:13.5px;color:var(--on-text2)">© 2026 · sobor.io · an Onym event</div>
+          <div style="font-family:var(--on-font-mono);font-size:12.5px;color:var(--on-text)">A seat is not granted. It is homesteaded.</div>
+        </div>
+      </footer>
+
+      <div style="position:absolute;right:16px;bottom:20px;display:flex;gap:2px;padding:4px;border-radius:999px;background:var(--on-glass);border:.5px solid var(--on-glass-bd);backdrop-filter:blur(20px) saturate(1.6);-webkit-backdrop-filter:blur(20px) saturate(1.6);box-shadow:var(--on-glass-shadow);font-family:var(--on-font-mono);font-size:10.5px;letter-spacing:.1em">
+        <button type="button" data-set-theme="auto" onClick="{{ setTheme }}" style="padding:6px 10px;border-radius:999px;color:var(--on-text2)">AUTO</button>
+        <button type="button" data-set-theme="light" onClick="{{ setTheme }}" style="padding:6px 10px;border-radius:999px;color:var(--on-blue)">LIGHT</button>
+        <button type="button" data-set-theme="dark" onClick="{{ setTheme }}" style="padding:6px 10px;border-radius:999px;color:var(--on-text2)">DARK</button>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;fundSecured&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:0,&quot;tsType&quot;:&quot;number&quot;,&quot;min&quot;:0,&quot;max&quot;:50000,&quot;step&quot;:500,&quot;unit&quot;:&quot;EUR&quot;,&quot;section&quot;:&quot;Honest status&quot;},&quot;arbiterNamed&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Honest status&quot;},&quot;showRsvpForm&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Home page&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const secured = Number(this.props.fundSecured ?? 0);
+    const arbiterNamed = !!(this.props.arbiterNamed ?? false);
+    const target = 25000;
+    return {
+      fundOpen: !(secured > 0),
+      fundRaised: secured > 0,
+      fundLabel: "€" + secured.toLocaleString("en-US"),
+      meterStyle: {
+        width: Math.max(2, Math.min(100, (secured / target) * 100)) + "%",
+        height: "100%",
+        background: "var(--so-warm)"
+      },
+      arbiterOpen: !arbiterNamed,
+      arbiterNamed: arbiterNamed,
+      showRsvp: this.props.showRsvpForm ?? true,
+      setTheme: (e) => {
+        const btn = e.currentTarget;
+        const next = btn.dataset.setTheme;
+        const board = btn.parentElement.parentElement;
+        if (next === "auto") board.removeAttribute("data-theme");
+        else board.setAttribute("data-theme", next);
+        Array.from(btn.parentElement.children).forEach((b) => {
+          b.style.color = b === btn ? "var(--on-blue)" : "var(--on-text2)";
+        });
+      }
+    };
+  }
+}
+
+</script>
+</body>
+</html>

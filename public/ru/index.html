@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>sobor — Построй место. Homestead it.</title>
+<meta name="description" content="Пятидневный конкурс в Баре, Черногория, 21–25 сентября 2026. Шестнадцать ролей в сети Onym открыты для реализации. Построй одну, запусти её, оставь себе."/>
+<meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)"/>
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)"/>
+<link rel="canonical" href="https://sobor.io/ru/"/>
+<link rel="alternate" hreflang="en" href="https://sobor.io/"/>
+<link rel="alternate" hreflang="ru" href="https://sobor.io/ru/"/>
+<link rel="alternate" hreflang="cnr" href="https://sobor.io/cnr/"/>
+<link rel="alternate" hreflang="x-default" href="https://sobor.io/"/>
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://sobor.io/ru/"/>
+<meta property="og:site_name" content="sobor"/>
+<meta property="og:locale" content="ru"/>
+<meta property="og:title" content="sobor — Построй место. Homestead it."/>
+<meta property="og:description" content="Пять дней в Баре. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="/favicon.ico" sizes="48x48"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<script src="/assets/theme.js"></script>
+<script src="/assets/lang.js"></script>
+<link rel="stylesheet" href="/assets/sobor.css"/>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ru/" aria-label="sobor — на главную">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+        <rect x=".5" y=".5" width="27" height="27" rx="6.2" fill="none" stroke="var(--on-hairline-strong)"></rect>
+        <g transform="rotate(45 14 14)" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+          <path d="M14 5.2A8.8 8.8 0 0 1 22.8 14"></path>
+          <path d="M14 22.8A8.8 8.8 0 0 1 5.2 14"></path>
+        </g>
+        <g fill="currentColor" opacity=".85">
+          <circle cx="18.6" cy="14" r="1.15"></circle><circle cx="17.25" cy="17.25" r="1.15"></circle>
+          <circle cx="14" cy="18.6" r="1.15"></circle><circle cx="10.75" cy="17.25" r="1.15"></circle>
+          <circle cx="9.4" cy="14" r="1.15"></circle><circle cx="10.75" cy="10.75" r="1.15"></circle>
+          <circle cx="14" cy="9.4" r="1.15"></circle><circle cx="17.25" cy="10.75" r="1.15"></circle>
+        </g>
+      </svg>
+      <span>sobor</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#contest">Конкурс</a>
+      <a href="#seats">Места</a>
+      <a href="#rules">Правила</a>
+      <a href="#status">Статус</a>
+    </nav>
+    <div class="nav-cta"><a class="btn-pill" href="#rsvp">Участвовать</a></div>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="hero">
+    <div class="hero-eyebrow">MTL City · Черногория · 21–25 сентября 2026</div>
+    <h1>Построй место.<br><span lang="en">Homestead it.</span></h1>
+    <div class="hero-copy">
+      <p>Пять дней в Баре. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода. Выбери, построй, займи.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#rsvp">Участвовать со счётом Stellar</a>
+        <a href="#rules">Читать правила →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- The three open questions. When one settles, swap .tag.open for .tag.settled in
+       content/i18n.json's label and rewrite the paragraph. Do not soften these. -->
+  <section class="status" id="status">
+    <div class="wrap">
+      <div class="status-stamp">Открытые вопросы · обновлено 11 сентября 2026</div>
+      <div class="status-grid">
+        <div>
+          <span class="tag open">Площадка — не определена</span>
+          <p>Неделя назначена. Помещение — нет. Адрес опубликуем в тот день, когда подпишем договор.</p>
+        </div>
+        <div>
+          <span class="tag open">Арбитр — не назван</span>
+          <p>Арбитр — не организатор. Его назовут, когда призовой фонд будет обеспечен, — и не раньше.</p>
+        </div>
+        <div>
+          <span class="tag open">Призовой фонд — обеспечено €0</span>
+          <p>Счётчик ниже показывает то, что действительно получено. Обещание не считается, пока деньги не пришли.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contest">
+    <div class="wrap">
+      <div class="eyebrow"><span>01</span><b>· Конкурс</b></div>
+      <h2>Пять дней.<br>По одному месту.</h2>
+      <p class="section-lede">Команда любого размера берёт одну открытую роль и реализует её по опубликованному контракту. Ни треков, ни темы, ни питчей. Место занято, когда что-то работает и кто-то посторонний может направить туда свой клиент.</p>
+      <div class="grid-4">
+        <div class="card">
+          <div class="kicker">01 · Строй</div>
+          <h3>Прочитай контракт</h3>
+          <p>Каждое место описано публично и нейтрально к технологиям. Эталонную реализацию можно полностью игнорировать.</p>
+          <p class="aph">Контракт — это и есть задание.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">02 · Сдавай</div>
+          <h3>Передай рабочий адрес</h3>
+          <p>Репозиторий, запущенный экземпляр и доступы, чтобы его проверить. Слайды — не работа.</p>
+          <p class="aph">Код, который никто не может запустить, — это предложение.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">03 · Суди</div>
+          <h3>Один арбитр, письменно</h3>
+          <p>Сначала соответствие контракту, потом надёжность. Каждое решение публикуется с обоснованием, включая отказы.</p>
+          <p class="aph">Арбитр должен обоснование, а не аплодисменты.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">04 · Занимай</div>
+          <h3>Займи место</h3>
+          <p>Тебе принадлежит то, что ты построил, и всё, что оно заработает. Никакой передачи прав, никаких долей, никаких претензий организатора.</p>
+          <p class="aph">Неделя кончается — место продолжает работать.</p>
+        </div>
+      </div>
+      <p class="after-grid" id="rules"><a href="#rules">Читать правила целиком →</a></p>
+    </div>
+  </section>
+
+  <section class="band" id="seats">
+    <div class="wrap">
+      <div class="eyebrow"><span>02</span><b>· Места</b></div>
+      <h2>Шестнадцать контрактов.<br>У семи есть код.</h2>
+      <p class="section-lede">Статус указан так, как его указывает Фонд: контракт в репозитории — ещё не реализация, а один заменяемый вариант по умолчанию — ещё не рынок. Все шестнадцать — ниже.</p>
+      <div class="grid-4 seats-grid">
+        <div class="card seat">
+          <h3>Каталог</h3>
+          <p>Занято — значит есть указатель, который находит совместимые экземпляры всех остальных мест. <a href="https://github.com/onymchat/onym-discovery">Эталонная реализация →</a></p>
+          <span class="chip green">Есть эталонная реализация</span>
+        </div>
+        <div class="card seat">
+          <h3>Имена и удостоверения</h3>
+          <p>Занято — значит кто-то выдаёт имена и отвечает за выдачу.</p>
+          <span class="chip amber">На рассмотрении · не подключено</span>
+        </div>
+        <div class="card seat">
+          <h3>Банк и платежи</h3>
+          <p>Занято — значит платёж проходит, ни разу не узнав содержания сообщения.</p>
+          <span class="chip amber">На рассмотрении · нет открытой реализации</span>
+        </div>
+        <div class="card seat">
+          <h3>Резервная копия</h3>
+          <p>Занято — значит восстановление работает, а seed-фраза остаётся только у владельца. <a href="https://github.com/onymchat/onym-backup">Эталонная реализация →</a></p>
+          <span class="chip green">Есть эталонная реализация</span>
+        </div>
+        <div class="card seat">
+          <h3>Аудит и аттестация</h3>
+          <p>Занято — значит опубликована проверка, под которой кто-то подписался своим именем.</p>
+          <span class="chip blue">Черновик спецификации</span>
+        </div>
+        <div class="card seat">
+          <h3>Доверенный для восстановления</h3>
+          <p>Занято — значит у доверенного опубликованы тарифы, профили и отказы.</p>
+          <span class="chip blue">Черновик спецификации</span>
+        </div>
+        <div class="card seat">
+          <h3>Арбитраж</h3>
+          <p>Занято — значит споры решает тот, у кого нет интереса ни на одной стороне.</p>
+          <span class="chip blue">Черновик спецификации</span>
+        </div>
+        <div class="card seat">
+          <h3>Подбор участников</h3>
+          <p>Занято — значит наём внутри сети оплачивается по этапам, а не за доступ.</p>
+          <span class="chip blue">Черновик спецификации</span>
+        </div>
+        <div class="card seat">
+          <h3>Привлечение</h3>
+          <p>Занято — значит покупка совершается от имени пользователя, по одному заказу, не удерживая сам заказ.</p>
+          <span class="chip blue">Черновик спецификации</span>
+        </div>
+        <div class="card seat">
+          <h3>Дистрибуция</h3>
+          <p>Занято — значит кампания доходит только до тех, кто сам попросил.</p>
+          <span class="chip blue">Черновик спецификации</span>
+        </div>
+        <div class="card seat">
+          <h3>Благотворительность</h3>
+          <p>Занято — значит пожертвования маршрутизируются, подтверждаются и публично учитываются.</p>
+          <span class="chip blue">Черновик спецификации</span>
+        </div>
+        <div class="card seat">
+          <h3>Курьер</h3>
+          <p>Занято ещё раз — значит появился второй курьер и умолчание стало выбором. Работает на обычном Nostr: подойдёт любой совместимый релей.</p>
+          <span class="chip green">Есть эталонный оператор</span>
+        </div>
+        <div class="card seat">
+          <h3>Хранилище медиа</h3>
+          <p>Занято ещё раз — значит долговечные файлы хранит тот, кто не может их прочитать. Работает на обычном Blossom: подойдёт любой совместимый сервер.</p>
+          <span class="chip green">Есть эталонный оператор</span>
+        </div>
+        <div class="card seat">
+          <h3>Нотариус</h3>
+          <p>Занято ещё раз — значит появился второй проверяющий, которому по-прежнему не виден список участников. Контракты Stellar опубликованы. <a href="https://github.com/onymchat/onym-contracts">onym-contracts →</a></p>
+          <span class="chip green">Есть эталонный оператор</span>
+        </div>
+        <div class="card seat">
+          <h3>Интерфейс</h3>
+          <p>Занято ещё раз — значит появился клиент, сделанный не нами. Окно — не контролёр: форкай, улучшай, владей.</p>
+          <span class="chip green">Работает на iOS и Android</span>
+        </div>
+        <div class="card seat">
+          <h3>Модерационная инстанция</h3>
+          <p>Занято — значит инстанция разбирает жалобы и никогда не исполняет решения сама. <a href="https://github.com/onymchat/onym-moderation">Эталонная реализация на Rust →</a></p>
+          <span class="chip green">Работает на iOS · Android в черновике</span>
+        </div>
+      </div>
+      <p class="after-grid"><a href="https://onym.foundation/seats.html">Все контракты мест на onym.foundation →</a></p>
+      <p class="after-grid">Личность — не место, она остаётся у человека. Чего не хватает, можно предложить как новое.</p>
+    </div>
+  </section>
+
+  <section class="band who">
+    <div class="wrap">
+      <div class="eyebrow"><span>03</span><b>· Кто может приехать</b></div>
+      <h2>Одна подпись.<br>Без списка гостей.</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Уже одобрены</h3>
+          <p>На вашем счету уже есть MTLAP или MTLAC. Участие — это одна подпись: баланс мы читаем из сети, по данным <a href="https://bsn.expert">bsn.expert</a>, и вы в списке.</p>
+          <div class="meta">ПРИМЕР · GA7QK4…M2XZD9</div>
+          <p class="aph">Приглашение — это сама сеть.</p>
+        </div>
+        <div class="card">
+          <h3>Все остальные</h3>
+          <p>Заявите интерес с любым счётом Stellar. Мы ответим — или честно ответим, что пока ничего нет. Очереди, в которой вас ранжируют, не существует.</p>
+          <div class="meta">ТОКЕН НЕ НУЖЕН · БЕЗ ВЗНОСА</div>
+          <p class="aph">Ключа достаточно, чтобы вас посчитали.</p>
+        </div>
+      </div>
+
+      <div class="card rsvp" id="rsvp"
+           data-account="GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR" data-amount="0.0000001" data-event="sobor2026"
+           data-msg="sobor 2026 - заявка" data-copy="Копировать" data-copied="Скопировано">
+        <div class="kicker">Участие</div>
+        <span class="rsvp-reg"><b>1</b> заявок подано · <b>1</b> из них одобрены
+<span class="rsvp-synced">последнее чтение реестра 2026-09-11 15:16 UTC</span></span>
+
+        <div class="kicker kicker-seats">Как вы приедете</div>
+        <div class="rsvp-mode" role="radiogroup" aria-label="Как вы приедете">
+          <button class="pick" type="button" role="radio" aria-checked="true" data-mode="p">Лично</button>
+          <button class="pick" type="button" role="radio" aria-checked="false" data-mode="r">Удалённо</button>
+        </div>
+
+        <div class="kicker kicker-seats">Места, над которыми вы бы работали — необязательно</div>
+        <div class="rsvp-seats" role="group" aria-label="Места, над которыми вы бы работали">
+            <button class="pick" type="button" aria-pressed="false" data-bit="0">Каталог</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="1">Имена и удостоверения</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="2">Банк и платежи</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="3">Резервная копия</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="4">Аудит и аттестация</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="5">Доверенный для восстановления</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="6">Арбитраж</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="7">Подбор участников</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="8">Привлечение</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="9">Дистрибуция</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="10">Благотворительность</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="11">Курьер</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="12">Хранилище медиа</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="13">Нотариус</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="14">Интерфейс</button>
+            <button class="pick" type="button" aria-pressed="false" data-bit="15">Модерационная инстанция</button>
+        </div>
+
+        <div class="kicker kicker-seats">Что попадёт в реестр</div>
+        <div class="rsvp-row">
+          <output class="rsvp-memo" id="rsvp-memo" for="rsvp">sobor2026 p 0000</output>
+          <a class="btn btn-primary" id="rsvp-go" href="web+stellar:pay?destination=GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR&amp;amount=0.0000001&amp;asset_code=XLM&amp;memo=sobor2026%20p%200000&amp;memo_type=MEMO_TEXT&amp;msg=sobor%202026%20-%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0">Открыть в кошельке</a>
+        </div>
+        <p class="rsvp-note">Открывает кошелёк Stellar с уже заполненным платежом. Подписываете вы; ключа мы не видим никогда.</p>
+
+        <details class="drop">
+          <summary>Или отправьте вручную</summary>
+          <dl class="kv">
+            <dt>Кому</dt><dd><code>GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR</code><button class="copy" type="button" data-copy="GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR">Копировать</button></dd>
+            <dt>Сумма</dt><dd><code>0.0000001 XLM</code><button class="copy" type="button" data-copy="0.0000001">Копировать</button></dd>
+            <dt>Мемо</dt><dd><code id="rsvp-memo2">sobor2026 p 0000</code><button class="copy" type="button" data-copy-memo>Копировать</button></dd>
+          </dl>
+        </details>
+
+        <details class="drop">
+          <summary>Как читать это мемо</summary>
+          <p>Одна строка текста в публичном реестре. Первое поле — событие, второе — p, если лично, или r, если удалённо, третье — шестнадцатибитная маска в hex: по одному биту на место, в порядке ниже, младший бит первый. Расшифровать может кто угодно, не спрашивая нас.</p>
+          <ol class="bits" start="0">
+            <li><code>0</code> Каталог</li>
+            <li><code>1</code> Имена и удостоверения</li>
+            <li><code>2</code> Банк и платежи</li>
+            <li><code>3</code> Резервная копия</li>
+            <li><code>4</code> Аудит и аттестация</li>
+            <li><code>5</code> Доверенный для восстановления</li>
+            <li><code>6</code> Арбитраж</li>
+            <li><code>7</code> Подбор участников</li>
+            <li><code>8</code> Привлечение</li>
+            <li><code>9</code> Дистрибуция</li>
+            <li><code>10</code> Благотворительность</li>
+            <li><code>11</code> Курьер</li>
+            <li><code>12</code> Хранилище медиа</li>
+            <li><code>13</code> Нотариус</li>
+            <li><code>14</code> Интерфейс</li>
+            <li><code>15</code> Модерационная инстанция</li>
+          </ol>
+        </details>
+
+        <div class="rsvp-foot">
+          <p class="rsvp-note">Ни анкеты, ни базы данных. Заявка — это сама транзакция, а реестр — это сеть: его может прочитать любой, в том числе тот, кто нам не доверяет.</p>
+          <p class="rsvp-out"><a id="rsvp-out" href="web+stellar:pay?destination=GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR&amp;amount=0.0000001&amp;asset_code=XLM&amp;memo=sobor2026%20out&amp;memo_type=MEMO_TEXT&amp;msg=sobor%202026%20-%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0">Отозвать поданную заявку →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="eyebrow"><span>04</span><b>· Призовой фонд</b></div>
+      <div class="fund">
+        <div class="fund-label">Обеспечено на сегодня</div>
+        <!-- When money clears: replace the amount, change the caption, and set --so-meter. -->
+        <div class="fund-figure">
+          <b>€0</b>
+          <span>из цели, которая ещё не объявлена</span>
+        </div>
+        <div class="meter" role="img" aria-label="Призовой фонд: пока ничего не обеспечено"><i></i></div>
+        <div class="fund-cols">
+          <p>Ничего не обещано, потому что ничего не внесено. Каждый поступивший платёж будет указан здесь с датой и суммой; обещание, которое не дошло до счёта, — не число на этой странице.</p>
+          <p>Арбитра назовут, когда фонд будет обеспечен, и ни днём раньше. Арбитр — не организатор, а организатор не голосует.</p>
+        </div>
+        <p class="aph">Необеспеченный приз — это слух.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div>
+      <h2>Возьми ноутбук.<br>Построй место.<br><span lang="en">Homestead it!</span></h2>
+      <div class="closing-actions">
+        <a class="btn btn-primary" href="#rsvp">Участвовать со счётом Stellar</a>
+        <a href="#rules">Читать правила →</a>
+      </div>
+      <p class="when">21–25 сентября 2026 · Бар, Черногория · площадка будет объявлена</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-l">
+      <div class="foot-copy">© 2026 · sobor.io · событие Onym</div>
+      <div class="foot-sign">Место не выдают. Его занимают.</div>
+    </div>
+    <div class="foot-r">
+      <div class="foot-links">
+        <a href="https://onym.app">onym.app</a>
+        <a href="https://onym.foundation">onym.foundation</a>
+        <a href="https://bsn.expert">bsn.expert</a>
+      </div>
+      <nav class="lang" aria-label="Язык">
+        <a class="pick" href="/" lang="en" hreflang="en" data-lang="en" title="English">EN</a>
+        <a class="pick is-on" href="/ru/" lang="ru" hreflang="ru" data-lang="ru" title="Русский" aria-current="true">RU</a>
+        <a class="pick" href="/cnr/" lang="cnr" hreflang="cnr" data-lang="cnr" title="Crnogorski">CNR</a>
+      </nav>
+      <!-- Lives in the footer so that on a narrow screen it can simply sit there
+           instead of floating over the text. Above 850px it is fixed again. -->
+      <div class="theme" role="group" aria-label="Цветовая тема">
+        <button type="button" data-theme-set="auto" aria-pressed="true">АВТО</button>
+        <button type="button" data-theme-set="light" aria-pressed="false">СВЕТЛАЯ</button>
+        <button type="button" data-theme-set="dark" aria-pressed="false">ТЁМНАЯ</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/sobor.js" defer></script>
+</body>
+</html>

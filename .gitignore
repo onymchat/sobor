@@ -1,0 +1,18 @@
+# Secrets. Nothing matching these has ever belonged in the repository.
+# Order matters: the negation has to come after the patterns it carves out of,
+# and nothing broader may follow it.
+.env
+.env.*
+!.env.example
+
+# Vercel: .vercel/ holds the project link, .env.local the OIDC token it issues.
+.vercel/
+.env.local
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+
+# Nothing here needs a package manager, but keep the door shut.
+node_modules/
