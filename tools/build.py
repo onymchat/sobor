@@ -168,7 +168,13 @@ def render(code):
 <meta property="og:locale" content="{lang}"/>
 <meta property="og:title" content="{title}"/>
 <meta property="og:description" content="{og_description}"/>
+<meta property="og:image" content="{origin}/{og_image}"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="{og_alt}"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="{origin}/{og_image}"/>
 <link rel="icon" href="/favicon.ico" sizes="48x48"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
@@ -344,6 +350,8 @@ def render(code):
 """.format(
         lang=t["lang"], origin=ORIGIN, base=base, alts=alts, mark=MARK,
         title=e(t["title"]), description=e(t["description"]), og_description=e(t["og_description"]),
+        og_image=("og.png" if code == "en" else "og-%s.png" % code),
+        og_alt=e("%s %s — %s" % (t["hero"]["h1a"], t["hero"]["h1b"], t["hero"]["eyebrow"])),
         nav_home=e(t["nav"]["home"]), nav_contest=e(t["nav"]["contest"]), nav_seats=e(t["nav"]["seats"]),
         nav_rules=e(t["nav"]["rules"]), nav_status=e(t["nav"]["status"]), nav_rsvp=e(t["nav"]["rsvp"]),
         hero_eyebrow=e(t["hero"]["eyebrow"]), hero_h1=hero_h1, closing_h2=closing_h2,
