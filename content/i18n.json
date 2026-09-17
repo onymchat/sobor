@@ -128,11 +128,12 @@
     },
     "book": {
       "eyebrow": "Book a place",
-      "h2a": "One form.",
+      "h2a": "One conversation.",
       "h2b": "No guest list.",
-      "lede": "Pick a time and we talk before the week starts — who you are, which seat interests you, and whether coming is worth it for you. No token, no fee, and no waiting list to be ranked on.",
+      "lede": "Pick a time and talk to Rinat before the week starts — who you are, which seat interests you, and whether coming is worth it for you. No token, no fee, and no waiting list to be ranked on.",
       "fallback": "Open the booking page →",
-      "note": "The form is hosted by Cal.com. Choosing a slot gives them your name and email, and puts the call on our calendar — nothing else is recorded.",
+      "phone": "The form asks for a phone number. Any number will do.",
+      "note": "The form is hosted by Cal.com. Choosing a slot gives them your name, your email and whatever you type in the phone field, and puts the call on our calendar — nothing else is recorded.",
       "aph": "A conversation is not a selection."
     },
     "fund": {
@@ -291,11 +292,12 @@
     },
     "book": {
       "eyebrow": "Запись",
-      "h2a": "Одна форма.",
+      "h2a": "Один разговор.",
       "h2b": "Без списка гостей.",
-      "lede": "Выберите время, и мы поговорим до начала недели: кто вы, какое место вам интересно и стоит ли вам приезжать. Токен не нужен, взноса нет, очереди, в которой вас ранжируют, тоже нет.",
+      "lede": "Выберите время и поговорите с Ринатом до начала недели: кто вы, какое место вам интересно и стоит ли вам приезжать. Токен не нужен, взноса нет, очереди, в которой вас ранжируют, тоже нет.",
       "fallback": "Открыть страницу записи →",
-      "note": "Форма работает на Cal.com. Выбрав время, вы передаёте им имя и почту, а звонок попадает в наш календарь — больше ничего не записывается.",
+      "phone": "Форма просит телефон. Подойдёт любой номер.",
+      "note": "Форма работает на Cal.com. Выбрав время, вы передаёте им имя, почту и то, что вписали в поле телефона, а звонок попадает в наш календарь — больше ничего не записывается.",
       "aph": "Разговор — это не отбор."
     },
     "fund": {
@@ -455,11 +457,12 @@
     },
     "book": {
       "eyebrow": "Prijava",
-      "h2a": "Jedan formular.",
+      "h2a": "Jedan razgovor.",
       "h2b": "Bez spiska gostiju.",
-      "lede": "Izaberi vrijeme i razgovaramo prije nego sedmica počne — ko si, koje te mjesto zanima i vrijedi li ti dolaziti. Bez tokena, bez naknade i bez liste čekanja na kojoj te rangiraju.",
+      "lede": "Izaberi vrijeme i popričaj s Rinatom prije nego sedmica počne — ko si, koje te mjesto zanima i vrijedi li ti dolaziti. Bez tokena, bez naknade i bez liste čekanja na kojoj te rangiraju.",
       "fallback": "Otvori stranicu za prijavu →",
-      "note": "Formular drži Cal.com. Kad izabereš termin, njima idu tvoje ime i e-adresa, a poziv ide u naš kalendar — ništa drugo se ne bilježi.",
+      "phone": "Formular traži broj telefona. Bilo koji broj je u redu.",
+      "note": "Formular drži Cal.com. Kad izabereš termin, njima idu tvoje ime, e-adresa i ono što upišeš u polje za telefon, a poziv ide u naš kalendar — ništa drugo se ne bilježi.",
       "aph": "Razgovor nije selekcija."
     },
     "fund": {

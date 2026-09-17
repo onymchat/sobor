@@ -225,6 +225,7 @@ def render(code):
            the booking page is reachable with the embed blocked or failing to load. -->
       <div class="cal-mount" id="cal-mount"
            data-cal-link="{cal_link}" data-cal-namespace="{cal_ns}"></div>
+      <p class="after-grid">{b_phone}</p>
       <p class="after-grid"><a href="https://cal.com/{cal_link}">{b_fallback}</a></p>
       <p class="after-grid">{b_note}</p>
       <p class="aph book-aph">{b_aph}</p>
@@ -312,7 +313,7 @@ def render(code):
         s_lede=e(t["seats"]["lede"]), s_more=e(t["seats"]["more"]), s_note=e(t["seats"]["note"]), seats=seats,
         b_eyebrow=e(t["book"]["eyebrow"]), b_h2a=e(t["book"]["h2a"]), b_h2b=e(t["book"]["h2b"]),
         b_lede=e(t["book"]["lede"]), b_fallback=e(t["book"]["fallback"]),
-        b_note=e(t["book"]["note"]), b_aph=e(t["book"]["aph"]),
+        b_phone=e(t["book"]["phone"]), b_note=e(t["book"]["note"]), b_aph=e(t["book"]["aph"]),
         cal_link=e(CAL_LINK), cal_ns=e(CAL_NS),
         f_eyebrow=e(t["fund"]["eyebrow"]), f_label=e(t["fund"]["label"]), f_amount=e(t["fund"]["amount"]),
         f_caption=e(t["fund"]["caption"]), f_meter_aria=e(t["fund"]["meter_aria"]),
