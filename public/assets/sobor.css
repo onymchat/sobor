@@ -354,25 +354,25 @@ a.pick.is-on:hover { color: var(--on-surface); }
   margin-top: 52px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 56px 40px;
+  gap: 40px;
 }
-/* No card around these — a border and a fill would be two more lines on a page
-   whose whole argument is that there is nothing between you and the thing. */
-.person { display: flex; flex-direction: column; }
+/* Portrait beside the text, not above it: stacked, each person used the top-left
+   corner of a half-width column and left the rest of it empty. */
+.person { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 22px; align-items: start; }
 .portrait {
-  display: block; width: 104px; height: 104px; max-width: 100%;
+  display: block; width: 96px; height: 96px;
   object-fit: cover; object-position: center top;
-  border-radius: 50%; margin-bottom: 24px; background: var(--on-surface3);
+  border-radius: 50%; background: var(--on-surface3);
 }
-.person h3 { font-size: 34px; letter-spacing: -0.04em; font-weight: 600; line-height: 1.02; }
+.person h3 { font-size: 30px; letter-spacing: -0.04em; font-weight: 600; line-height: 1.05; }
 .person-role {
   font-family: var(--on-font-mono);
   font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--on-text3); margin-bottom: 12px;
+  color: var(--on-text3); margin-bottom: 8px;
 }
-.person p { margin-top: 14px; font-size: 15px; line-height: 1.5; color: var(--on-text2); max-width: 42ch; }
-.person-contact { margin-top: 18px; font-size: 15px; }
-#people .aph { margin-top: 48px; font-size: 15px; font-weight: 700; color: var(--on-text); }
+.person p { margin-top: 12px; font-size: 15px; line-height: 1.5; color: var(--on-text2); }
+.person-contact { margin-top: 14px; font-size: 15px; }
+#people .aph { margin-top: 44px; font-size: 15px; font-weight: 700; color: var(--on-text); }
 
 /* ---------- seats ---------- */
 .seat { display: flex; flex-direction: column; gap: 14px; }
@@ -563,9 +563,10 @@ footer > .wrap { padding: 44px 0 56px; display: grid; grid-template-columns: min
   .section-lede { font-size: 17px; margin-top: 20px; }
   .status-stamp { font-size: 0.64rem; letter-spacing: 0.16em; }
   .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .people-grid { grid-template-columns: 1fr; gap: 44px; }
-  .portrait { width: 88px; height: 88px; margin-bottom: 18px; }
-  .person h3 { font-size: 30px; }
+  .people-grid { grid-template-columns: 1fr; gap: 36px; }
+  .person { grid-template-columns: 72px minmax(0, 1fr); gap: 18px; }
+  .portrait { width: 72px; height: 72px; }
+  .person h3 { font-size: 26px; }
   .status-grid { gap: 36px; }
   .seats-grid { grid-template-columns: 1fr; }
   .chip { font-size: 0.6rem; }

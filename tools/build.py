@@ -227,17 +227,21 @@ def render(code):
         <div class="person">
           <img class="portrait" src="/assets/rinat.jpg" width="480" height="480"
                alt="{p_org_alt}" loading="lazy" decoding="async">
-          <div class="person-role">{p_org_role}</div>
-          <h3>{p_org_name}</h3>
-          <p>{p_org_p}</p>
-          <p class="person-contact"><a href="{tg_url}" rel="me">{tg_handle}</a></p>
+          <div>
+            <div class="person-role">{p_org_role}</div>
+            <h3>{p_org_name}</h3>
+            <p>{p_org_p}</p>
+            <p class="person-contact"><a href="{tg_url}" rel="me">{tg_handle}</a></p>
+          </div>
         </div>
         <div class="person">
           <img class="portrait" src="/assets/andy.jpg" width="423" height="423"
                alt="{p_arb_alt}" loading="lazy" decoding="async">
-          <div class="person-role">{p_arb_role}</div>
-          <h3>{p_arb_name}</h3>
-          <p>{p_arb_p}</p>
+          <div>
+            <div class="person-role">{p_arb_role}</div>
+            <h3>{p_arb_name}</h3>
+            <p>{p_arb_p}</p>
+          </div>
         </div>
       </div>
       <p class="aph">{p_aph}</p>

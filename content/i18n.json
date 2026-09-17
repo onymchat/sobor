@@ -6,8 +6,8 @@
     "label": "EN",
     "title_label": "English",
     "title": "sobor — Build a seat. Homestead it.",
-    "description": "A five-day contest in Bar, Montenegro, 21–25 September 2026. Sixteen roles in the Onym network are open to implementation. Build one, run it, keep it.",
-    "og_description": "Five days in Bar. Sixteen roles in the Onym network are open to implementation; most have a contract and no code.",
+    "description": "A five-day contest at Montelibero City in Bar, Montenegro, 21–25 September 2026. Sixteen roles in the Onym network are open to implementation. Build one, run it, keep it.",
+    "og_description": "Five days in Montelibero City. Sixteen roles in the Onym network are open to implementation; most have a contract and no code.",
     "nav": {
       "contest": "The contest",
       "seats": "Seats",
@@ -20,8 +20,8 @@
       "eyebrow": "MTL City · Montenegro · 21–25 September 2026",
       "h1a": "Build a seat.",
       "h1b": "Homestead it.",
-      "lede": "Five days in Bar. Sixteen roles in the Onym network are open to implementation; most have a contract and no code. Pick it, build it, homestead it.",
-      "cta": "Book a place",
+      "lede": "Five days in Montelibero City. Sixteen roles in the Onym network are open to implementation; most have a contract and no code. Pick it, build it, homestead it.",
+      "cta": "Book to attend",
       "rules": "Read the rules →"
     },
     "status": {
@@ -132,12 +132,12 @@
     },
     "book": {
       "eyebrow": "Book a place",
-      "h2a": "One conversation.",
-      "h2b": "No guest list.",
-      "lede": "Pick a time and talk to Rinat before the week starts — who you are, which seat interests you, and whether coming is worth it for you. No token, no fee, and no waiting list to be ranked on.",
+      "h2a": "In person.",
+      "h2b": "In Montelibero City.",
+      "lede": "Booking a slot is how you attend. Pick a time and we meet face to face at Montelibero City in Bar — who you are, which seat interests you, and whether coming is worth it for you. No guest list, no token, no fee, and no waiting list to be ranked on.",
       "fallback": "Open the booking page →",
       "phone": "The form asks for a phone number. Any number will do.",
-      "note": "The form is hosted by Cal.com. Choosing a slot gives them your name, your email and whatever you type in the phone field, and puts the call on our calendar — nothing else is recorded.",
+      "note": "The form is hosted by Cal.com. Choosing a slot gives them your name, your email and whatever you type in the phone field, and puts the meeting on our calendar — nothing else is recorded.",
       "aph": "A conversation is not a selection."
     },
     "fund": {
@@ -157,7 +157,7 @@
       "lede": "Two names, two jobs, and a wall between them. The organizer books the room and raises the fund. The arbiter decides who won and owes reasons for it.",
       "org_role": "Organizer",
       "org_name": "Rinat",
-      "org_p": "Books the room, raises the fund, and takes the calls on this page. Does not judge and does not vote.",
+      "org_p": "Books the room, raises the fund, and is who you sit down with when you book. Does not judge and does not vote.",
       "org_alt": "Rinat, the organizer",
       "arb_role": "Arbiter",
       "arb_name": "Andy",
@@ -188,8 +188,8 @@
     "label": "RU",
     "title_label": "Русский",
     "title": "sobor — Построй место. Homestead it.",
-    "description": "Пятидневный конкурс в Баре, Черногория, 21–25 сентября 2026. Шестнадцать ролей в сети Onym открыты для реализации. Построй одну, запусти её, оставь себе.",
-    "og_description": "Пять дней в Баре. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода.",
+    "description": "Пятидневный конкурс в Montelibero City, Бар, Черногория, 21–25 сентября 2026. Шестнадцать ролей в сети Onym открыты для реализации. Построй одну, запусти её, оставь себе.",
+    "og_description": "Пять дней в Montelibero City. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода.",
     "nav": {
       "contest": "Конкурс",
       "seats": "Места",
@@ -202,8 +202,8 @@
       "eyebrow": "MTL City · Черногория · 21–25 сентября 2026",
       "h1a": "Построй место.",
       "h1b": "Homestead it.",
-      "lede": "Пять дней в Баре. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода. Выбери, построй, займи.",
-      "cta": "Забронировать место",
+      "lede": "Пять дней в Montelibero City. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода. Выбери, построй, займи.",
+      "cta": "Записаться на участие",
       "rules": "Читать правила →",
       "h1b_lang": "en"
     },
@@ -315,12 +315,12 @@
     },
     "book": {
       "eyebrow": "Запись",
-      "h2a": "Один разговор.",
-      "h2b": "Без списка гостей.",
-      "lede": "Выберите время и поговорите с Ринатом до начала недели: кто вы, какое место вам интересно и стоит ли вам приезжать. Токен не нужен, взноса нет, очереди, в которой вас ранжируют, тоже нет.",
+      "h2a": "Лично.",
+      "h2b": "В Montelibero City.",
+      "lede": "Запись — это и есть участие. Выберите время, и мы встретимся вживую в Montelibero City в Баре: кто вы, какое место вам интересно и стоит ли вам приезжать. Без списка гостей, без токена, без взноса и без очереди, в которой вас ранжируют.",
       "fallback": "Открыть страницу записи →",
       "phone": "Форма просит телефон. Подойдёт любой номер.",
-      "note": "Форма работает на Cal.com. Выбрав время, вы передаёте им имя, почту и то, что вписали в поле телефона, а звонок попадает в наш календарь — больше ничего не записывается.",
+      "note": "Форма работает на Cal.com. Выбрав время, вы передаёте им имя, почту и то, что вписали в поле телефона, а встреча попадает в наш календарь — больше ничего не записывается.",
       "aph": "Разговор — это не отбор."
     },
     "fund": {
@@ -340,7 +340,7 @@
       "lede": "Два имени, две работы и стена между ними. Организатор снимает площадку и собирает фонд. Арбитр решает, кто победил, и обязан объяснить почему.",
       "org_role": "Организатор",
       "org_name": "Ринат",
-      "org_p": "Снимает площадку, собирает фонд и отвечает на звонки с этой страницы. Не судит и не голосует.",
+      "org_p": "Снимает площадку, собирает фонд и встречается с теми, кто записался. Не судит и не голосует.",
       "org_alt": "Ринат, организатор",
       "arb_role": "Арбитр",
       "arb_name": "Энди",
@@ -373,8 +373,8 @@
     "label": "CNR",
     "title_label": "Crnogorski",
     "title": "sobor — Napravi mjesto. Zauzmi ga.",
-    "description": "Petodnevno takmičenje u Baru, Crna Gora, 21–25. septembra 2026. Šesnaest uloga u Onym mreži otvoreno je za implementaciju. Napravi jednu, pokreni je, zadrži je.",
-    "og_description": "Pet dana u Baru. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod.",
+    "description": "Petodnevno takmičenje u Montelibero Cityju, Bar, Crna Gora, 21–25. septembra 2026. Šesnaest uloga u Onym mreži otvoreno je za implementaciju. Napravi jednu, pokreni je, zadrži je.",
+    "og_description": "Pet dana u Montelibero Cityju. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod.",
     "nav": {
       "contest": "Takmičenje",
       "seats": "Mjesta",
@@ -387,8 +387,8 @@
       "eyebrow": "MTL City · Crna Gora · 21–25. septembra 2026",
       "h1a": "Napravi mjesto.",
       "h1b": "Zauzmi ga.",
-      "lede": "Pet dana u Baru. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod. Izaberi, napravi, zauzmi.",
-      "cta": "Rezerviši mjesto",
+      "lede": "Pet dana u Montelibero Cityju. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod. Izaberi, napravi, zauzmi.",
+      "cta": "Prijavi dolazak",
       "rules": "Pročitaj pravila →"
     },
     "status": {
@@ -499,12 +499,12 @@
     },
     "book": {
       "eyebrow": "Prijava",
-      "h2a": "Jedan razgovor.",
-      "h2b": "Bez spiska gostiju.",
-      "lede": "Izaberi vrijeme i popričaj s Rinatom prije nego sedmica počne — ko si, koje te mjesto zanima i vrijedi li ti dolaziti. Bez tokena, bez naknade i bez liste čekanja na kojoj te rangiraju.",
+      "h2a": "Uživo.",
+      "h2b": "U Montelibero Cityju.",
+      "lede": "Prijava i jeste dolazak. Izaberi vrijeme i vidimo se uživo u Montelibero Cityju u Baru — ko si, koje te mjesto zanima i vrijedi li ti dolaziti. Bez spiska gostiju, bez tokena, bez naknade i bez liste čekanja na kojoj te rangiraju.",
       "fallback": "Otvori stranicu za prijavu →",
       "phone": "Formular traži broj telefona. Bilo koji broj je u redu.",
-      "note": "Formular drži Cal.com. Kad izabereš termin, njima idu tvoje ime, e-adresa i ono što upišeš u polje za telefon, a poziv ide u naš kalendar — ništa drugo se ne bilježi.",
+      "note": "Formular drži Cal.com. Kad izabereš termin, njima idu tvoje ime, e-adresa i ono što upišeš u polje za telefon, a susret ide u naš kalendar — ništa drugo se ne bilježi.",
       "aph": "Razgovor nije selekcija."
     },
     "fund": {
@@ -524,7 +524,7 @@
       "lede": "Dva imena, dva posla i zid između njih. Organizator obezbjeđuje prostor i skuplja fond. Arbitar odlučuje ko je pobijedio i duguje razloge.",
       "org_role": "Organizator",
       "org_name": "Rinat",
-      "org_p": "Obezbjeđuje prostor, skuplja fond i javlja se na pozive s ove stranice. Ne sudi i ne glasa.",
+      "org_p": "Obezbjeđuje prostor, skuplja fond i s njim sjedaš kad se prijaviš. Ne sudi i ne glasa.",
       "org_alt": "Rinat, organizator",
       "arb_role": "Arbitar",
       "arb_name": "Andy",

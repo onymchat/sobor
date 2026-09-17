@@ -60,8 +60,10 @@ deploy needs nothing.
 
 `assets/rinat.jpg` (480²) and `assets/andy.jpg` (423²) are the two faces in the
 **Who runs it** band, which sits second, directly under the booking calendar. They are
-drawn as circles with no card around them — a border and a fill would be two more lines
-on a page whose argument is that there is nothing between you and the thing. Both are cropped square on disk rather than by CSS, so the file
+drawn as circles beside the text rather than above it, with no card around them — a
+border and a fill would be two more lines on a page whose argument is that there is
+nothing between you and the thing, and stacking left each person in the top-left corner
+of a half-width column with the rest of it empty. Both are cropped square on disk rather than by CSS, so the file
 that ships is the crop that shows; `object-fit: cover` is only there to defend against
 a replacement that is not square.
 
@@ -73,7 +75,7 @@ public page. Two things to know if you replace one:
   often lives *in* the EXIF that gets stripped, so an image that looked correct in
   Preview can land upside down once it is clean. Bake the rotation into the pixels
   (`sips -r 180`, say) rather than relying on the tag.
-- Keep them square and keep them small; they are drawn at 104px, 88px on mobile.
+- Keep them square and keep them small; they are drawn at 96px, 72px on mobile.
 
 ## Languages
 
