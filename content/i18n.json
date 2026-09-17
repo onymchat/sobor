@@ -13,7 +13,7 @@
       "seats": "Seats",
       "rules": "Rules",
       "status": "Status",
-      "rsvp": "RSVP",
+      "book": "RSVP",
       "home": "sobor home"
     },
     "hero": {
@@ -21,7 +21,7 @@
       "h1a": "Build a seat.",
       "h1b": "Homestead it.",
       "lede": "Five days in Bar. Sixteen roles in the Onym network are open to implementation; most have a contract and no code. Pick it, build it, homestead it.",
-      "cta": "RSVP with a Stellar account",
+      "cta": "Book a place",
       "rules": "Read the rules →"
     },
     "status": {
@@ -38,33 +38,7 @@
       "h2a": "Five days.",
       "h2b": "One seat each.",
       "lede": "Teams of any size take one open role and implement it against its published contract. There is no track, no theme, and no pitch. A seat is filled when something runs and someone else can point their client at it.",
-      "more": "Read the rules in full →",
-      "cards": [
-        {
-          "k": "Build",
-          "h": "Read the contract",
-          "p": "Every seat is specified in public, technology-neutral prose. You are free to ignore the reference implementation entirely.",
-          "a": "The contract is the brief."
-        },
-        {
-          "k": "Submit",
-          "h": "Hand over an endpoint",
-          "p": "A repository, a running instance, and the credentials to exercise it. Slides are not a submission.",
-          "a": "Code nobody can run is a proposal."
-        },
-        {
-          "k": "Judge",
-          "h": "One arbiter, in writing",
-          "p": "Conformance first, then durability. Every verdict is published with its reasons, including the refusals.",
-          "a": "The arbiter owes reasons, not applause."
-        },
-        {
-          "k": "Fill",
-          "h": "Homestead the seat",
-          "p": "You own what you built and whatever it earns. No assignment of rights, no equity, no claim by the organizer.",
-          "a": "The week ends; the seat keeps working."
-        }
-      ]
+      "more": "Read the rules in full →"
     },
     "seats": {
       "eyebrow": "Seats",
@@ -152,47 +126,14 @@
         }
       ]
     },
-    "who": {
-      "eyebrow": "Who may come",
-      "h2a": "One signature.",
+    "book": {
+      "eyebrow": "Book a place",
+      "h2a": "One form.",
       "h2b": "No guest list.",
-      "pre_h": "Pre-approved",
-      "pre_p1": "Your account already holds MTLAP or MTLAC. RSVP is one signature — we read the balance from the chain, per ",
-      "pre_p2": ", and you are in.",
-      "pre_meta": "SAMPLE · GA7QK4…M2XZD9",
-      "pre_a": "The chain is the invitation.",
-      "else_h": "Everyone else",
-      "else_p": "Register interest with any Stellar account. We answer — or we answer honestly that there is nothing yet. There is no waiting list to be ranked on.",
-      "else_meta": "NO TOKEN REQUIRED · NO FEE",
-      "else_a": "A key is enough to be counted."
-    },
-    "rsvp": {
-      "kicker": "RSVP",
-      "seats_kicker": "Seats you would work on — optional",
-      "seats_aria": "Seats you would work on",
-      "mode_kicker": "How are you coming",
-      "mode_person": "In person",
-      "mode_remote": "Remote",
-      "memo_kicker": "What goes on the ledger",
-      "open_wallet": "Open in wallet",
-      "manual": "Or send it by hand",
-      "f_to": "To",
-      "f_amount": "Amount",
-      "f_memo": "Memo",
-      "copy": "Copy",
-      "copied": "Copied",
-      "withdraw": "Withdraw a previous RSVP →",
-      "decode": "How to read this memo",
-      "decode_p": "One line of text on a public ledger. The first field names the event, the second is p for in person or r for remote, and the third is a sixteen-bit hex mask — one bit per seat, in the order below, lowest bit first. Anyone can decode it without asking us.",
-      "unset_tag": "SOBOR account — not published",
-      "unset_p": "The account that receives RSVPs is not published yet, so there is nothing to sign against. This section goes live the day the key is announced.",
-      "wallet_note": "Opens your Stellar wallet with the payment prefilled. You sign it; we never see a key.",
-      "ledger_note": "There is no form and no database. The transaction is the RSVP, and the ledger is the register — readable by anyone, including people who do not trust us.",
-      "msg": "sobor 2026 - RSVP",
-      "empty_register": "No RSVPs recorded yet.",
-      "register": "recorded so far",
-      "synced": "last read from the ledger",
-      "pre_approved": "pre-approved"
+      "lede": "Pick a time and we talk before the week starts — who you are, which seat interests you, and whether coming is worth it for you. No token, no fee, and no waiting list to be ranked on.",
+      "fallback": "Open the booking page →",
+      "note": "The form is hosted by Cal.com. Choosing a slot gives them your name and email, and puts the call on our calendar — nothing else is recorded.",
+      "aph": "A conversation is not a selection."
     },
     "fund": {
       "eyebrow": "The prize fund",
@@ -234,7 +175,7 @@
       "seats": "Места",
       "rules": "Правила",
       "status": "Статус",
-      "rsvp": "Участвовать",
+      "book": "Участвовать",
       "home": "sobor — на главную"
     },
     "hero": {
@@ -242,7 +183,7 @@
       "h1a": "Построй место.",
       "h1b": "Homestead it.",
       "lede": "Пять дней в Баре. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода. Выбери, построй, займи.",
-      "cta": "Участвовать со счётом Stellar",
+      "cta": "Забронировать место",
       "rules": "Читать правила →",
       "h1b_lang": "en"
     },
@@ -260,33 +201,7 @@
       "h2a": "Пять дней.",
       "h2b": "По одному месту.",
       "lede": "Команда любого размера берёт одну открытую роль и реализует её по опубликованному контракту. Ни треков, ни темы, ни питчей. Место занято, когда что-то работает и кто-то посторонний может направить туда свой клиент.",
-      "more": "Читать правила целиком →",
-      "cards": [
-        {
-          "k": "Строй",
-          "h": "Прочитай контракт",
-          "p": "Каждое место описано публично и нейтрально к технологиям. Эталонную реализацию можно полностью игнорировать.",
-          "a": "Контракт — это и есть задание."
-        },
-        {
-          "k": "Сдавай",
-          "h": "Передай рабочий адрес",
-          "p": "Репозиторий, запущенный экземпляр и доступы, чтобы его проверить. Слайды — не работа.",
-          "a": "Код, который никто не может запустить, — это предложение."
-        },
-        {
-          "k": "Суди",
-          "h": "Один арбитр, письменно",
-          "p": "Сначала соответствие контракту, потом надёжность. Каждое решение публикуется с обоснованием, включая отказы.",
-          "a": "Арбитр должен обоснование, а не аплодисменты."
-        },
-        {
-          "k": "Занимай",
-          "h": "Займи место",
-          "p": "Тебе принадлежит то, что ты построил, и всё, что оно заработает. Никакой передачи прав, никаких долей, никаких претензий организатора.",
-          "a": "Неделя кончается — место продолжает работать."
-        }
-      ]
+      "more": "Читать правила целиком →"
     },
     "seats": {
       "eyebrow": "Места",
@@ -374,47 +289,14 @@
         }
       ]
     },
-    "who": {
-      "eyebrow": "Кто может приехать",
-      "h2a": "Одна подпись.",
+    "book": {
+      "eyebrow": "Запись",
+      "h2a": "Одна форма.",
       "h2b": "Без списка гостей.",
-      "pre_h": "Уже одобрены",
-      "pre_p1": "На вашем счету уже есть MTLAP или MTLAC. Участие — это одна подпись: баланс мы читаем из сети, по данным ",
-      "pre_p2": ", и вы в списке.",
-      "pre_meta": "ПРИМЕР · GA7QK4…M2XZD9",
-      "pre_a": "Приглашение — это сама сеть.",
-      "else_h": "Все остальные",
-      "else_p": "Заявите интерес с любым счётом Stellar. Мы ответим — или честно ответим, что пока ничего нет. Очереди, в которой вас ранжируют, не существует.",
-      "else_meta": "ТОКЕН НЕ НУЖЕН · БЕЗ ВЗНОСА",
-      "else_a": "Ключа достаточно, чтобы вас посчитали."
-    },
-    "rsvp": {
-      "kicker": "Участие",
-      "seats_kicker": "Места, над которыми вы бы работали — необязательно",
-      "seats_aria": "Места, над которыми вы бы работали",
-      "mode_kicker": "Как вы приедете",
-      "mode_person": "Лично",
-      "mode_remote": "Удалённо",
-      "memo_kicker": "Что попадёт в реестр",
-      "open_wallet": "Открыть в кошельке",
-      "manual": "Или отправьте вручную",
-      "f_to": "Кому",
-      "f_amount": "Сумма",
-      "f_memo": "Мемо",
-      "copy": "Копировать",
-      "copied": "Скопировано",
-      "withdraw": "Отозвать поданную заявку →",
-      "decode": "Как читать это мемо",
-      "decode_p": "Одна строка текста в публичном реестре. Первое поле — событие, второе — p, если лично, или r, если удалённо, третье — шестнадцатибитная маска в hex: по одному биту на место, в порядке ниже, младший бит первый. Расшифровать может кто угодно, не спрашивая нас.",
-      "unset_tag": "Счёт SOBOR — не опубликован",
-      "unset_p": "Счёт, который принимает заявки, ещё не опубликован, так что подписывать нечего. Этот блок заработает в день, когда ключ объявят.",
-      "wallet_note": "Открывает кошелёк Stellar с уже заполненным платежом. Подписываете вы; ключа мы не видим никогда.",
-      "ledger_note": "Ни анкеты, ни базы данных. Заявка — это сама транзакция, а реестр — это сеть: его может прочитать любой, в том числе тот, кто нам не доверяет.",
-      "msg": "sobor 2026 - заявка",
-      "empty_register": "Заявок пока нет.",
-      "register": "заявок подано",
-      "synced": "последнее чтение реестра",
-      "pre_approved": "из них одобрены"
+      "lede": "Выберите время, и мы поговорим до начала недели: кто вы, какое место вам интересно и стоит ли вам приезжать. Токен не нужен, взноса нет, очереди, в которой вас ранжируют, тоже нет.",
+      "fallback": "Открыть страницу записи →",
+      "note": "Форма работает на Cal.com. Выбрав время, вы передаёте им имя и почту, а звонок попадает в наш календарь — больше ничего не записывается.",
+      "aph": "Разговор — это не отбор."
     },
     "fund": {
       "eyebrow": "Призовой фонд",
@@ -458,7 +340,7 @@
       "seats": "Mjesta",
       "rules": "Pravila",
       "status": "Status",
-      "rsvp": "Prijavi se",
+      "book": "Prijavi se",
       "home": "sobor — početna"
     },
     "hero": {
@@ -466,7 +348,7 @@
       "h1a": "Napravi mjesto.",
       "h1b": "Zauzmi ga.",
       "lede": "Pet dana u Baru. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod. Izaberi, napravi, zauzmi.",
-      "cta": "Prijavi se Stellar nalogom",
+      "cta": "Rezerviši mjesto",
       "rules": "Pročitaj pravila →"
     },
     "status": {
@@ -483,33 +365,7 @@
       "h2a": "Pet dana.",
       "h2b": "Po jedno mjesto.",
       "lede": "Tim bilo koje veličine uzima jednu otvorenu ulogu i implementira je prema objavljenom ugovoru. Nema kategorija, nema teme, nema prezentacija. Mjesto je zauzeto kad nešto radi i kad neko sa strane može usmjeriti svoj klijent na njega.",
-      "more": "Pročitaj pravila u cjelini →",
-      "cards": [
-        {
-          "k": "Pravi",
-          "h": "Pročitaj ugovor",
-          "p": "Svako mjesto opisano je javno i neutralno prema tehnologiji. Referentnu implementaciju smiješ potpuno ignorisati.",
-          "a": "Ugovor je zadatak."
-        },
-        {
-          "k": "Predaj",
-          "h": "Predaj adresu koja radi",
-          "p": "Repozitorijum, pokrenuta instanca i pristupi da se provjeri. Slajdovi nisu rad.",
-          "a": "Kod koji niko ne može pokrenuti je predlog."
-        },
-        {
-          "k": "Sudi",
-          "h": "Jedan arbitar, pisano",
-          "p": "Prvo usklađenost s ugovorom, pa trajnost. Svaka odluka objavljuje se s obrazloženjem, uključujući i odbijanja.",
-          "a": "Arbitar duguje obrazloženje, ne aplauz."
-        },
-        {
-          "k": "Zauzmi",
-          "h": "Zauzmi mjesto",
-          "p": "Tvoje je ono što si napravio i sve što to zaradi. Bez prenosa prava, bez udjela, bez potraživanja organizatora.",
-          "a": "Sedmica se završava; mjesto nastavlja da radi."
-        }
-      ]
+      "more": "Pročitaj pravila u cjelini →"
     },
     "seats": {
       "eyebrow": "Mjesta",
@@ -597,47 +453,14 @@
         }
       ]
     },
-    "who": {
-      "eyebrow": "Ko može doći",
-      "h2a": "Jedan potpis.",
+    "book": {
+      "eyebrow": "Prijava",
+      "h2a": "Jedan formular.",
       "h2b": "Bez spiska gostiju.",
-      "pre_h": "Već odobreni",
-      "pre_p1": "Tvoj nalog već drži MTLAP ili MTLAC. Prijava je jedan potpis — stanje čitamo iz mreže, prema ",
-      "pre_p2": ", i unutra si.",
-      "pre_meta": "PRIMJER · GA7QK4…M2XZD9",
-      "pre_a": "Pozivnica je sama mreža.",
-      "else_h": "Svi ostali",
-      "else_p": "Prijavi interesovanje bilo kojim Stellar nalogom. Odgovaramo — ili pošteno odgovaramo da još ničega nema. Ne postoji lista čekanja na kojoj te rangiraju.",
-      "else_meta": "TOKEN NIJE POTREBAN · BEZ NAKNADE",
-      "else_a": "Ključ je dovoljan da te izbroje."
-    },
-    "rsvp": {
-      "kicker": "Prijava",
-      "seats_kicker": "Mjesta na kojima bi radio — neobavezno",
-      "seats_aria": "Mjesta na kojima bi radio",
-      "mode_kicker": "Kako dolaziš",
-      "mode_person": "Lično",
-      "mode_remote": "Na daljinu",
-      "memo_kicker": "Što ide u registar",
-      "open_wallet": "Otvori u novčaniku",
-      "manual": "Ili pošalji ručno",
-      "f_to": "Kome",
-      "f_amount": "Iznos",
-      "f_memo": "Memo",
-      "copy": "Kopiraj",
-      "copied": "Kopirano",
-      "withdraw": "Povuci ranije podnesenu prijavu →",
-      "decode": "Kako se čita ovaj memo",
-      "decode_p": "Jedan red teksta u javnom registru. Prvo polje imenuje događaj, drugo je p za lično ili r za na daljinu, a treće je šesnaestobitna hex maska — po jedan bit za svako mjesto, redom ispod, najniži bit prvi. Svako to može dekodirati bez pitanja nas.",
-      "unset_tag": "SOBOR nalog — nije objavljen",
-      "unset_p": "Nalog koji prima prijave još nije objavljen, pa nema se šta potpisati. Ovaj dio počinje da radi onog dana kad ključ bude objavljen.",
-      "wallet_note": "Otvara tvoj Stellar novčanik s već popunjenim plaćanjem. Ti potpisuješ; ključ nikad ne vidimo.",
-      "ledger_note": "Nema formulara ni baze podataka. Prijava je sama transakcija, a registar je mreža — može ga pročitati svako, uključujući i one koji nam ne vjeruju.",
-      "msg": "sobor 2026 - prijava",
-      "empty_register": "Još nema prijava.",
-      "register": "prijava do sada",
-      "synced": "posljednje čitanje registra",
-      "pre_approved": "od toga odobreni"
+      "lede": "Izaberi vrijeme i razgovaramo prije nego sedmica počne — ko si, koje te mjesto zanima i vrijedi li ti dolaziti. Bez tokena, bez naknade i bez liste čekanja na kojoj te rangiraju.",
+      "fallback": "Otvori stranicu za prijavu →",
+      "note": "Formular drži Cal.com. Kad izabereš termin, njima idu tvoje ime i e-adresa, a poziv ide u naš kalendar — ništa drugo se ne bilježi.",
+      "aph": "Razgovor nije selekcija."
     },
     "fund": {
       "eyebrow": "Nagradni fond",

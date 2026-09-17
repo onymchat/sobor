@@ -221,7 +221,7 @@ h2 {
 }
 .btn-pill:hover { border-color: var(--on-text); }
 
-/* selectable pill — seat multi-select, language switcher */
+/* selectable pill — the language switcher renders these as anchors */
 .pick {
   padding: 6px 14px;
   border-radius: var(--on-radius-pill);
@@ -250,15 +250,6 @@ a.pick.is-on:hover { color: var(--on-surface); }
 }
 .card h3 { font-size: 30px; letter-spacing: -0.035em; font-weight: 600; line-height: 1.02; }
 .card p { font-size: 15px; line-height: 1.48; color: var(--on-text2); max-width: 44ch; }
-.card .kicker {
-  font-family: var(--on-font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--on-text3);
-}
-/* the closing aphorism every card ends on */
-.card .aph { margin-top: 16px; font-size: 15px; line-height: 1.48; font-weight: 700; color: var(--on-text); }
 
 /* ---------- hero ---------- */
 .hero {
@@ -351,7 +342,6 @@ a.pick.is-on:hover { color: var(--on-surface); }
 
 /* ---------- grids ---------- */
 .grid-4 { margin-top: 56px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
-.grid-2 { margin-top: 56px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .after-grid { margin-top: 40px; font-size: 15px; color: var(--on-text2); }
 .after-grid + .after-grid { margin-top: 14px; color: var(--on-text3); line-height: 1.45; max-width: 62ch; }
 
@@ -377,146 +367,24 @@ a.pick.is-on:hover { color: var(--on-surface); }
 .chip.amber { background: color-mix(in srgb, var(--on-accent-yellow) 14%, transparent); }
 .chip.blue  { background: color-mix(in srgb, var(--on-blue) 14%, transparent); }
 
-/* ---------- who may come ---------- */
-.who .card { padding: 26px; }
-.who .card p { max-width: 56ch; margin-top: 14px; }
-.who .meta {
-  margin-top: 20px;
-  border-top: 1px solid var(--on-hairline);
-  padding-top: 16px;
-  font-family: var(--on-font-mono);
-  font-size: 13px;
-  color: var(--on-text3);
-}
+/* ---------- booking: the Cal.com inline embed ---------- */
+/* The embed sizes itself once loaded and reports its height over postMessage.
+   min-height is only what the page reserves in the meantime, so the sections
+   below do not jump when the calendar arrives.
 
-/* ---------- rsvp ---------- */
-/* Spacing rule for this block: a label belongs to what is under it. Labels get a
-   large gap above (separating groups) and a small one below (binding label to
-   content). Getting that ratio backwards is what made this read as a jumble. */
-.rsvp { margin-top: 18px; padding: 26px; }
-.rsvp .kicker { font-size: 0.68rem; }
-.rsvp-reg {
-  display: block;
-  margin-top: 12px;
-  font-family: var(--on-font-mono);
-  font-size: 13px;
-  color: var(--on-text2);
-}
-.rsvp-reg b { color: var(--on-text); font-weight: 600; }
-.rsvp-synced { display: block; margin-top: 4px; color: var(--on-text3); }
-.rsvp .tag { margin-top: 14px; }
+   Do not put a min-height here. Cal's own <cal-inline> takes min-height from
+   this element with `min-height: inherit`, and then the iframe is pinned to it
+   and the month view is clipped at the bottom. Reserving space is not worth a
+   cut-off calendar; the embed ships its own loading skeleton anyway.
 
-.rsvp .kicker-seats { margin-top: 34px; }          /* air above a group */
-.rsvp-mode,
-.rsvp-seats { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
-.rsvp-mode .pick[aria-checked="true"] {
-  background: var(--on-text);
-  color: var(--on-surface);
-  border-color: var(--on-text);
+   Deliberately unstyled otherwise: Cal draws its own hairline card, and putting
+   a second border and surface under it reads as a frame inside a frame. The
+   embed is told the theme in assets/cal.js, so it matches without help here. */
+.cal-mount {
+  margin-top: 56px;
+  width: 100%;
 }
-
-/* the line that will land on a public ledger, and the button that signs it —
-   one row, because they are one action */
-.rsvp-row {
-  margin-top: 10px;
-  max-width: 680px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 12px;
-}
-.rsvp-memo {
-  display: flex;
-  align-items: center;
-  padding: 14px 16px;
-  border: 1px solid var(--on-hairline-strong);
-  border-radius: var(--on-radius-card);
-  background: var(--on-surface3);
-  font-family: var(--on-font-mono);
-  font-size: 17px;
-  letter-spacing: 0.02em;
-  color: var(--on-text);
-  overflow-x: auto;
-  white-space: nowrap;
-}
-.rsvp-row .btn { min-height: 0; padding: 0 22px; }
-
-.rsvp-note {
-  margin-top: 12px;
-  font-size: 15px;
-  line-height: 1.48;
-  color: var(--on-text2);
-  max-width: 58ch;
-  text-wrap: pretty;
-}
-
-/* disclosure — the FAQ idiom from onym.app: hairline rule, + becomes − */
-.drop { border-top: 1px solid var(--on-hairline); padding: 16px 0; }
-.drop + .drop { border-top: 1px solid var(--on-hairline); }
-.rsvp .drop:first-of-type { margin-top: 30px; }
-.drop > summary {
-  list-style: none;
-  cursor: pointer;
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  font-size: 15px;
-  color: var(--on-text2);
-}
-.drop > summary::-webkit-details-marker { display: none; }
-.drop > summary::before {
-  content: "+";
-  width: 12px;
-  flex: none;
-  color: var(--on-text3);
-}
-.drop[open] > summary::before { content: "\2212"; }
-.drop > summary:hover { color: var(--on-text); }
-.drop > *:not(summary) { margin-top: 16px; margin-left: 24px; }
-.drop p { font-size: 15px; line-height: 1.48; color: var(--on-text2); max-width: 62ch; }
-
-/* the closing statement is about the whole block, not the disclosure above it */
-.rsvp-foot { margin-top: 8px; padding-top: 22px; border-top: 1px solid var(--on-hairline-strong); }
-.rsvp-foot .rsvp-note { margin-top: 0; }
-.rsvp-out { margin-top: 16px; font-size: 15px; }
-
-.kv { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 18px; }
-.kv dt {
-  font-family: var(--on-font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--on-text3);
-  padding-top: 4px;
-}
-.kv dd { margin: 0; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; min-width: 0; }
-.kv code {
-  font-family: var(--on-font-mono);
-  font-size: 13px;
-  color: var(--on-text);
-  word-break: break-all;
-}
-.copy {
-  flex: none;
-  padding: 3px 9px;
-  border: 1px solid var(--on-hairline-strong);
-  border-radius: var(--on-radius-pill);
-  font-family: var(--on-font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--on-text2);
-}
-.copy:hover { border-color: var(--on-text); color: var(--on-text); }
-
-.bits { margin: 16px 0 0 24px; padding: 0; list-style: none; columns: 2; column-gap: 28px; }
-.bits li { font-size: 14px; line-height: 1.7; color: var(--on-text2); break-inside: avoid; }
-.bits code {
-  display: inline-block;
-  min-width: 2.2em;
-  font-family: var(--on-font-mono);
-  font-size: 12px;
-  color: var(--on-text3);
-}
+.book-aph { margin-top: 30px; font-size: 15px; font-weight: 700; color: var(--on-text); }
 
 /* ---------- prize fund: the one warm card ---------- */
 .fund {
@@ -609,33 +477,20 @@ footer > .wrap { padding: 44px 0 56px; display: grid; grid-template-columns: min
   .status-grid p { font-size: 17px; line-height: 1.4; margin-top: 12px; max-width: none; }
 
   .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 32px; }
-  .grid-2 { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; }
 
   .card { padding: 18px; }
   .card h3 { font-size: 22px; line-height: 1.05; margin-top: 12px; }
   .card p { font-size: 14px; line-height: 1.45; max-width: none; }
-  .card .aph { margin-top: 12px; font-size: 14px; }
-  .who .card { padding: 20px; }
-  .who .card h3 { font-size: 24px; margin-top: 0; }
-  .who .meta { margin-top: 16px; padding-top: 14px; font-size: 12px; }
 
   .seat h3 { font-size: 24px; margin-top: 0; }
   .seat { gap: 10px; }
   .chip { margin-top: 4px; }
 
-  .rsvp { margin-top: 0; padding: 20px; }
-  .rsvp .kicker-seats { margin-top: 28px; }
   /* Tried an auto-fill grid here to even out the ragged rows; at 297px of usable
      width it collapsed to one column and doubled the block to 640px. Wrapping flex
      packs the sixteen labels far tighter, so the ragged right edge stays. */
-  .rsvp-seats { gap: 7px; }
-  .rsvp-seats .pick { padding: 6px 12px; }
-  .rsvp-row { grid-template-columns: 1fr; }
-  .rsvp-row .btn { min-height: 50px; width: 100%; }
-  .rsvp-memo { font-size: 15px; padding: 12px 14px; }
-  .bits { columns: 1; }
-  .kv { grid-template-columns: 1fr; gap: 4px 0; }
-  .kv dt { padding-top: 10px; }
+
+  .cal-mount { margin-top: 32px; }
 
   .fund { margin-top: 24px; padding: 24px; }
   .fund-figure { display: block; }
@@ -681,7 +536,6 @@ footer > .wrap { padding: 44px 0 56px; display: grid; grid-template-columns: min
   .tag { font-size: 0.62rem; }
   .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .seats-grid { grid-template-columns: 1fr; }
-  .card .kicker { font-size: 0.6rem; letter-spacing: 0.14em; }
   .chip { font-size: 0.6rem; }
   .after-grid { margin-top: 28px; }
   .after-grid + .after-grid { margin-top: 12px; font-size: 14px; }

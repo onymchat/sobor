@@ -15,15 +15,12 @@ responsive document rather than two.
 | `content/i18n.json` | **Every string on the site, in all three languages. Edit here.** |
 | `tools/build.py` | Renders the pages from `i18n.json`. Python stdlib only. |
 | `tools/favicon.py` | Redraws the icons from the mark's geometry. Needs Pillow. |
-| `tools/register.py` | Folds the RSVP register off the Stellar ledger. Stdlib only. |
-| `content/rsvp.json` | The sobor account, amount and event id. |
-| `content/register.json` | **Generated** by `tools/register.py`. |
-| `public/.well-known/stellar.txt` | SEP-1; served at `/.well-known/stellar.toml`. |
 | `tools/lang-test.js` | 27 locale-routing cases against a stubbed browser. |
 | `public/{,ru/,cnr/}index.html` | **Generated — do not edit by hand.** |
 | `public/sitemap.xml`, `robots.txt` | Generated too. |
 | `public/assets/sobor.css` | Tokens + every component. Dark by default. |
-| `public/assets/sobor.js` | Theme capsule, seat multi-select, Stellar key validation. |
+| `public/assets/sobor.js` | The theme capsule. That is now its only job. |
+| `public/assets/cal.js` | The Cal.com booking embed. The only third party on the page. |
 | `public/assets/theme.js` | Pre-paint theme. Blocking `<script src>` in `<head>`. |
 | `public/assets/lang.js` | Pre-paint locale routing. Same rule: blocking, never deferred. |
 | `public/favicon.*`, `apple-touch-icon.png`, `icon-512.png` | **Generated** by `tools/favicon.py`. |
@@ -129,9 +126,10 @@ vercel deploy               # preview URL
 ```
 
 `vercel.json` sets `outputDirectory: public`, `cleanUrls`, and the security headers.
-The CSP is strict — `default-src 'none'`, no `unsafe-inline` for script or style — which
-is why there is **no inline `<script>` and no inline `style=` attribute anywhere in
-`index.html`**. Keep it that way: the pre-paint theme snippet lives in
+The CSP is still strict — `default-src 'none'`, and no `unsafe-inline` for **script** —
+which is why there is **no inline `<script>` and no inline `style=` attribute anywhere in
+`index.html`**. It does now allow `app.cal.com` and inline *style*, for the booking
+embed; see **Booking** below for exactly what and why. Keep the rest that way: the pre-paint theme snippet lives in
 `assets/theme.js` as a blocking `<script src>` in `<head>` (never `defer`, or the page
 flashes the wrong theme), and the fund meter takes its width from the `--so-meter`
 custom property rather than an inline style.
@@ -173,103 +171,84 @@ and replace the paragraph — the switch points are marked with HTML comments.
 The prize meter reads what has actually cleared. A pledge that has not cleared is not
 a number on that page.
 
-## How an RSVP is recorded
+## Booking
 
-An RSVP is a **Stellar payment carrying a text memo**. There is no database, no session,
-and no account of ours that anyone has to trust.
-
-```
-from    the joiner's own account
-to      the sobor account (content/rsvp.json)
-amount  0.0000001 XLM — one stroop, a signal and not a price
-memo    MEMO_TEXT, e.g.  sobor2026 p 0009
-```
-
-### The memo grammar
+Participants book a slot through **Cal.com** — event `enikeev/sobor`, embedded inline in
+the page's third section. There is no form of our own, no database, and no account of
+ours anyone has to trust with anything beyond what Cal.com already holds.
 
 ```
-sobor2026 p 0009     in person · seats Discovery + Device backup
-sobor2026 r ffff     remote · all sixteen seats
-sobor2026 p 0000     coming · no seat picked
-sobor2026 out        withdrawing an earlier RSVP
+link        enikeev/sobor          (tools/build.py — CAL_LINK)
+namespace   sobor                  (tools/build.py — CAL_NS)
+mount       <div id="cal-mount">   layout month_view, slots view when narrow
 ```
 
-Field three is a sixteen-bit hex mask, one bit per seat, **in the order of
-`seats.items` in `content/i18n.json`, lowest bit first**. That order is published on the
-page under "How to read this memo" so anyone can decode a memo without asking us.
-Sixteen bytes worst case, against `MEMO_TEXT`'s 28-byte limit.
+`build.py` writes the link and namespace onto `#cal-mount` as data attributes, and
+`assets/cal.js` reads them back. That keeps the Cal link in exactly one place; changing
+the event means editing `CAL_LINK` and rebuilding, not touching the JavaScript.
 
-Reordering those seats would silently change what every memo already on the ledger
-means. If the list ever has to change, bump `event` in `content/rsvp.json` instead.
+**The `cal.com/enikeev/sobor` link under the embed stays.** It is not a fallback that
+JavaScript removes — it is the path for a reader with the iframe blocked, with the embed
+failing to load, or with JavaScript off entirely. Do not hide it when the embed works.
 
-Latest transaction per sender wins; `out` is a tombstone. `tools/register.py` folds the
-account's payment history into `content/register.json`, which `build.py` renders into the
-page. Two Horizon reads — the payment list, then each sender's MTLAP/MTLAC balance for
-the pre-approved count.
+Cal publishes its embed as an inline `<script>` snippet, and also as an
+`@calcom/embed-react` package. Neither is used verbatim: there is no bundler here, and
+the CSP has no `'unsafe-inline'` for script, so the vendor loader lives in
+`assets/cal.js` as a normal file fetched from `'self'`. The loader itself is copied
+unchanged from Cal's snippet — keep it that way, so it can be re-synced from their docs.
 
-### Why not SEP-10
+The embed does not inherit the page's colours, so `cal.js` passes the theme explicitly
+and re-passes it when the footer capsule is clicked. `auto` is Cal's own name for
+following the OS, which is what this site means by no stored choice.
 
-SEP-10 proves control of an account for the length of a *session*, which then needs a
-backend to store the RSVP. A submitted transaction proves control **and is** the record,
-and the network enforces the account's signer thresholds — so a multisig MTLA account
-works natively instead of us reimplementing threshold checks. A multisig joiner can route
-the transaction through `eurmtl.me/sign_tools`, the same way Council decisions are signed.
+### What the CSP had to give up
 
-### SEP-0007
+Three additions, and one real concession:
 
-The button builds a `web+stellar:pay` URI and hands it to whatever wallet has registered
-the handler. `network_passphrase` is omitted, which means the public network.
+| Directive | Why |
+|---|---|
+| `script-src https://app.cal.com` | `cal.js` appends `app.cal.com/embed/embed.js`. |
+| `frame-src https://app.cal.com` | The booking iframe is served from there. |
+| `font-src https://cal.com` | `@font-face` in the stylesheet `embed.js` injects. |
+| `style-src 'unsafe-inline'` | **The concession.** See below. |
 
-`asset_code=XLM` is sent explicitly even though SEP-7 treats an absent asset as XLM —
-some wallets open the request with **no asset selected** unless it is named. `asset_issuer`
-stays absent, and that is what makes it the native asset rather than somebody's token that
-calls itself XLM. Do not add an issuer.
+`embed.js` does `document.head.appendChild(document.createElement("style")).innerHTML =
+…` in the parent document, unconditionally. A hash cannot cover it, because the CSS
+changes with the embed version. So `style-src` carries `'unsafe-inline'` where it used
+to carry `'self'` alone.
 
-`msg` is kept ASCII (a plain hyphen, not an em dash) because it is rendered inside the
-wallet, where encoding handling is less predictable than in a browser.
+`script-src` does **not** have `'unsafe-inline'` and must not get it — that is the
+directive that matters, and the no-inline-`<script>` rule for the generated pages still
+holds. The inline `style=` attribute rule also still holds: nothing in `index.html`
+carries one, and the fund meter still takes its width from `--so-meter`.
 
-`origin_domain` is deliberately **not** sent. SEP-7 expects it alongside a `signature`
-made with a key published in the site's `stellar.toml`, and wallets flag an unsigned
-origin claim — so claiming an origin we cannot prove is worse than claiming none. Signing
-the URI is the obvious next step and needs a signing key sobor does not have yet.
+If the concession is ever unacceptable, the fix is to drop the inline embed and keep only
+the link to `cal.com/enikeev/sobor`, which needs no CSP changes at all.
 
-Not every browser has a `web+stellar` handler registered, so the block also shows the
-destination, amount and memo as copyable fields. The RSVP works by hand.
+### What replaced what
 
-### The account
+The RSVP used to be a **Stellar payment carrying a text memo** — no form, no database,
+the ledger as the register. That flow is gone, along with `tools/register.py`,
+`content/rsvp.json`, `content/register.json`, the SEP-7 wallet button, the sixteen-bit
+seat mask, and `public/.well-known/stellar.txt` (SEP-1), which existed only to name the
+account that received the payments.
 
-```
-GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR
-```
+**One RSVP was on the ledger when it was removed** — `GCR3GN73U3G4CHAHPINTWZGH2ZIRTVZ4WNHWYSB3FZOU63W22IGRINAT`,
+in person, seat Interface, pre-approved. The ledger still has it; the site no longer
+reads it. If that person should be carried over, they have to be asked to book a slot,
+because nothing about a Cal.com booking can be derived from a Stellar transaction. The
+history is recoverable from git if the flow is ever wanted back.
 
-A vanity key ending in `SOBOR`. It holds nothing and spends nothing — it is a mailbox,
-and losing its key would not erase a single RSVP, because the register lives in ledger
-history rather than in the account.
-
-`content/rsvp.json` carries it; `build.py` verifies the strkey checksum and refuses to
-build on a typo. Set it back to `""` and the page honestly reports the account as
-unpublished instead of rendering a button that signs against nothing.
-
-### Verifying the site owns the account
-
-`public/.well-known/stellar.toml` (SEP-1) is half of the link: the site names the
-account. It is stored as `stellar.txt` and rewritten onto the `.toml` path — Vercel
-derives `Content-Type` from the extension and ignores a custom one for static files, and
-SEP-1 wants `text/plain` so browsers render it instead of downloading it. The mandatory
-part, `Access-Control-Allow-Origin: *`, is set on both paths. The other half is **on the account — set its `home_domain` to `sobor.io`**,
-which needs a `setOptions` transaction from its key and has not been done yet.
-
-Until both halves exist there is no on-chain way to tell a real RSVP request from one
-served by a lookalike domain with a different destination. For a flow that asks people
-to send a payment, that is worth closing.
+The account `GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR` is unchanged and
+still holds nothing. It is simply no longer mentioned on the site.
 
 ## Not done yet
 
-- **`home_domain` is not set on the account**, so the site/account link is one-sided.
-- **The SEP-7 URI is unsigned.** Needs a signing key and a `.well-known/stellar.toml`
-  before wallets will show the request as verified.
-- **No QR code.** Desktop browsers without a `web+stellar` handler currently fall back to
-  copy-by-hand; a QR would let them hand off to a phone wallet.
-- **RU and CNR are unreviewed.** See the warning above.
-- **Only the Home page exists.** The canvas has no Seats, Status, or RSVP-confirmation
-  artboard; `#rules` and `#status` are in-page anchors, not separate pages.
+- **RU and CNR are unreviewed.** See the warning above — the booking copy is new and
+  unreviewed too.
+- **The Cal.com event's own settings are not in this repo.** Availability, duration,
+  questions and confirmation mail live in the Cal.com dashboard; the repo only knows the
+  link. A change there is invisible to `--check`.
+- **`style-src 'unsafe-inline'`** is the price of the inline embed. See above.
+- **Only the Home page exists.** `#rules` and `#status` are in-page anchors, not separate
+  pages.

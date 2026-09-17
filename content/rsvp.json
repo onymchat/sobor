@@ -1,7 +1,0 @@
-{
-  "_note": "RSVP-on-Stellar config. The seat bit order is the order of seats[].items in i18n.json — bit 0 is the first. Changing that order breaks every memo already on the ledger, so bump `event` if it ever has to change.",
-  "account": "GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR",
-  "amount": "0.0000001",
-  "event": "sobor2026",
-  "horizon": "https://horizon.stellar.org"
-}

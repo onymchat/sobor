@@ -8,48 +8,20 @@ the regenerated pages together with the string change.
     python3 tools/build.py          # write
     python3 tools/build.py --check  # fail if the committed output is stale
 """
-import base64
 import html
 import json
 import pathlib
 import sys
-import urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 I18N = json.loads((ROOT / "content" / "i18n.json").read_text(encoding="utf-8"))
-RSVP = json.loads((ROOT / "content" / "rsvp.json").read_text(encoding="utf-8"))
-_reg = ROOT / "content" / "register.json"
-REGISTER = json.loads(_reg.read_text(encoding="utf-8")) if _reg.exists() else {}
 LOCALES = ["en", "ru", "cnr"]
 ORIGIN = "https://sobor.io"
 
-
-def crc16(data):
-    """CRC-16/XMODEM — Stellar appends it to a strkey payload, little-endian."""
-    crc = 0
-    for b in data:
-        crc ^= b << 8
-        for _ in range(8):
-            crc = ((crc << 1) ^ 0x1021) & 0xFFFF if crc & 0x8000 else (crc << 1) & 0xFFFF
-    return crc
-
-
-def is_account_id(s):
-    """A real strkey check, so a typo in content/rsvp.json cannot reach the site."""
-    if not isinstance(s, str) or len(s) != 56 or not s.startswith("G"):
-        return False
-    try:
-        raw = base64.b32decode(s)
-    except Exception:
-        return False
-    if len(raw) != 35 or raw[0] != 6 << 3:
-        return False
-    return crc16(raw[:33]) == raw[33] | (raw[34] << 8)
-
-
-ACCOUNT = RSVP.get("account", "").strip()
-if ACCOUNT and not is_account_id(ACCOUNT):
-    sys.exit("content/rsvp.json: %r is not a valid Stellar account id" % ACCOUNT)
+# The Cal.com event the booking section embeds. Namespace is arbitrary but has to
+# match the one assets/cal.js initialises, or the embed renders into nothing.
+CAL_LINK = "enikeev/sobor"
+CAL_NS = "sobor"
 
 # Which chip each seat carries, and which external link (if any) its paragraph ends on.
 CHIPS = ["impl", "review_unwired", "review_noimpl", "impl", "draft", "draft", "draft",
@@ -112,16 +84,6 @@ def render(code):
         for l in LOCALES
     )
 
-    cards = "\n".join(
-        """        <div class="card">
-          <div class="kicker">%02d · %s</div>
-          <h3>%s</h3>
-          <p>%s</p>
-          <p class="aph">%s</p>
-        </div>""" % (i + 1, e(c["k"]), e(c["h"]), e(c["p"]), e(c["a"]))
-        for i, c in enumerate(t["contest"]["cards"])
-    )
-
     seats = []
     for i, s in enumerate(t["seats"]["items"]):
         chip = t["seats"]["chips"][CHIPS[i]]
@@ -137,13 +99,6 @@ def render(code):
         </div>""" % (e(s["h"]), body, TONE[CHIPS[i]], e(chip))
         )
     seats = "\n".join(seats)
-
-    picks = "\n            ".join(
-        '<button class="pick" type="button" aria-pressed="false" data-bit="%d">%s</button>'
-        % (i, e(s["h"]))
-        for i, s in enumerate(t["seats"]["items"])
-    )
-    rsvp_body = rsvp_block(t, picks)
 
     hero_h1 = line(t["hero"], "h1a") + "<br>" + line(t["hero"], "h1b")
     closing_h2 = line(t["closing"], "h2a") + "<br>" + line(t["closing"], "h2b")
@@ -197,7 +152,7 @@ def render(code):
       <a href="#rules">{nav_rules}</a>
       <a href="#status">{nav_status}</a>
     </nav>
-    <div class="nav-cta"><a class="btn-pill" href="#rsvp">{nav_rsvp}</a></div>
+    <div class="nav-cta"><a class="btn-pill" href="#book">{nav_book}</a></div>
   </div>
 </header>
 
@@ -209,7 +164,7 @@ def render(code):
     <div class="hero-copy">
       <p>{hero_lede}</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#rsvp">{hero_cta}</a>
+        <a class="btn btn-primary" href="#book">{hero_cta}</a>
         <a href="#rules">{hero_rules}</a>
       </div>
     </div>
@@ -242,9 +197,6 @@ def render(code):
       <div class="eyebrow"><span>01</span><b>· {c_eyebrow}</b></div>
       <h2>{c_h2a}<br>{c_h2b}</h2>
       <p class="section-lede">{c_lede}</p>
-      <div class="grid-4">
-{cards}
-      </div>
       <p class="after-grid" id="rules"><a href="#rules">{c_more}</a></p>
     </div>
   </section>
@@ -262,26 +214,20 @@ def render(code):
     </div>
   </section>
 
-  <section class="band who">
+  <section class="band" id="book">
     <div class="wrap">
-      <div class="eyebrow"><span>03</span><b>· {w_eyebrow}</b></div>
-      <h2>{w_h2a}<br>{w_h2b}</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>{w_pre_h}</h3>
-          <p>{w_pre_p1}<a href="https://bsn.expert">bsn.expert</a>{w_pre_p2}</p>
-          <div class="meta">{w_pre_meta}</div>
-          <p class="aph">{w_pre_a}</p>
-        </div>
-        <div class="card">
-          <h3>{w_else_h}</h3>
-          <p>{w_else_p}</p>
-          <div class="meta">{w_else_meta}</div>
-          <p class="aph">{w_else_a}</p>
-        </div>
-      </div>
-
-{rsvp_body}
+      <div class="eyebrow"><span>03</span><b>· {b_eyebrow}</b></div>
+      <h2>{b_h2a}<br>{b_h2b}</h2>
+      <p class="section-lede">{b_lede}</p>
+      <!-- assets/cal.js mounts the Cal.com inline embed here and reads the event off
+           these data attributes, so content/build.py stays the only place the link is
+           written. The link underneath is not a fallback that JS removes: it stays, so
+           the booking page is reachable with the embed blocked or failing to load. -->
+      <div class="cal-mount" id="cal-mount"
+           data-cal-link="{cal_link}" data-cal-namespace="{cal_ns}"></div>
+      <p class="after-grid"><a href="https://cal.com/{cal_link}">{b_fallback}</a></p>
+      <p class="after-grid">{b_note}</p>
+      <p class="aph book-aph">{b_aph}</p>
     </div>
   </section>
 
@@ -309,7 +255,7 @@ def render(code):
     <div>
       <h2>{closing_h2}</h2>
       <div class="closing-actions">
-        <a class="btn btn-primary" href="#rsvp">{hero_cta}</a>
+        <a class="btn btn-primary" href="#book">{hero_cta}</a>
         <a href="#rules">{hero_rules}</a>
       </div>
       <p class="when">{cl_when}</p>
@@ -345,6 +291,7 @@ def render(code):
 </footer>
 
 <script src="/assets/sobor.js" defer></script>
+<script src="/assets/cal.js" defer></script>
 </body>
 </html>
 """.format(
@@ -353,137 +300,29 @@ def render(code):
         og_image=("og.png" if code == "en" else "og-%s.png" % code),
         og_alt=e("%s %s — %s" % (t["hero"]["h1a"], t["hero"]["h1b"], t["hero"]["eyebrow"])),
         nav_home=e(t["nav"]["home"]), nav_contest=e(t["nav"]["contest"]), nav_seats=e(t["nav"]["seats"]),
-        nav_rules=e(t["nav"]["rules"]), nav_status=e(t["nav"]["status"]), nav_rsvp=e(t["nav"]["rsvp"]),
+        nav_rules=e(t["nav"]["rules"]), nav_status=e(t["nav"]["status"]), nav_book=e(t["nav"]["book"]),
         hero_eyebrow=e(t["hero"]["eyebrow"]), hero_h1=hero_h1, closing_h2=closing_h2,
         hero_lede=e(t["hero"]["lede"]), hero_cta=e(t["hero"]["cta"]), hero_rules=e(t["hero"]["rules"]),
         st_stamp=e(t["status"]["stamp"]), st_venue_tag=e(t["status"]["venue_tag"]), st_venue_p=e(t["status"]["venue_p"]),
         st_arbiter_tag=e(t["status"]["arbiter_tag"]), st_arbiter_p=e(t["status"]["arbiter_p"]),
         st_fund_tag=e(t["status"]["fund_tag"]), st_fund_p=e(t["status"]["fund_p"]),
         c_eyebrow=e(t["contest"]["eyebrow"]), c_h2a=e(t["contest"]["h2a"]), c_h2b=e(t["contest"]["h2b"]),
-        c_lede=e(t["contest"]["lede"]), c_more=e(t["contest"]["more"]), cards=cards,
+        c_lede=e(t["contest"]["lede"]), c_more=e(t["contest"]["more"]),
         s_eyebrow=e(t["seats"]["eyebrow"]), s_h2a=e(t["seats"]["h2a"]), s_h2b=e(t["seats"]["h2b"]),
         s_lede=e(t["seats"]["lede"]), s_more=e(t["seats"]["more"]), s_note=e(t["seats"]["note"]), seats=seats,
-        w_eyebrow=e(t["who"]["eyebrow"]), w_h2a=e(t["who"]["h2a"]), w_h2b=e(t["who"]["h2b"]),
-        w_pre_h=e(t["who"]["pre_h"]), w_pre_p1=e(t["who"]["pre_p1"]), w_pre_p2=e(t["who"]["pre_p2"]),
-        w_pre_meta=e(t["who"]["pre_meta"]), w_pre_a=e(t["who"]["pre_a"]),
-        w_else_h=e(t["who"]["else_h"]), w_else_p=e(t["who"]["else_p"]),
-        w_else_meta=e(t["who"]["else_meta"]), w_else_a=e(t["who"]["else_a"]),
+        b_eyebrow=e(t["book"]["eyebrow"]), b_h2a=e(t["book"]["h2a"]), b_h2b=e(t["book"]["h2b"]),
+        b_lede=e(t["book"]["lede"]), b_fallback=e(t["book"]["fallback"]),
+        b_note=e(t["book"]["note"]), b_aph=e(t["book"]["aph"]),
+        cal_link=e(CAL_LINK), cal_ns=e(CAL_NS),
         f_eyebrow=e(t["fund"]["eyebrow"]), f_label=e(t["fund"]["label"]), f_amount=e(t["fund"]["amount"]),
         f_caption=e(t["fund"]["caption"]), f_meter_aria=e(t["fund"]["meter_aria"]),
         f_p1=e(t["fund"]["p1"]), f_p2=e(t["fund"]["p2"]), f_a=e(t["fund"]["a"]),
-        rsvp_body=rsvp_body,
         cl_when=e(t["closing"]["when"]),
         ft_copy=e(t["footer"]["copy"]), ft_sign=e(t["footer"]["sign"]), ft_lang_aria=e(t["footer"]["lang_aria"]),
         lang_btns=lang_btns,
         th_aria=e(t["theme"]["aria"]), th_auto=e(t["theme"]["auto"]),
         th_light=e(t["theme"]["light"]), th_dark=e(t["theme"]["dark"]),
     )
-
-
-
-def sep7_uri(memo, msg):
-    """A SEP-0007 `pay` URI.
-
-    asset_code=XLM is sent even though SEP-7 says an absent asset means XLM: some
-    wallets open the request with no asset selected unless it is named. asset_issuer
-    stays absent, which is what makes it the native asset rather than someone's token
-    called XLM. network_passphrase is omitted, which SEP-7 reads as the public network.
-
-    origin_domain is left off deliberately: without a matching `signature` from a key
-    published in stellar.toml, wallets flag it, so an unsigned claim of origin is worse
-    than none. Signing it is the next step, and needs a key sobor does not have yet."""
-    q = [("destination", ACCOUNT), ("amount", RSVP["amount"]), ("asset_code", "XLM"),
-         ("memo", memo), ("memo_type", "MEMO_TEXT"), ("msg", msg)]
-    return "web+stellar:pay?" + urllib.parse.urlencode(q, quote_via=urllib.parse.quote)
-
-
-def rsvp_block(t, picks):
-    r = t["rsvp"]
-    ev = RSVP["event"]
-
-    # The register line. The "as of" stamp shows in both states on purpose: a count
-    # baked at build time that does not say when it was taken reads as live, and this
-    # page does not get to imply things it has not checked.
-    n = REGISTER.get("count") or 0
-    stamp = REGISTER.get("synced", "")
-    stamp = stamp.replace("T", " ").replace("Z", " UTC")[:-7] + " UTC" if stamp else "—"
-    head = ("<b>%d</b> %s · <b>%d</b> %s" % (n, e(r["register"]), REGISTER.get("pre_approved", 0),
-                                             e(r["pre_approved"]))) if n else e(r["empty_register"])
-    # The newline before the stamp is load-bearing: .rsvp-synced is display:block, but
-    # if the stylesheet is stale or missing this still reads as "… pre-approved last
-    # read from the ledger …" rather than running the two together.
-    reg = '<span class="rsvp-reg">%s\n<span class="rsvp-synced">%s %s</span></span>' % (
-        head, e(r["synced"]), e(stamp))
-
-    if not ACCOUNT:
-        return """      <div class="card rsvp" id="rsvp">
-        <div class="kicker">%s</div>
-        <span class="tag open">%s</span>
-        <p class="rsvp-note">%s</p>
-        <p class="rsvp-note">%s</p>
-      </div>""" % (e(r["kicker"]), e(r["unset_tag"]), e(r["unset_p"]), e(r["ledger_note"]))
-
-    bits = "\n            ".join(
-        '<li><code>%d</code> %s</li>' % (i, e(s["h"])) for i, s in enumerate(t["seats"]["items"]))
-
-    return """      <div class="card rsvp" id="rsvp"
-           data-account="{acct}" data-amount="{amount}" data-event="{ev}"
-           data-msg="{msg}" data-copy="{copy}" data-copied="{copied}">
-        <div class="kicker">{kicker}</div>
-        {reg}
-
-        <div class="kicker kicker-seats">{mode_kicker}</div>
-        <div class="rsvp-mode" role="radiogroup" aria-label="{mode_kicker}">
-          <button class="pick" type="button" role="radio" aria-checked="true" data-mode="p">{mode_person}</button>
-          <button class="pick" type="button" role="radio" aria-checked="false" data-mode="r">{mode_remote}</button>
-        </div>
-
-        <div class="kicker kicker-seats">{seats_kicker}</div>
-        <div class="rsvp-seats" role="group" aria-label="{seats_aria}">
-            {picks}
-        </div>
-
-        <div class="kicker kicker-seats">{memo_kicker}</div>
-        <div class="rsvp-row">
-          <output class="rsvp-memo" id="rsvp-memo" for="rsvp">{memo0}</output>
-          <a class="btn btn-primary" id="rsvp-go" href="{uri0}">{open_wallet}</a>
-        </div>
-        <p class="rsvp-note">{wallet_note}</p>
-
-        <details class="drop">
-          <summary>{manual}</summary>
-          <dl class="kv">
-            <dt>{f_to}</dt><dd><code>{acct}</code><button class="copy" type="button" data-copy="{acct}">{copy}</button></dd>
-            <dt>{f_amount}</dt><dd><code>{amount} XLM</code><button class="copy" type="button" data-copy="{amount}">{copy}</button></dd>
-            <dt>{f_memo}</dt><dd><code id="rsvp-memo2">{memo0}</code><button class="copy" type="button" data-copy-memo>{copy}</button></dd>
-          </dl>
-        </details>
-
-        <details class="drop">
-          <summary>{decode}</summary>
-          <p>{decode_p}</p>
-          <ol class="bits" start="0">
-            {bits}
-          </ol>
-        </details>
-
-        <div class="rsvp-foot">
-          <p class="rsvp-note">{ledger_note}</p>
-          <p class="rsvp-out"><a id="rsvp-out" href="{uri_out}">{withdraw}</a></p>
-        </div>
-      </div>""".format(
-        acct=e(ACCOUNT), amount=e(RSVP["amount"]), ev=e(ev), msg=e(r["msg"]),
-        copy=e(r["copy"]), copied=e(r["copied"]), reg=reg,
-        kicker=e(r["kicker"]), mode_kicker=e(r["mode_kicker"]),
-        mode_person=e(r["mode_person"]), mode_remote=e(r["mode_remote"]),
-        seats_kicker=e(r["seats_kicker"]), seats_aria=e(r["seats_aria"]), picks=picks,
-        memo_kicker=e(r["memo_kicker"]), memo0=e("%s p 0000" % ev),
-        uri0=e(sep7_uri("%s p 0000" % ev, r["msg"])),
-        uri_out=e(sep7_uri("%s out" % ev, r["msg"])),
-        open_wallet=e(r["open_wallet"]), wallet_note=e(r["wallet_note"]),
-        manual=e(r["manual"]), f_to=e(r["f_to"]), f_amount=e(r["f_amount"]), f_memo=e(r["f_memo"]),
-        decode=e(r["decode"]), decode_p=e(r["decode_p"]), bits=bits,
-        ledger_note=e(r["ledger_note"]), withdraw=e(r["withdraw"]))
 
 
 def target(code):

@@ -60,7 +60,7 @@
       <a href="#rules">Pravila</a>
       <a href="#status">Status</a>
     </nav>
-    <div class="nav-cta"><a class="btn-pill" href="#rsvp">Prijavi se</a></div>
+    <div class="nav-cta"><a class="btn-pill" href="#book">Prijavi se</a></div>
   </div>
 </header>
 
@@ -72,7 +72,7 @@
     <div class="hero-copy">
       <p>Pet dana u Baru. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod. Izaberi, napravi, zauzmi.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#rsvp">Prijavi se Stellar nalogom</a>
+        <a class="btn btn-primary" href="#book">Rezerviši mjesto</a>
         <a href="#rules">Pročitaj pravila →</a>
       </div>
     </div>
@@ -105,32 +105,6 @@
       <div class="eyebrow"><span>01</span><b>· Takmičenje</b></div>
       <h2>Pet dana.<br>Po jedno mjesto.</h2>
       <p class="section-lede">Tim bilo koje veličine uzima jednu otvorenu ulogu i implementira je prema objavljenom ugovoru. Nema kategorija, nema teme, nema prezentacija. Mjesto je zauzeto kad nešto radi i kad neko sa strane može usmjeriti svoj klijent na njega.</p>
-      <div class="grid-4">
-        <div class="card">
-          <div class="kicker">01 · Pravi</div>
-          <h3>Pročitaj ugovor</h3>
-          <p>Svako mjesto opisano je javno i neutralno prema tehnologiji. Referentnu implementaciju smiješ potpuno ignorisati.</p>
-          <p class="aph">Ugovor je zadatak.</p>
-        </div>
-        <div class="card">
-          <div class="kicker">02 · Predaj</div>
-          <h3>Predaj adresu koja radi</h3>
-          <p>Repozitorijum, pokrenuta instanca i pristupi da se provjeri. Slajdovi nisu rad.</p>
-          <p class="aph">Kod koji niko ne može pokrenuti je predlog.</p>
-        </div>
-        <div class="card">
-          <div class="kicker">03 · Sudi</div>
-          <h3>Jedan arbitar, pisano</h3>
-          <p>Prvo usklađenost s ugovorom, pa trajnost. Svaka odluka objavljuje se s obrazloženjem, uključujući i odbijanja.</p>
-          <p class="aph">Arbitar duguje obrazloženje, ne aplauz.</p>
-        </div>
-        <div class="card">
-          <div class="kicker">04 · Zauzmi</div>
-          <h3>Zauzmi mjesto</h3>
-          <p>Tvoje je ono što si napravio i sve što to zaradi. Bez prenosa prava, bez udjela, bez potraživanja organizatora.</p>
-          <p class="aph">Sedmica se završava; mjesto nastavlja da radi.</p>
-        </div>
-      </div>
       <p class="after-grid" id="rules"><a href="#rules">Pročitaj pravila u cjelini →</a></p>
     </div>
   </section>
@@ -227,102 +201,20 @@
     </div>
   </section>
 
-  <section class="band who">
+  <section class="band" id="book">
     <div class="wrap">
-      <div class="eyebrow"><span>03</span><b>· Ko može doći</b></div>
-      <h2>Jedan potpis.<br>Bez spiska gostiju.</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Već odobreni</h3>
-          <p>Tvoj nalog već drži MTLAP ili MTLAC. Prijava je jedan potpis — stanje čitamo iz mreže, prema <a href="https://bsn.expert">bsn.expert</a>, i unutra si.</p>
-          <div class="meta">PRIMJER · GA7QK4…M2XZD9</div>
-          <p class="aph">Pozivnica je sama mreža.</p>
-        </div>
-        <div class="card">
-          <h3>Svi ostali</h3>
-          <p>Prijavi interesovanje bilo kojim Stellar nalogom. Odgovaramo — ili pošteno odgovaramo da još ničega nema. Ne postoji lista čekanja na kojoj te rangiraju.</p>
-          <div class="meta">TOKEN NIJE POTREBAN · BEZ NAKNADE</div>
-          <p class="aph">Ključ je dovoljan da te izbroje.</p>
-        </div>
-      </div>
-
-      <div class="card rsvp" id="rsvp"
-           data-account="GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR" data-amount="0.0000001" data-event="sobor2026"
-           data-msg="sobor 2026 - prijava" data-copy="Kopiraj" data-copied="Kopirano">
-        <div class="kicker">Prijava</div>
-        <span class="rsvp-reg"><b>1</b> prijava do sada · <b>1</b> od toga odobreni
-<span class="rsvp-synced">posljednje čitanje registra 2026-09-11 15:16 UTC</span></span>
-
-        <div class="kicker kicker-seats">Kako dolaziš</div>
-        <div class="rsvp-mode" role="radiogroup" aria-label="Kako dolaziš">
-          <button class="pick" type="button" role="radio" aria-checked="true" data-mode="p">Lično</button>
-          <button class="pick" type="button" role="radio" aria-checked="false" data-mode="r">Na daljinu</button>
-        </div>
-
-        <div class="kicker kicker-seats">Mjesta na kojima bi radio — neobavezno</div>
-        <div class="rsvp-seats" role="group" aria-label="Mjesta na kojima bi radio">
-            <button class="pick" type="button" aria-pressed="false" data-bit="0">Katalog</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="1">Imena i akreditivi</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="2">Banka i plaćanja</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="3">Rezervna kopija</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="4">Revizija i atestiranje</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="5">Povjerenik za oporavak</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="6">Arbitraža</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="7">Regrutacija</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="8">Akvizicija</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="9">Distribucija</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="10">Dobrotvorna koordinacija</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="11">Kurir</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="12">Skladište medija</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="13">Notar</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="14">Interfejs</button>
-            <button class="pick" type="button" aria-pressed="false" data-bit="15">Tijelo za moderaciju</button>
-        </div>
-
-        <div class="kicker kicker-seats">Što ide u registar</div>
-        <div class="rsvp-row">
-          <output class="rsvp-memo" id="rsvp-memo" for="rsvp">sobor2026 p 0000</output>
-          <a class="btn btn-primary" id="rsvp-go" href="web+stellar:pay?destination=GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR&amp;amount=0.0000001&amp;asset_code=XLM&amp;memo=sobor2026%20p%200000&amp;memo_type=MEMO_TEXT&amp;msg=sobor%202026%20-%20prijava">Otvori u novčaniku</a>
-        </div>
-        <p class="rsvp-note">Otvara tvoj Stellar novčanik s već popunjenim plaćanjem. Ti potpisuješ; ključ nikad ne vidimo.</p>
-
-        <details class="drop">
-          <summary>Ili pošalji ručno</summary>
-          <dl class="kv">
-            <dt>Kome</dt><dd><code>GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR</code><button class="copy" type="button" data-copy="GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR">Kopiraj</button></dd>
-            <dt>Iznos</dt><dd><code>0.0000001 XLM</code><button class="copy" type="button" data-copy="0.0000001">Kopiraj</button></dd>
-            <dt>Memo</dt><dd><code id="rsvp-memo2">sobor2026 p 0000</code><button class="copy" type="button" data-copy-memo>Kopiraj</button></dd>
-          </dl>
-        </details>
-
-        <details class="drop">
-          <summary>Kako se čita ovaj memo</summary>
-          <p>Jedan red teksta u javnom registru. Prvo polje imenuje događaj, drugo je p za lično ili r za na daljinu, a treće je šesnaestobitna hex maska — po jedan bit za svako mjesto, redom ispod, najniži bit prvi. Svako to može dekodirati bez pitanja nas.</p>
-          <ol class="bits" start="0">
-            <li><code>0</code> Katalog</li>
-            <li><code>1</code> Imena i akreditivi</li>
-            <li><code>2</code> Banka i plaćanja</li>
-            <li><code>3</code> Rezervna kopija</li>
-            <li><code>4</code> Revizija i atestiranje</li>
-            <li><code>5</code> Povjerenik za oporavak</li>
-            <li><code>6</code> Arbitraža</li>
-            <li><code>7</code> Regrutacija</li>
-            <li><code>8</code> Akvizicija</li>
-            <li><code>9</code> Distribucija</li>
-            <li><code>10</code> Dobrotvorna koordinacija</li>
-            <li><code>11</code> Kurir</li>
-            <li><code>12</code> Skladište medija</li>
-            <li><code>13</code> Notar</li>
-            <li><code>14</code> Interfejs</li>
-            <li><code>15</code> Tijelo za moderaciju</li>
-          </ol>
-        </details>
-
-        <div class="rsvp-foot">
-          <p class="rsvp-note">Nema formulara ni baze podataka. Prijava je sama transakcija, a registar je mreža — može ga pročitati svako, uključujući i one koji nam ne vjeruju.</p>
-          <p class="rsvp-out"><a id="rsvp-out" href="web+stellar:pay?destination=GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR&amp;amount=0.0000001&amp;asset_code=XLM&amp;memo=sobor2026%20out&amp;memo_type=MEMO_TEXT&amp;msg=sobor%202026%20-%20prijava">Povuci ranije podnesenu prijavu →</a></p>
-        </div>
-      </div>
+      <div class="eyebrow"><span>03</span><b>· Prijava</b></div>
+      <h2>Jedan formular.<br>Bez spiska gostiju.</h2>
+      <p class="section-lede">Izaberi vrijeme i razgovaramo prije nego sedmica počne — ko si, koje te mjesto zanima i vrijedi li ti dolaziti. Bez tokena, bez naknade i bez liste čekanja na kojoj te rangiraju.</p>
+      <!-- assets/cal.js mounts the Cal.com inline embed here and reads the event off
+           these data attributes, so content/build.py stays the only place the link is
+           written. The link underneath is not a fallback that JS removes: it stays, so
+           the booking page is reachable with the embed blocked or failing to load. -->
+      <div class="cal-mount" id="cal-mount"
+           data-cal-link="enikeev/sobor" data-cal-namespace="sobor"></div>
+      <p class="after-grid"><a href="https://cal.com/enikeev/sobor">Otvori stranicu za prijavu →</a></p>
+      <p class="after-grid">Formular drži Cal.com. Kad izabereš termin, njima idu tvoje ime i e-adresa, a poziv ide u naš kalendar — ništa drugo se ne bilježi.</p>
+      <p class="aph book-aph">Razgovor nije selekcija.</p>
     </div>
   </section>
 
@@ -350,7 +242,7 @@
     <div>
       <h2>Ponesi laptop.<br>Zauzmi mjesto.</h2>
       <div class="closing-actions">
-        <a class="btn btn-primary" href="#rsvp">Prijavi se Stellar nalogom</a>
+        <a class="btn btn-primary" href="#book">Rezerviši mjesto</a>
         <a href="#rules">Pročitaj pravila →</a>
       </div>
       <p class="when">21–25. septembra 2026. · Bar, Crna Gora · lokacija slijedi</p>
@@ -388,5 +280,6 @@
 </footer>
 
 <script src="/assets/sobor.js" defer></script>
+<script src="/assets/cal.js" defer></script>
 </body>
 </html>
