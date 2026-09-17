@@ -218,22 +218,52 @@ def render(code):
     </div>
   </section>
 
+  <section class="band" id="people">
+    <div class="wrap">
+      <div class="eyebrow"><span>02</span><b>· {p_eyebrow}</b></div>
+      <h2>{p_h2a}<br>{p_h2b}</h2>
+      <p class="section-lede">{p_lede}</p>
+      <div class="people-grid">
+        <div class="person">
+          <img class="portrait" src="/assets/rinat.jpg" width="480" height="480"
+               alt="{p_org_alt}" loading="lazy" decoding="async">
+          <div class="person-role">{p_org_role}</div>
+          <h3>{p_org_name}</h3>
+          <p>{p_org_p}</p>
+          <p class="person-contact"><a href="{tg_url}" rel="me">{tg_handle}</a></p>
+        </div>
+        <div class="person">
+          <img class="portrait" src="/assets/andy.jpg" width="423" height="423"
+               alt="{p_arb_alt}" loading="lazy" decoding="async">
+          <div class="person-role">{p_arb_role}</div>
+          <h3>{p_arb_name}</h3>
+          <p>{p_arb_p}</p>
+        </div>
+      </div>
+      <p class="aph">{p_aph}</p>
+    </div>
+  </section>
+
   <!-- The three questions that were open. A state flips in STATUS_STATE above and the
        paragraph gets rewritten in content/i18n.json. Do not soften these. -->
   <section class="status" id="status">
     <div class="wrap">
       <div class="status-stamp">{st_stamp}</div>
       <div class="status-grid">
-        <div>
-          <span class="tag {st_venue_state}">{st_venue_tag}</span>
-          <p>{st_venue_p} <a href="{venue_url}">{st_venue_link}</a></p>
+        <div class="fact">
+          <div class="fact-value">{st_venue_value}</div>
+          <div class="fact-label"><i class="dot {st_venue_state}"></i>{st_venue_label}</div>
+          <p>{st_venue_p}</p>
+          <p class="fact-link"><a href="{venue_url}">{st_venue_link}</a></p>
         </div>
-        <div>
-          <span class="tag {st_arbiter_state}">{st_arbiter_tag}</span>
+        <div class="fact">
+          <div class="fact-value">{st_arbiter_value}</div>
+          <div class="fact-label"><i class="dot {st_arbiter_state}"></i>{st_arbiter_label}</div>
           <p>{st_arbiter_p}</p>
         </div>
-        <div>
-          <span class="tag {st_fund_state}">{st_fund_tag}</span>
+        <div class="fact fact-warm">
+          <div class="fact-value">{st_fund_value}</div>
+          <div class="fact-label"><i class="dot {st_fund_state}"></i>{st_fund_label}</div>
           <p>{st_fund_p}</p>
         </div>
       </div>
@@ -242,7 +272,7 @@ def render(code):
 
   <section class="band" id="contest">
     <div class="wrap">
-      <div class="eyebrow"><span>02</span><b>· {c_eyebrow}</b></div>
+      <div class="eyebrow"><span>03</span><b>· {c_eyebrow}</b></div>
       <h2>{c_h2a}<br>{c_h2b}</h2>
       <p class="section-lede">{c_lede}</p>
       <p class="after-grid" id="rules"><a href="#rules">{c_more}</a></p>
@@ -251,7 +281,7 @@ def render(code):
 
   <section class="band" id="seats">
     <div class="wrap">
-      <div class="eyebrow"><span>03</span><b>· {s_eyebrow}</b></div>
+      <div class="eyebrow"><span>04</span><b>· {s_eyebrow}</b></div>
       <h2>{s_h2a}<br>{s_h2b}</h2>
       <p class="section-lede">{s_lede}</p>
       <div class="grid-4 seats-grid">
@@ -265,7 +295,7 @@ def render(code):
 
   <section class="band">
     <div class="wrap">
-      <div class="eyebrow"><span>04</span><b>· {f_eyebrow}</b></div>
+      <div class="eyebrow"><span>05</span><b>· {f_eyebrow}</b></div>
       <div class="fund">
         <div class="fund-label">{f_label}</div>
         <!-- The figure is content/i18n.json fund.amount. The meter beneath it only
@@ -280,32 +310,6 @@ def render(code):
         </div>
         <p class="aph">{f_a}</p>
       </div>
-    </div>
-  </section>
-
-  <section class="band" id="people">
-    <div class="wrap">
-      <div class="eyebrow"><span>05</span><b>· {p_eyebrow}</b></div>
-      <h2>{p_h2a}<br>{p_h2b}</h2>
-      <p class="section-lede">{p_lede}</p>
-      <div class="people-grid">
-        <div class="card person">
-          <img class="portrait" src="/assets/rinat.jpg" width="480" height="480"
-               alt="{p_org_alt}" loading="lazy" decoding="async">
-          <div class="person-role">{p_org_role}</div>
-          <h3>{p_org_name}</h3>
-          <p>{p_org_p}</p>
-          <p class="person-contact"><a href="{tg_url}" rel="me">{tg_handle}</a></p>
-        </div>
-        <div class="card person">
-          <img class="portrait" src="/assets/andy.jpg" width="423" height="423"
-               alt="{p_arb_alt}" loading="lazy" decoding="async">
-          <div class="person-role">{p_arb_role}</div>
-          <h3>{p_arb_name}</h3>
-          <p>{p_arb_p}</p>
-        </div>
-      </div>
-      <p class="aph">{p_aph}</p>
     </div>
   </section>
 
@@ -362,12 +366,14 @@ def render(code):
         nav_rules=e(t["nav"]["rules"]), nav_status=e(t["nav"]["status"]), nav_book=e(t["nav"]["book"]),
         hero_eyebrow=e(t["hero"]["eyebrow"]), hero_h1=hero_h1, closing_h2=closing_h2,
         hero_lede=e(t["hero"]["lede"]), hero_cta=e(t["hero"]["cta"]), hero_rules=e(t["hero"]["rules"]),
-        st_stamp=e(t["status"]["stamp"]), st_venue_tag=e(t["status"]["venue_tag"]), st_venue_p=e(t["status"]["venue_p"]),
+        st_stamp=e(t["status"]["stamp"]), st_venue_p=e(t["status"]["venue_p"]),
+        st_venue_value=e(t["status"]["venue_value"]), st_venue_label=e(t["status"]["venue_label"]),
+        st_arbiter_value=e(t["status"]["arbiter_value"]), st_arbiter_label=e(t["status"]["arbiter_label"]),
+        st_fund_value=e(t["status"]["fund_value"]), st_fund_label=e(t["status"]["fund_label"]),
         st_venue_link=e(t["status"]["venue_link"]), venue_url=e(VENUE_URL),
         st_venue_state=STATUS_STATE["venue"], st_arbiter_state=STATUS_STATE["arbiter"],
         st_fund_state=STATUS_STATE["fund"], tg_url=e(TG_URL), tg_handle=e(TG_HANDLE),
-        st_arbiter_tag=e(t["status"]["arbiter_tag"]), st_arbiter_p=e(t["status"]["arbiter_p"]),
-        st_fund_tag=e(t["status"]["fund_tag"]), st_fund_p=e(t["status"]["fund_p"]),
+        st_arbiter_p=e(t["status"]["arbiter_p"]), st_fund_p=e(t["status"]["fund_p"]),
         c_eyebrow=e(t["contest"]["eyebrow"]), c_h2a=e(t["contest"]["h2a"]), c_h2b=e(t["contest"]["h2b"]),
         c_lede=e(t["contest"]["lede"]), c_more=e(t["contest"]["more"]),
         s_eyebrow=e(t["seats"]["eyebrow"]), s_h2a=e(t["seats"]["h2a"]), s_h2b=e(t["seats"]["h2b"]),

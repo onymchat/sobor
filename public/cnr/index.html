@@ -96,23 +96,53 @@
     </div>
   </section>
 
+  <section class="band" id="people">
+    <div class="wrap">
+      <div class="eyebrow"><span>02</span><b>· Ko ovo vodi</b></div>
+      <h2>Jedan organizator.<br>Jedan arbitar.</h2>
+      <p class="section-lede">Dva imena, dva posla i zid između njih. Organizator obezbjeđuje prostor i skuplja fond. Arbitar odlučuje ko je pobijedio i duguje razloge.</p>
+      <div class="people-grid">
+        <div class="person">
+          <img class="portrait" src="/assets/rinat.jpg" width="480" height="480"
+               alt="Rinat, organizator" loading="lazy" decoding="async">
+          <div class="person-role">Organizator</div>
+          <h3>Rinat</h3>
+          <p>Obezbjeđuje prostor, skuplja fond i javlja se na pozive s ove stranice. Ne sudi i ne glasa.</p>
+          <p class="person-contact"><a href="https://t.me/programyzer" rel="me">@programyzer</a></p>
+        </div>
+        <div class="person">
+          <img class="portrait" src="/assets/andy.jpg" width="423" height="423"
+               alt="Andy, arbitar" loading="lazy" decoding="async">
+          <div class="person-role">Arbitar</div>
+          <h3>Andy</h3>
+          <p>Čita ono što je poslato i objavljuje odluku za svaki rad, s razlozima — prvo usklađenost, pa izdržljivost. I odbijanja se objavljuju.</p>
+        </div>
+      </div>
+      <p class="aph">Ko plaća, taj ne sudi.</p>
+    </div>
+  </section>
+
   <!-- The three questions that were open. A state flips in STATUS_STATE above and the
        paragraph gets rewritten in content/i18n.json. Do not soften these. -->
   <section class="status" id="status">
     <div class="wrap">
       <div class="status-stamp">Status · ažurirano 17. septembra 2026.</div>
       <div class="status-grid">
-        <div>
-          <span class="tag settled">Mjesto — Montelibero City</span>
-          <p>Sedmica je oduvijek bila fiksna. Sada je fiksan i prostor: Montelibero City, Bar. <a href="https://www.google.com/maps/place/Montelibero-City/@42.0326317,19.1635781,17z/data=!3m1!4b1!4m6!3m5!1s0x134e7345408cff31:0x4c5d231719f81f5e!8m2!3d42.0326317!4d19.166153">Otvori na mapi →</a></p>
+        <div class="fact">
+          <div class="fact-value">Montelibero City</div>
+          <div class="fact-label"><i class="dot settled"></i>Mjesto · Bar, Crna Gora</div>
+          <p>Sedmica je oduvijek bila fiksna. Sada je fiksan i prostor.</p>
+          <p class="fact-link"><a href="https://www.google.com/maps/place/Montelibero-City/@42.0326317,19.1635781,17z/data=!3m1!4b1!4m6!3m5!1s0x134e7345408cff31:0x4c5d231719f81f5e!8m2!3d42.0326317!4d19.166153">Otvori na mapi →</a></p>
         </div>
-        <div>
-          <span class="tag settled">Arbitar — Andy</span>
-          <p>Fond je obezbijeđen, pa je arbitar imenovan — tačno kako je obećano. On nije organizator, a organizator ne glasa.</p>
+        <div class="fact">
+          <div class="fact-value">Andy</div>
+          <div class="fact-label"><i class="dot settled"></i>Arbitar · imenovan</div>
+          <p>Imenovan jer je fond obezbijeđen — tim redom je i obećano. On nije organizator, a organizator ne glasa.</p>
         </div>
-        <div>
-          <span class="tag settled">Nagradni fond — €1.000</span>
-          <p>€1.000 je stiglo i na računu je. Cilj kojem ide još nije objavljen.</p>
+        <div class="fact fact-warm">
+          <div class="fact-value">€1.000</div>
+          <div class="fact-label"><i class="dot settled"></i>Nagradni fond · obezbijeđen</div>
+          <p>Stiglo i na računu je. Cilj kojem ide još nije objavljen.</p>
         </div>
       </div>
     </div>
@@ -120,7 +150,7 @@
 
   <section class="band" id="contest">
     <div class="wrap">
-      <div class="eyebrow"><span>02</span><b>· Takmičenje</b></div>
+      <div class="eyebrow"><span>03</span><b>· Takmičenje</b></div>
       <h2>Pet dana.<br>Po jedno mjesto.</h2>
       <p class="section-lede">Tim bilo koje veličine uzima jednu otvorenu ulogu i implementira je prema objavljenom ugovoru. Nema kategorija, nema teme, nema prezentacija. Mjesto je zauzeto kad nešto radi i kad neko sa strane može usmjeriti svoj klijent na njega.</p>
       <p class="after-grid" id="rules"><a href="#rules">Pročitaj pravila u cjelini →</a></p>
@@ -129,7 +159,7 @@
 
   <section class="band" id="seats">
     <div class="wrap">
-      <div class="eyebrow"><span>03</span><b>· Mjesta</b></div>
+      <div class="eyebrow"><span>04</span><b>· Mjesta</b></div>
       <h2>Šesnaest ugovora.<br>Sedam ima kod.</h2>
       <p class="section-lede">Status je naveden onako kako ga navodi Fondacija: ugovor u repozitorijumu nije implementacija, a jedna zamjenjiva podrazumijevana instalacija nije tržište. Svih šesnaest je ispod.</p>
       <div class="grid-4 seats-grid">
@@ -222,7 +252,7 @@
 
   <section class="band">
     <div class="wrap">
-      <div class="eyebrow"><span>04</span><b>· Nagradni fond</b></div>
+      <div class="eyebrow"><span>05</span><b>· Nagradni fond</b></div>
       <div class="fund">
         <div class="fund-label">Obezbijeđeno do danas</div>
         <!-- The figure is content/i18n.json fund.amount. The meter beneath it only
@@ -237,32 +267,6 @@
         </div>
         <p class="aph">Nepokrivena nagrada je glasina.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="band" id="people">
-    <div class="wrap">
-      <div class="eyebrow"><span>05</span><b>· Ko ovo vodi</b></div>
-      <h2>Jedan organizator.<br>Jedan arbitar.</h2>
-      <p class="section-lede">Dva imena, dva posla i zid između njih. Organizator obezbjeđuje prostor i skuplja fond. Arbitar odlučuje ko je pobijedio i duguje razloge.</p>
-      <div class="people-grid">
-        <div class="card person">
-          <img class="portrait" src="/assets/rinat.jpg" width="480" height="480"
-               alt="Rinat, organizator" loading="lazy" decoding="async">
-          <div class="person-role">Organizator</div>
-          <h3>Rinat</h3>
-          <p>Obezbjeđuje prostor, skuplja fond i javlja se na pozive s ove stranice. Ne sudi i ne glasa.</p>
-          <p class="person-contact"><a href="https://t.me/programyzer" rel="me">@programyzer</a></p>
-        </div>
-        <div class="card person">
-          <img class="portrait" src="/assets/andy.jpg" width="423" height="423"
-               alt="Andy, arbitar" loading="lazy" decoding="async">
-          <div class="person-role">Arbitar</div>
-          <h3>Andy</h3>
-          <p>Čita ono što je poslato i objavljuje odluku za svaki rad, s razlozima — prvo usklađenost, pa izdržljivost. I odbijanja se objavljuju.</p>
-        </div>
-      </div>
-      <p class="aph">Ko plaća, taj ne sudi.</p>
     </div>
   </section>
 

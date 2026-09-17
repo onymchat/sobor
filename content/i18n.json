@@ -26,13 +26,16 @@
     },
     "status": {
       "stamp": "Status · updated 17 September 2026",
-      "venue_tag": "Venue — Montelibero City",
-      "venue_p": "The week was always fixed. The room is now fixed too: Montelibero City, Bar.",
+      "venue_value": "Montelibero City",
+      "venue_label": "Venue · Bar, Montenegro",
+      "venue_p": "The week was always fixed. The room is now fixed too.",
       "venue_link": "Open in Maps →",
-      "arbiter_tag": "Arbiter — Andy",
-      "arbiter_p": "The fund is secured, so the arbiter is named, exactly as promised. He is not the organizer, and the organizer does not vote.",
-      "fund_tag": "Prize fund — €1,000 secured",
-      "fund_p": "€1,000 has cleared and is in hand. The target it counts towards is not published yet."
+      "arbiter_value": "Andy",
+      "arbiter_label": "Arbiter · named",
+      "arbiter_p": "Named because the fund is secured, which is the order this was promised in. He is not the organizer, and the organizer does not vote.",
+      "fund_value": "€1,000",
+      "fund_label": "Prize fund · secured",
+      "fund_p": "Cleared and in hand. The target it counts towards is not published yet."
     },
     "contest": {
       "eyebrow": "The contest",
@@ -206,13 +209,16 @@
     },
     "status": {
       "stamp": "Статус · обновлено 17 сентября 2026",
-      "venue_tag": "Площадка — Montelibero City",
-      "venue_p": "Неделя была назначена всегда. Теперь назначена и площадка: Montelibero City, Бар.",
+      "venue_value": "Montelibero City",
+      "venue_label": "Площадка · Бар, Черногория",
+      "venue_p": "Неделя была назначена всегда. Теперь назначена и площадка.",
       "venue_link": "Открыть на карте →",
-      "arbiter_tag": "Арбитр — Энди",
-      "arbiter_p": "Фонд собран, поэтому арбитр назван — ровно как было обещано. Он не организатор, а организатор не голосует.",
-      "fund_tag": "Призовой фонд — €1 000",
-      "fund_p": "€1 000 поступили и лежат на счету. Цель, к которой они идут, пока не опубликована."
+      "arbiter_value": "Энди",
+      "arbiter_label": "Арбитр · назван",
+      "arbiter_p": "Назван потому, что фонд собран, — в том порядке, в каком это было обещано. Он не организатор, а организатор не голосует.",
+      "fund_value": "€1 000",
+      "fund_label": "Призовой фонд · собран",
+      "fund_p": "Поступили и лежат на счету. Цель, к которой они идут, пока не опубликована."
     },
     "contest": {
       "eyebrow": "Конкурс",
@@ -387,13 +393,16 @@
     },
     "status": {
       "stamp": "Status · ažurirano 17. septembra 2026.",
-      "venue_tag": "Mjesto — Montelibero City",
-      "venue_p": "Sedmica je oduvijek bila fiksna. Sada je fiksan i prostor: Montelibero City, Bar.",
+      "venue_value": "Montelibero City",
+      "venue_label": "Mjesto · Bar, Crna Gora",
+      "venue_p": "Sedmica je oduvijek bila fiksna. Sada je fiksan i prostor.",
       "venue_link": "Otvori na mapi →",
-      "arbiter_tag": "Arbitar — Andy",
-      "arbiter_p": "Fond je obezbijeđen, pa je arbitar imenovan — tačno kako je obećano. On nije organizator, a organizator ne glasa.",
-      "fund_tag": "Nagradni fond — €1.000",
-      "fund_p": "€1.000 je stiglo i na računu je. Cilj kojem ide još nije objavljen."
+      "arbiter_value": "Andy",
+      "arbiter_label": "Arbitar · imenovan",
+      "arbiter_p": "Imenovan jer je fond obezbijeđen — tim redom je i obećano. On nije organizator, a organizator ne glasa.",
+      "fund_value": "€1.000",
+      "fund_label": "Nagradni fond · obezbijeđen",
+      "fund_p": "Stiglo i na računu je. Cilj kojem ide još nije objavljen."
     },
     "contest": {
       "eyebrow": "Takmičenje",

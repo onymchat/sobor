@@ -96,23 +96,53 @@
     </div>
   </section>
 
+  <section class="band" id="people">
+    <div class="wrap">
+      <div class="eyebrow"><span>02</span><b>· Who runs it</b></div>
+      <h2>One organizer.<br>One arbiter.</h2>
+      <p class="section-lede">Two names, two jobs, and a wall between them. The organizer books the room and raises the fund. The arbiter decides who won and owes reasons for it.</p>
+      <div class="people-grid">
+        <div class="person">
+          <img class="portrait" src="/assets/rinat.jpg" width="480" height="480"
+               alt="Rinat, the organizer" loading="lazy" decoding="async">
+          <div class="person-role">Organizer</div>
+          <h3>Rinat</h3>
+          <p>Books the room, raises the fund, and takes the calls on this page. Does not judge and does not vote.</p>
+          <p class="person-contact"><a href="https://t.me/programyzer" rel="me">@programyzer</a></p>
+        </div>
+        <div class="person">
+          <img class="portrait" src="/assets/andy.jpg" width="423" height="423"
+               alt="Andy, the arbiter" loading="lazy" decoding="async">
+          <div class="person-role">Arbiter</div>
+          <h3>Andy</h3>
+          <p>Reads what is submitted and publishes a verdict on each, with its reasons — conformance first, then durability. The refusals are published too.</p>
+        </div>
+      </div>
+      <p class="aph">The one who pays is not the one who judges.</p>
+    </div>
+  </section>
+
   <!-- The three questions that were open. A state flips in STATUS_STATE above and the
        paragraph gets rewritten in content/i18n.json. Do not soften these. -->
   <section class="status" id="status">
     <div class="wrap">
       <div class="status-stamp">Status · updated 17 September 2026</div>
       <div class="status-grid">
-        <div>
-          <span class="tag settled">Venue — Montelibero City</span>
-          <p>The week was always fixed. The room is now fixed too: Montelibero City, Bar. <a href="https://www.google.com/maps/place/Montelibero-City/@42.0326317,19.1635781,17z/data=!3m1!4b1!4m6!3m5!1s0x134e7345408cff31:0x4c5d231719f81f5e!8m2!3d42.0326317!4d19.166153">Open in Maps →</a></p>
+        <div class="fact">
+          <div class="fact-value">Montelibero City</div>
+          <div class="fact-label"><i class="dot settled"></i>Venue · Bar, Montenegro</div>
+          <p>The week was always fixed. The room is now fixed too.</p>
+          <p class="fact-link"><a href="https://www.google.com/maps/place/Montelibero-City/@42.0326317,19.1635781,17z/data=!3m1!4b1!4m6!3m5!1s0x134e7345408cff31:0x4c5d231719f81f5e!8m2!3d42.0326317!4d19.166153">Open in Maps →</a></p>
         </div>
-        <div>
-          <span class="tag settled">Arbiter — Andy</span>
-          <p>The fund is secured, so the arbiter is named, exactly as promised. He is not the organizer, and the organizer does not vote.</p>
+        <div class="fact">
+          <div class="fact-value">Andy</div>
+          <div class="fact-label"><i class="dot settled"></i>Arbiter · named</div>
+          <p>Named because the fund is secured, which is the order this was promised in. He is not the organizer, and the organizer does not vote.</p>
         </div>
-        <div>
-          <span class="tag settled">Prize fund — €1,000 secured</span>
-          <p>€1,000 has cleared and is in hand. The target it counts towards is not published yet.</p>
+        <div class="fact fact-warm">
+          <div class="fact-value">€1,000</div>
+          <div class="fact-label"><i class="dot settled"></i>Prize fund · secured</div>
+          <p>Cleared and in hand. The target it counts towards is not published yet.</p>
         </div>
       </div>
     </div>
@@ -120,7 +150,7 @@
 
   <section class="band" id="contest">
     <div class="wrap">
-      <div class="eyebrow"><span>02</span><b>· The contest</b></div>
+      <div class="eyebrow"><span>03</span><b>· The contest</b></div>
       <h2>Five days.<br>One seat each.</h2>
       <p class="section-lede">Teams of any size take one open role and implement it against its published contract. There is no track, no theme, and no pitch. A seat is filled when something runs and someone else can point their client at it.</p>
       <p class="after-grid" id="rules"><a href="#rules">Read the rules in full →</a></p>
@@ -129,7 +159,7 @@
 
   <section class="band" id="seats">
     <div class="wrap">
-      <div class="eyebrow"><span>03</span><b>· Seats</b></div>
+      <div class="eyebrow"><span>04</span><b>· Seats</b></div>
       <h2>Sixteen contracts.<br>Seven have code.</h2>
       <p class="section-lede">Status is reported as the Foundation reports it — a contract in the repository is not an implementation, and one replaceable default deployment is not a market. All sixteen are below.</p>
       <div class="grid-4 seats-grid">
@@ -222,7 +252,7 @@
 
   <section class="band">
     <div class="wrap">
-      <div class="eyebrow"><span>04</span><b>· The prize fund</b></div>
+      <div class="eyebrow"><span>05</span><b>· The prize fund</b></div>
       <div class="fund">
         <div class="fund-label">Secured, to date</div>
         <!-- The figure is content/i18n.json fund.amount. The meter beneath it only
@@ -237,32 +267,6 @@
         </div>
         <p class="aph">An unfunded prize is a rumour.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="band" id="people">
-    <div class="wrap">
-      <div class="eyebrow"><span>05</span><b>· Who runs it</b></div>
-      <h2>One organizer.<br>One arbiter.</h2>
-      <p class="section-lede">Two names, two jobs, and a wall between them. The organizer books the room and raises the fund. The arbiter decides who won and owes reasons for it.</p>
-      <div class="people-grid">
-        <div class="card person">
-          <img class="portrait" src="/assets/rinat.jpg" width="480" height="480"
-               alt="Rinat, the organizer" loading="lazy" decoding="async">
-          <div class="person-role">Organizer</div>
-          <h3>Rinat</h3>
-          <p>Books the room, raises the fund, and takes the calls on this page. Does not judge and does not vote.</p>
-          <p class="person-contact"><a href="https://t.me/programyzer" rel="me">@programyzer</a></p>
-        </div>
-        <div class="card person">
-          <img class="portrait" src="/assets/andy.jpg" width="423" height="423"
-               alt="Andy, the arbiter" loading="lazy" decoding="async">
-          <div class="person-role">Arbiter</div>
-          <h3>Andy</h3>
-          <p>Reads what is submitted and publishes a verdict on each, with its reasons — conformance first, then durability. The refusals are published too.</p>
-        </div>
-      </div>
-      <p class="aph">The one who pays is not the one who judges.</p>
     </div>
   </section>
 

@@ -59,7 +59,9 @@ deploy needs nothing.
 ## Portraits
 
 `assets/rinat.jpg` (480²) and `assets/andy.jpg` (423²) are the two faces in the
-**Who runs it** band. Both are cropped square on disk rather than by CSS, so the file
+**Who runs it** band, which sits second, directly under the booking calendar. They are
+drawn as circles with no card around them — a border and a fill would be two more lines
+on a page whose argument is that there is nothing between you and the thing. Both are cropped square on disk rather than by CSS, so the file
 that ships is the crop that shows; `object-fit: cover` is only there to defend against
 a replacement that is not square.
 
@@ -71,7 +73,7 @@ public page. Two things to know if you replace one:
   often lives *in* the EXIF that gets stripped, so an image that looked correct in
   Preview can land upside down once it is clean. Bake the rotation into the pixels
   (`sips -r 180`, say) rather than relying on the tag.
-- Keep them square and keep them small; they are drawn at 168px, 132px on mobile.
+- Keep them square and keep them small; they are drawn at 104px, 88px on mobile.
 
 ## Languages
 
@@ -184,8 +186,11 @@ The status band carries three facts and says exactly where each one stands. All 
 are now settled: the **venue** is Montelibero City, the **arbiter** is Andy and is not
 the organizer, and the **prize fund** is €1,000 secured. Do not soften these into
 "coming soon" or a countdown, and do not re-open one in words while the tag stays green.
-State lives in `STATUS_STATE` in `tools/build.py`, which picks `.tag.open` (red) or
-`.tag.settled` (green); the label and the paragraph are `content/i18n.json`.
+Each fact is set at display size with a quiet label under it, because the venue and the
+prize are what people scan the page for. State lives in `STATUS_STATE` in
+`tools/build.py` and colours the dot on the label — red `.dot`, green `.dot.settled`;
+the value, the label and the paragraph are `content/i18n.json` (`*_value`, `*_label`,
+`*_p`).
 
 The order matters and is a promise the page keeps: the arbiter is named **because** the
 fund is secured, which is what the fund section says it would take. Naming an arbiter
@@ -199,7 +204,7 @@ no share, and a bar sitting at 0% under a non-zero figure just reads as a bug.
 ## Booking
 
 Participants book a slot through **Cal.com** — event `enikeev/sobor`, embedded inline in
-the page's first section, directly under the hero. There is no form of our own, no database, and no account of
+the page's first section, directly under the hero, with the team band right beneath it. There is no form of our own, no database, and no account of
 ours anyone has to trust with anything beyond what Cal.com already holds.
 
 ```
