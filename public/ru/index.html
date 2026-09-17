@@ -78,23 +78,41 @@
     </div>
   </div>
 
-  <!-- The three open questions. When one settles, swap .tag.open for .tag.settled in
-       content/i18n.json's label and rewrite the paragraph. Do not soften these. -->
+  <section class="band" id="book">
+    <div class="wrap">
+      <div class="eyebrow"><span>01</span><b>· Запись</b></div>
+      <h2>Один разговор.<br>Без списка гостей.</h2>
+      <p class="section-lede">Выберите время и поговорите с Ринатом до начала недели: кто вы, какое место вам интересно и стоит ли вам приезжать. Токен не нужен, взноса нет, очереди, в которой вас ранжируют, тоже нет.</p>
+      <!-- assets/cal.js mounts the Cal.com inline embed here and reads the event off
+           these data attributes, so content/build.py stays the only place the link is
+           written. The link underneath is not a fallback that JS removes: it stays, so
+           the booking page is reachable with the embed blocked or failing to load. -->
+      <div class="cal-mount" id="cal-mount"
+           data-cal-link="enikeev/sobor" data-cal-namespace="sobor"></div>
+      <p class="after-grid">Форма просит телефон. Подойдёт любой номер.</p>
+      <p class="after-grid"><a href="https://cal.com/enikeev/sobor">Открыть страницу записи →</a></p>
+      <p class="after-grid">Форма работает на Cal.com. Выбрав время, вы передаёте им имя, почту и то, что вписали в поле телефона, а звонок попадает в наш календарь — больше ничего не записывается.</p>
+      <p class="aph book-aph">Разговор — это не отбор.</p>
+    </div>
+  </section>
+
+  <!-- The three questions that were open. A state flips in STATUS_STATE above and the
+       paragraph gets rewritten in content/i18n.json. Do not soften these. -->
   <section class="status" id="status">
     <div class="wrap">
-      <div class="status-stamp">Открытые вопросы · обновлено 11 сентября 2026</div>
+      <div class="status-stamp">Статус · обновлено 17 сентября 2026</div>
       <div class="status-grid">
         <div>
-          <span class="tag open">Площадка — не определена</span>
-          <p>Неделя назначена. Помещение — нет. Адрес опубликуем в тот день, когда подпишем договор.</p>
+          <span class="tag settled">Площадка — Montelibero City</span>
+          <p>Неделя была назначена всегда. Теперь назначена и площадка: Montelibero City, Бар. <a href="https://www.google.com/maps/place/Montelibero-City/@42.0326317,19.1635781,17z/data=!3m1!4b1!4m6!3m5!1s0x134e7345408cff31:0x4c5d231719f81f5e!8m2!3d42.0326317!4d19.166153">Открыть на карте →</a></p>
         </div>
         <div>
-          <span class="tag open">Арбитр — не назван</span>
-          <p>Арбитр — не организатор. Его назовут, когда призовой фонд будет обеспечен, — и не раньше.</p>
+          <span class="tag settled">Арбитр — Энди</span>
+          <p>Фонд собран, поэтому арбитр назван — ровно как было обещано. Он не организатор, а организатор не голосует.</p>
         </div>
         <div>
-          <span class="tag open">Призовой фонд — обеспечено €0</span>
-          <p>Счётчик ниже показывает то, что действительно получено. Обещание не считается, пока деньги не пришли.</p>
+          <span class="tag settled">Призовой фонд — €1 000</span>
+          <p>€1 000 поступили и лежат на счету. Цель, к которой они идут, пока не опубликована.</p>
         </div>
       </div>
     </div>
@@ -102,7 +120,7 @@
 
   <section class="band" id="contest">
     <div class="wrap">
-      <div class="eyebrow"><span>01</span><b>· Конкурс</b></div>
+      <div class="eyebrow"><span>02</span><b>· Конкурс</b></div>
       <h2>Пять дней.<br>По одному месту.</h2>
       <p class="section-lede">Команда любого размера берёт одну открытую роль и реализует её по опубликованному контракту. Ни треков, ни темы, ни питчей. Место занято, когда что-то работает и кто-то посторонний может направить туда свой клиент.</p>
       <p class="after-grid" id="rules"><a href="#rules">Читать правила целиком →</a></p>
@@ -111,7 +129,7 @@
 
   <section class="band" id="seats">
     <div class="wrap">
-      <div class="eyebrow"><span>02</span><b>· Места</b></div>
+      <div class="eyebrow"><span>03</span><b>· Места</b></div>
       <h2>Шестнадцать контрактов.<br>У семи есть код.</h2>
       <p class="section-lede">Статус указан так, как его указывает Фонд: контракт в репозитории — ещё не реализация, а один заменяемый вариант по умолчанию — ещё не рынок. Все шестнадцать — ниже.</p>
       <div class="grid-4 seats-grid">
@@ -201,41 +219,50 @@
     </div>
   </section>
 
-  <section class="band" id="book">
-    <div class="wrap">
-      <div class="eyebrow"><span>03</span><b>· Запись</b></div>
-      <h2>Один разговор.<br>Без списка гостей.</h2>
-      <p class="section-lede">Выберите время и поговорите с Ринатом до начала недели: кто вы, какое место вам интересно и стоит ли вам приезжать. Токен не нужен, взноса нет, очереди, в которой вас ранжируют, тоже нет.</p>
-      <!-- assets/cal.js mounts the Cal.com inline embed here and reads the event off
-           these data attributes, so content/build.py stays the only place the link is
-           written. The link underneath is not a fallback that JS removes: it stays, so
-           the booking page is reachable with the embed blocked or failing to load. -->
-      <div class="cal-mount" id="cal-mount"
-           data-cal-link="enikeev/sobor" data-cal-namespace="sobor"></div>
-      <p class="after-grid">Форма просит телефон. Подойдёт любой номер.</p>
-      <p class="after-grid"><a href="https://cal.com/enikeev/sobor">Открыть страницу записи →</a></p>
-      <p class="after-grid">Форма работает на Cal.com. Выбрав время, вы передаёте им имя, почту и то, что вписали в поле телефона, а звонок попадает в наш календарь — больше ничего не записывается.</p>
-      <p class="aph book-aph">Разговор — это не отбор.</p>
-    </div>
-  </section>
 
   <section class="band">
     <div class="wrap">
       <div class="eyebrow"><span>04</span><b>· Призовой фонд</b></div>
       <div class="fund">
         <div class="fund-label">Обеспечено на сегодня</div>
-        <!-- When money clears: replace the amount, change the caption, and set --so-meter. -->
+        <!-- The figure is content/i18n.json fund.amount. The meter beneath it only
+             appears once FUND_TARGET is set; see meter() above. -->
         <div class="fund-figure">
-          <b>€0</b>
-          <span>из цели, которая ещё не объявлена</span>
+          <b>€1 000</b>
+          <span>из цели, которая пока не опубликована</span>
         </div>
-        <div class="meter" role="img" aria-label="Призовой фонд: пока ничего не обеспечено"><i></i></div>
         <div class="fund-cols">
-          <p>Ничего не обещано, потому что ничего не внесено. Каждый поступивший платёж будет указан здесь с датой и суммой; обещание, которое не дошло до счёта, — не число на этой странице.</p>
-          <p>Арбитра назовут, когда фонд будет обеспечен, и ни днём раньше. Арбитр — не организатор, а организатор не голосует.</p>
+          <p>Обещано только то, что поступило. €1 000 на счету; обещание, которое не поступило, — не цифра на этой странице.</p>
+          <p>Арбитр называется, когда фонд собран, и ни днём раньше. Он собран — и арбитр назван: Энди. Арбитр не организатор, а организатор не голосует.</p>
         </div>
         <p class="aph">Необеспеченный приз — это слух.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="band" id="people">
+    <div class="wrap">
+      <div class="eyebrow"><span>05</span><b>· Кто это делает</b></div>
+      <h2>Один организатор.<br>Один арбитр.</h2>
+      <p class="section-lede">Два имени, две работы и стена между ними. Организатор снимает площадку и собирает фонд. Арбитр решает, кто победил, и обязан объяснить почему.</p>
+      <div class="people-grid">
+        <div class="card person">
+          <img class="portrait" src="/assets/rinat.jpg" width="480" height="480"
+               alt="Ринат, организатор" loading="lazy" decoding="async">
+          <div class="person-role">Организатор</div>
+          <h3>Ринат</h3>
+          <p>Снимает площадку, собирает фонд и отвечает на звонки с этой страницы. Не судит и не голосует.</p>
+          <p class="person-contact"><a href="https://t.me/programyzer" rel="me">@programyzer</a></p>
+        </div>
+        <div class="card person">
+          <img class="portrait" src="/assets/andy.jpg" width="423" height="423"
+               alt="Энди, арбитр" loading="lazy" decoding="async">
+          <div class="person-role">Арбитр</div>
+          <h3>Энди</h3>
+          <p>Читает присланное и публикует решение по каждой работе с обоснованием: сначала соответствие контракту, потом живучесть. Отказы публикуются тоже.</p>
+        </div>
+      </div>
+      <p class="aph">Кто платит — тот не судит.</p>
     </div>
   </section>
 
@@ -246,7 +273,7 @@
         <a class="btn btn-primary" href="#book">Забронировать место</a>
         <a href="#rules">Читать правила →</a>
       </div>
-      <p class="when">21–25 сентября 2026 · Бар, Черногория · площадка будет объявлена</p>
+      <p class="when">21–25 сентября 2026 · Montelibero City, Бар, Черногория</p>
     </div>
   </section>
 
@@ -263,6 +290,7 @@
         <a href="https://onym.app">onym.app</a>
         <a href="https://onym.foundation">onym.foundation</a>
         <a href="https://bsn.expert">bsn.expert</a>
+        <a href="https://t.me/programyzer" rel="me">@programyzer</a>
       </div>
       <nav class="lang" aria-label="Язык">
         <a class="pick" href="/" lang="en" hreflang="en" data-lang="en" title="English">EN</a>

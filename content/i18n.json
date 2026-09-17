@@ -25,13 +25,14 @@
       "rules": "Read the rules →"
     },
     "status": {
-      "stamp": "Open questions · updated 11 September 2026",
-      "venue_tag": "Venue — undetermined",
-      "venue_p": "The week is fixed. The room is not. We publish the address the day we sign for one.",
-      "arbiter_tag": "Arbiter — unnamed",
-      "arbiter_p": "The arbiter is not the organizer. They are named when the prize fund is secured — not before.",
-      "fund_tag": "Prize fund — €0 secured",
-      "fund_p": "The meter below reads what is actually in hand. No pledge is counted until it clears."
+      "stamp": "Status · updated 17 September 2026",
+      "venue_tag": "Venue — Montelibero City",
+      "venue_p": "The week was always fixed. The room is now fixed too: Montelibero City, Bar.",
+      "venue_link": "Open in Maps →",
+      "arbiter_tag": "Arbiter — Andy",
+      "arbiter_p": "The fund is secured, so the arbiter is named, exactly as promised. He is not the organizer, and the organizer does not vote.",
+      "fund_tag": "Prize fund — €1,000 secured",
+      "fund_p": "€1,000 has cleared and is in hand. The target it counts towards is not published yet."
     },
     "contest": {
       "eyebrow": "The contest",
@@ -139,17 +140,32 @@
     "fund": {
       "eyebrow": "The prize fund",
       "label": "Secured, to date",
-      "amount": "€0",
+      "amount": "€1,000",
       "caption": "of a target not yet published",
-      "meter_aria": "Prize fund: nothing secured yet",
-      "p1": "Nothing is pledged, so nothing is promised. Every payment that clears is listed here with its date and its amount; a pledge that has not cleared is not a number on this page.",
-      "p2": "The arbiter is named once the fund is secured, and not a day earlier. The arbiter is not the organizer, and the organizer does not vote.",
+      "meter_aria": "Prize fund: €1,000 secured",
+      "p1": "Only what has cleared is promised. €1,000 is in hand; a pledge that has not cleared is not a number on this page.",
+      "p2": "The arbiter is named once the fund is secured, and not a day earlier. It is, and he is — Andy. The arbiter is not the organizer, and the organizer does not vote.",
       "a": "An unfunded prize is a rumour."
+    },
+    "people": {
+      "eyebrow": "Who runs it",
+      "h2a": "One organizer.",
+      "h2b": "One arbiter.",
+      "lede": "Two names, two jobs, and a wall between them. The organizer books the room and raises the fund. The arbiter decides who won and owes reasons for it.",
+      "org_role": "Organizer",
+      "org_name": "Rinat",
+      "org_p": "Books the room, raises the fund, and takes the calls on this page. Does not judge and does not vote.",
+      "org_alt": "Rinat, the organizer",
+      "arb_role": "Arbiter",
+      "arb_name": "Andy",
+      "arb_p": "Reads what is submitted and publishes a verdict on each, with its reasons — conformance first, then durability. The refusals are published too.",
+      "arb_alt": "Andy, the arbiter",
+      "aph": "The one who pays is not the one who judges."
     },
     "closing": {
       "h2a": "Bring a laptop.",
       "h2b": "Homestead the seat.",
-      "when": "21–25 September 2026 · Bar, Montenegro · venue to follow"
+      "when": "21–25 September 2026 · Montelibero City, Bar, Montenegro"
     },
     "footer": {
       "copy": "© 2026 · sobor.io · an Onym event",
@@ -189,13 +205,14 @@
       "h1b_lang": "en"
     },
     "status": {
-      "stamp": "Открытые вопросы · обновлено 11 сентября 2026",
-      "venue_tag": "Площадка — не определена",
-      "venue_p": "Неделя назначена. Помещение — нет. Адрес опубликуем в тот день, когда подпишем договор.",
-      "arbiter_tag": "Арбитр — не назван",
-      "arbiter_p": "Арбитр — не организатор. Его назовут, когда призовой фонд будет обеспечен, — и не раньше.",
-      "fund_tag": "Призовой фонд — обеспечено €0",
-      "fund_p": "Счётчик ниже показывает то, что действительно получено. Обещание не считается, пока деньги не пришли."
+      "stamp": "Статус · обновлено 17 сентября 2026",
+      "venue_tag": "Площадка — Montelibero City",
+      "venue_p": "Неделя была назначена всегда. Теперь назначена и площадка: Montelibero City, Бар.",
+      "venue_link": "Открыть на карте →",
+      "arbiter_tag": "Арбитр — Энди",
+      "arbiter_p": "Фонд собран, поэтому арбитр назван — ровно как было обещано. Он не организатор, а организатор не голосует.",
+      "fund_tag": "Призовой фонд — €1 000",
+      "fund_p": "€1 000 поступили и лежат на счету. Цель, к которой они идут, пока не опубликована."
     },
     "contest": {
       "eyebrow": "Конкурс",
@@ -303,17 +320,32 @@
     "fund": {
       "eyebrow": "Призовой фонд",
       "label": "Обеспечено на сегодня",
-      "amount": "€0",
-      "caption": "из цели, которая ещё не объявлена",
-      "meter_aria": "Призовой фонд: пока ничего не обеспечено",
-      "p1": "Ничего не обещано, потому что ничего не внесено. Каждый поступивший платёж будет указан здесь с датой и суммой; обещание, которое не дошло до счёта, — не число на этой странице.",
-      "p2": "Арбитра назовут, когда фонд будет обеспечен, и ни днём раньше. Арбитр — не организатор, а организатор не голосует.",
+      "amount": "€1 000",
+      "caption": "из цели, которая пока не опубликована",
+      "meter_aria": "Призовой фонд: собрано €1 000",
+      "p1": "Обещано только то, что поступило. €1 000 на счету; обещание, которое не поступило, — не цифра на этой странице.",
+      "p2": "Арбитр называется, когда фонд собран, и ни днём раньше. Он собран — и арбитр назван: Энди. Арбитр не организатор, а организатор не голосует.",
       "a": "Необеспеченный приз — это слух."
+    },
+    "people": {
+      "eyebrow": "Кто это делает",
+      "h2a": "Один организатор.",
+      "h2b": "Один арбитр.",
+      "lede": "Два имени, две работы и стена между ними. Организатор снимает площадку и собирает фонд. Арбитр решает, кто победил, и обязан объяснить почему.",
+      "org_role": "Организатор",
+      "org_name": "Ринат",
+      "org_p": "Снимает площадку, собирает фонд и отвечает на звонки с этой страницы. Не судит и не голосует.",
+      "org_alt": "Ринат, организатор",
+      "arb_role": "Арбитр",
+      "arb_name": "Энди",
+      "arb_p": "Читает присланное и публикует решение по каждой работе с обоснованием: сначала соответствие контракту, потом живучесть. Отказы публикуются тоже.",
+      "arb_alt": "Энди, арбитр",
+      "aph": "Кто платит — тот не судит."
     },
     "closing": {
       "h2a": "Возьми ноутбук.",
       "h2b": "Построй место.",
-      "when": "21–25 сентября 2026 · Бар, Черногория · площадка будет объявлена",
+      "when": "21–25 сентября 2026 · Montelibero City, Бар, Черногория",
       "h2c": "Homestead it!",
       "h2c_lang": "en"
     },
@@ -354,13 +386,14 @@
       "rules": "Pročitaj pravila →"
     },
     "status": {
-      "stamp": "Otvorena pitanja · ažurirano 11. septembra 2026.",
-      "venue_tag": "Lokacija — nije određena",
-      "venue_p": "Sedmica je određena. Prostor nije. Adresu objavljujemo onog dana kad potpišemo ugovor.",
-      "arbiter_tag": "Arbitar — nije imenovan",
-      "arbiter_p": "Arbitar nije organizator. Biće imenovan kad nagradni fond bude obezbijeđen — ne prije.",
-      "fund_tag": "Nagradni fond — obezbijeđeno €0",
-      "fund_p": "Brojač ispod pokazuje ono što je stvarno primljeno. Obećanje se ne računa dok sredstva ne stignu."
+      "stamp": "Status · ažurirano 17. septembra 2026.",
+      "venue_tag": "Mjesto — Montelibero City",
+      "venue_p": "Sedmica je oduvijek bila fiksna. Sada je fiksan i prostor: Montelibero City, Bar.",
+      "venue_link": "Otvori na mapi →",
+      "arbiter_tag": "Arbitar — Andy",
+      "arbiter_p": "Fond je obezbijeđen, pa je arbitar imenovan — tačno kako je obećano. On nije organizator, a organizator ne glasa.",
+      "fund_tag": "Nagradni fond — €1.000",
+      "fund_p": "€1.000 je stiglo i na računu je. Cilj kojem ide još nije objavljen."
     },
     "contest": {
       "eyebrow": "Takmičenje",
@@ -468,17 +501,32 @@
     "fund": {
       "eyebrow": "Nagradni fond",
       "label": "Obezbijeđeno do danas",
-      "amount": "€0",
+      "amount": "€1.000",
       "caption": "od cilja koji još nije objavljen",
-      "meter_aria": "Nagradni fond: još ništa nije obezbijeđeno",
-      "p1": "Ništa nije obećano, jer ništa nije uplaćeno. Svaka uplata koja stigne biće navedena ovdje s datumom i iznosom; obećanje koje nije stiglo na račun nije broj na ovoj stranici.",
-      "p2": "Arbitar se imenuje kad fond bude obezbijeđen, i nijedan dan ranije. Arbitar nije organizator, a organizator ne glasa.",
+      "meter_aria": "Nagradni fond: obezbijeđeno €1.000",
+      "p1": "Obećava se samo ono što je stiglo. €1.000 je tu; obećanje koje nije stiglo nije broj na ovoj stranici.",
+      "p2": "Arbitar se imenuje kad je fond obezbijeđen, ni dan ranije. Jeste — i imenovan je: Andy. Arbitar nije organizator, a organizator ne glasa.",
       "a": "Nepokrivena nagrada je glasina."
+    },
+    "people": {
+      "eyebrow": "Ko ovo vodi",
+      "h2a": "Jedan organizator.",
+      "h2b": "Jedan arbitar.",
+      "lede": "Dva imena, dva posla i zid između njih. Organizator obezbjeđuje prostor i skuplja fond. Arbitar odlučuje ko je pobijedio i duguje razloge.",
+      "org_role": "Organizator",
+      "org_name": "Rinat",
+      "org_p": "Obezbjeđuje prostor, skuplja fond i javlja se na pozive s ove stranice. Ne sudi i ne glasa.",
+      "org_alt": "Rinat, organizator",
+      "arb_role": "Arbitar",
+      "arb_name": "Andy",
+      "arb_p": "Čita ono što je poslato i objavljuje odluku za svaki rad, s razlozima — prvo usklađenost, pa izdržljivost. I odbijanja se objavljuju.",
+      "arb_alt": "Andy, arbitar",
+      "aph": "Ko plaća, taj ne sudi."
     },
     "closing": {
       "h2a": "Ponesi laptop.",
       "h2b": "Zauzmi mjesto.",
-      "when": "21–25. septembra 2026. · Bar, Crna Gora · lokacija slijedi"
+      "when": "21–25. septembra 2026. · Montelibero City, Bar, Crna Gora"
     },
     "footer": {
       "copy": "© 2026 · sobor.io · Onym događaj",

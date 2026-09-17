@@ -78,23 +78,41 @@
     </div>
   </div>
 
-  <!-- The three open questions. When one settles, swap .tag.open for .tag.settled in
-       content/i18n.json's label and rewrite the paragraph. Do not soften these. -->
+  <section class="band" id="book">
+    <div class="wrap">
+      <div class="eyebrow"><span>01</span><b>· Prijava</b></div>
+      <h2>Jedan razgovor.<br>Bez spiska gostiju.</h2>
+      <p class="section-lede">Izaberi vrijeme i popričaj s Rinatom prije nego sedmica počne — ko si, koje te mjesto zanima i vrijedi li ti dolaziti. Bez tokena, bez naknade i bez liste čekanja na kojoj te rangiraju.</p>
+      <!-- assets/cal.js mounts the Cal.com inline embed here and reads the event off
+           these data attributes, so content/build.py stays the only place the link is
+           written. The link underneath is not a fallback that JS removes: it stays, so
+           the booking page is reachable with the embed blocked or failing to load. -->
+      <div class="cal-mount" id="cal-mount"
+           data-cal-link="enikeev/sobor" data-cal-namespace="sobor"></div>
+      <p class="after-grid">Formular traži broj telefona. Bilo koji broj je u redu.</p>
+      <p class="after-grid"><a href="https://cal.com/enikeev/sobor">Otvori stranicu za prijavu →</a></p>
+      <p class="after-grid">Formular drži Cal.com. Kad izabereš termin, njima idu tvoje ime, e-adresa i ono što upišeš u polje za telefon, a poziv ide u naš kalendar — ništa drugo se ne bilježi.</p>
+      <p class="aph book-aph">Razgovor nije selekcija.</p>
+    </div>
+  </section>
+
+  <!-- The three questions that were open. A state flips in STATUS_STATE above and the
+       paragraph gets rewritten in content/i18n.json. Do not soften these. -->
   <section class="status" id="status">
     <div class="wrap">
-      <div class="status-stamp">Otvorena pitanja · ažurirano 11. septembra 2026.</div>
+      <div class="status-stamp">Status · ažurirano 17. septembra 2026.</div>
       <div class="status-grid">
         <div>
-          <span class="tag open">Lokacija — nije određena</span>
-          <p>Sedmica je određena. Prostor nije. Adresu objavljujemo onog dana kad potpišemo ugovor.</p>
+          <span class="tag settled">Mjesto — Montelibero City</span>
+          <p>Sedmica je oduvijek bila fiksna. Sada je fiksan i prostor: Montelibero City, Bar. <a href="https://www.google.com/maps/place/Montelibero-City/@42.0326317,19.1635781,17z/data=!3m1!4b1!4m6!3m5!1s0x134e7345408cff31:0x4c5d231719f81f5e!8m2!3d42.0326317!4d19.166153">Otvori na mapi →</a></p>
         </div>
         <div>
-          <span class="tag open">Arbitar — nije imenovan</span>
-          <p>Arbitar nije organizator. Biće imenovan kad nagradni fond bude obezbijeđen — ne prije.</p>
+          <span class="tag settled">Arbitar — Andy</span>
+          <p>Fond je obezbijeđen, pa je arbitar imenovan — tačno kako je obećano. On nije organizator, a organizator ne glasa.</p>
         </div>
         <div>
-          <span class="tag open">Nagradni fond — obezbijeđeno €0</span>
-          <p>Brojač ispod pokazuje ono što je stvarno primljeno. Obećanje se ne računa dok sredstva ne stignu.</p>
+          <span class="tag settled">Nagradni fond — €1.000</span>
+          <p>€1.000 je stiglo i na računu je. Cilj kojem ide još nije objavljen.</p>
         </div>
       </div>
     </div>
@@ -102,7 +120,7 @@
 
   <section class="band" id="contest">
     <div class="wrap">
-      <div class="eyebrow"><span>01</span><b>· Takmičenje</b></div>
+      <div class="eyebrow"><span>02</span><b>· Takmičenje</b></div>
       <h2>Pet dana.<br>Po jedno mjesto.</h2>
       <p class="section-lede">Tim bilo koje veličine uzima jednu otvorenu ulogu i implementira je prema objavljenom ugovoru. Nema kategorija, nema teme, nema prezentacija. Mjesto je zauzeto kad nešto radi i kad neko sa strane može usmjeriti svoj klijent na njega.</p>
       <p class="after-grid" id="rules"><a href="#rules">Pročitaj pravila u cjelini →</a></p>
@@ -111,7 +129,7 @@
 
   <section class="band" id="seats">
     <div class="wrap">
-      <div class="eyebrow"><span>02</span><b>· Mjesta</b></div>
+      <div class="eyebrow"><span>03</span><b>· Mjesta</b></div>
       <h2>Šesnaest ugovora.<br>Sedam ima kod.</h2>
       <p class="section-lede">Status je naveden onako kako ga navodi Fondacija: ugovor u repozitorijumu nije implementacija, a jedna zamjenjiva podrazumijevana instalacija nije tržište. Svih šesnaest je ispod.</p>
       <div class="grid-4 seats-grid">
@@ -201,41 +219,50 @@
     </div>
   </section>
 
-  <section class="band" id="book">
-    <div class="wrap">
-      <div class="eyebrow"><span>03</span><b>· Prijava</b></div>
-      <h2>Jedan razgovor.<br>Bez spiska gostiju.</h2>
-      <p class="section-lede">Izaberi vrijeme i popričaj s Rinatom prije nego sedmica počne — ko si, koje te mjesto zanima i vrijedi li ti dolaziti. Bez tokena, bez naknade i bez liste čekanja na kojoj te rangiraju.</p>
-      <!-- assets/cal.js mounts the Cal.com inline embed here and reads the event off
-           these data attributes, so content/build.py stays the only place the link is
-           written. The link underneath is not a fallback that JS removes: it stays, so
-           the booking page is reachable with the embed blocked or failing to load. -->
-      <div class="cal-mount" id="cal-mount"
-           data-cal-link="enikeev/sobor" data-cal-namespace="sobor"></div>
-      <p class="after-grid">Formular traži broj telefona. Bilo koji broj je u redu.</p>
-      <p class="after-grid"><a href="https://cal.com/enikeev/sobor">Otvori stranicu za prijavu →</a></p>
-      <p class="after-grid">Formular drži Cal.com. Kad izabereš termin, njima idu tvoje ime, e-adresa i ono što upišeš u polje za telefon, a poziv ide u naš kalendar — ništa drugo se ne bilježi.</p>
-      <p class="aph book-aph">Razgovor nije selekcija.</p>
-    </div>
-  </section>
 
   <section class="band">
     <div class="wrap">
       <div class="eyebrow"><span>04</span><b>· Nagradni fond</b></div>
       <div class="fund">
         <div class="fund-label">Obezbijeđeno do danas</div>
-        <!-- When money clears: replace the amount, change the caption, and set --so-meter. -->
+        <!-- The figure is content/i18n.json fund.amount. The meter beneath it only
+             appears once FUND_TARGET is set; see meter() above. -->
         <div class="fund-figure">
-          <b>€0</b>
+          <b>€1.000</b>
           <span>od cilja koji još nije objavljen</span>
         </div>
-        <div class="meter" role="img" aria-label="Nagradni fond: još ništa nije obezbijeđeno"><i></i></div>
         <div class="fund-cols">
-          <p>Ništa nije obećano, jer ništa nije uplaćeno. Svaka uplata koja stigne biće navedena ovdje s datumom i iznosom; obećanje koje nije stiglo na račun nije broj na ovoj stranici.</p>
-          <p>Arbitar se imenuje kad fond bude obezbijeđen, i nijedan dan ranije. Arbitar nije organizator, a organizator ne glasa.</p>
+          <p>Obećava se samo ono što je stiglo. €1.000 je tu; obećanje koje nije stiglo nije broj na ovoj stranici.</p>
+          <p>Arbitar se imenuje kad je fond obezbijeđen, ni dan ranije. Jeste — i imenovan je: Andy. Arbitar nije organizator, a organizator ne glasa.</p>
         </div>
         <p class="aph">Nepokrivena nagrada je glasina.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="band" id="people">
+    <div class="wrap">
+      <div class="eyebrow"><span>05</span><b>· Ko ovo vodi</b></div>
+      <h2>Jedan organizator.<br>Jedan arbitar.</h2>
+      <p class="section-lede">Dva imena, dva posla i zid između njih. Organizator obezbjeđuje prostor i skuplja fond. Arbitar odlučuje ko je pobijedio i duguje razloge.</p>
+      <div class="people-grid">
+        <div class="card person">
+          <img class="portrait" src="/assets/rinat.jpg" width="480" height="480"
+               alt="Rinat, organizator" loading="lazy" decoding="async">
+          <div class="person-role">Organizator</div>
+          <h3>Rinat</h3>
+          <p>Obezbjeđuje prostor, skuplja fond i javlja se na pozive s ove stranice. Ne sudi i ne glasa.</p>
+          <p class="person-contact"><a href="https://t.me/programyzer" rel="me">@programyzer</a></p>
+        </div>
+        <div class="card person">
+          <img class="portrait" src="/assets/andy.jpg" width="423" height="423"
+               alt="Andy, arbitar" loading="lazy" decoding="async">
+          <div class="person-role">Arbitar</div>
+          <h3>Andy</h3>
+          <p>Čita ono što je poslato i objavljuje odluku za svaki rad, s razlozima — prvo usklađenost, pa izdržljivost. I odbijanja se objavljuju.</p>
+        </div>
+      </div>
+      <p class="aph">Ko plaća, taj ne sudi.</p>
     </div>
   </section>
 
@@ -246,7 +273,7 @@
         <a class="btn btn-primary" href="#book">Rezerviši mjesto</a>
         <a href="#rules">Pročitaj pravila →</a>
       </div>
-      <p class="when">21–25. septembra 2026. · Bar, Crna Gora · lokacija slijedi</p>
+      <p class="when">21–25. septembra 2026. · Montelibero City, Bar, Crna Gora</p>
     </div>
   </section>
 
@@ -263,6 +290,7 @@
         <a href="https://onym.app">onym.app</a>
         <a href="https://onym.foundation">onym.foundation</a>
         <a href="https://bsn.expert">bsn.expert</a>
+        <a href="https://t.me/programyzer" rel="me">@programyzer</a>
       </div>
       <nav class="lang" aria-label="Jezik">
         <a class="pick" href="/" lang="en" hreflang="en" data-lang="en" title="English">EN</a>

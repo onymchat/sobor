@@ -24,6 +24,7 @@ responsive document rather than two.
 | `public/assets/theme.js` | Pre-paint theme. Blocking `<script src>` in `<head>`. |
 | `public/assets/lang.js` | Pre-paint locale routing. Same rule: blocking, never deferred. |
 | `public/favicon.*`, `apple-touch-icon.png`, `icon-512.png` | **Generated** by `tools/favicon.py`. |
+| `public/assets/{rinat,andy}.jpg` | The two portraits. Square, EXIF stripped. |
 | `design-prompt.md` | The brief the canvas was drafted from. |
 | `.design/Sobor Site.dc.html` | The canvas source, decoded, for reference. |
 
@@ -54,6 +55,23 @@ the larger sizes are faithful.
 
 Pillow is needed only to regenerate. The output is committed, so a normal checkout and
 deploy needs nothing.
+
+## Portraits
+
+`assets/rinat.jpg` (480²) and `assets/andy.jpg` (423²) are the two faces in the
+**Who runs it** band. Both are cropped square on disk rather than by CSS, so the file
+that ships is the crop that shows; `object-fit: cover` is only there to defend against
+a replacement that is not square.
+
+Both were stripped of EXIF, XMP and Photoshop blocks before committing — a phone photo
+carries a camera model, a timestamp and sometimes GPS, and none of that belongs on a
+public page. Two things to know if you replace one:
+
+- **Strip the metadata, then check the picture is still the right way up.** Orientation
+  often lives *in* the EXIF that gets stripped, so an image that looked correct in
+  Preview can land upside down once it is clean. Bake the rotation into the pixels
+  (`sips -r 180`, say) rather than relying on the tag.
+- Keep them square and keep them small; they are drawn at 168px, 132px on mobile.
 
 ## Languages
 
@@ -162,19 +180,26 @@ Zone:DNS:Edit and Zone:Zone:Read on `sobor.io` only).
 
 ## Content rules — keep these
 
-Three facts are unsettled and the page says so, in its most prominent band:
-the **venue** is undetermined, the **arbiter** is unnamed and is not the organizer,
-and the **prize fund** is €0 secured. Do not soften these into "coming soon" or a
-countdown. When one settles, swap `.tag.open` for `.tag.settled`, change the label,
-and replace the paragraph — the switch points are marked with HTML comments.
+The status band carries three facts and says exactly where each one stands. All three
+are now settled: the **venue** is Montelibero City, the **arbiter** is Andy and is not
+the organizer, and the **prize fund** is €1,000 secured. Do not soften these into
+"coming soon" or a countdown, and do not re-open one in words while the tag stays green.
+State lives in `STATUS_STATE` in `tools/build.py`, which picks `.tag.open` (red) or
+`.tag.settled` (green); the label and the paragraph are `content/i18n.json`.
 
-The prize meter reads what has actually cleared. A pledge that has not cleared is not
-a number on that page.
+The order matters and is a promise the page keeps: the arbiter is named **because** the
+fund is secured, which is what the fund section says it would take. Naming an arbiter
+over an empty fund would make that paragraph a lie.
+
+The prize figure reads what has actually cleared. A pledge that has not cleared is not
+a number on that page. The meter beneath it draws a *share of a target*, so it renders
+only once `FUND_TARGET` is set in `tools/build.py` — with no published target there is
+no share, and a bar sitting at 0% under a non-zero figure just reads as a bug.
 
 ## Booking
 
 Participants book a slot through **Cal.com** — event `enikeev/sobor`, embedded inline in
-the page's third section. There is no form of our own, no database, and no account of
+the page's first section, directly under the hero. There is no form of our own, no database, and no account of
 ours anyone has to trust with anything beyond what Cal.com already holds.
 
 ```
@@ -220,7 +245,8 @@ to carry `'self'` alone.
 `script-src` does **not** have `'unsafe-inline'` and must not get it — that is the
 directive that matters, and the no-inline-`<script>` rule for the generated pages still
 holds. The inline `style=` attribute rule also still holds: nothing in `index.html`
-carries one, and the fund meter still takes its width from `--so-meter`.
+carries one, and the fund meter still takes its width from `--so-meter` in the
+stylesheet rather than from a `style=` attribute the generator writes.
 
 If the concession is ever unacceptable, the fix is to drop the inline embed and keep only
 the link to `cal.com/enikeev/sobor`, which needs no CSP changes at all.

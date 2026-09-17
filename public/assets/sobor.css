@@ -345,6 +345,26 @@ a.pick.is-on:hover { color: var(--on-surface); }
 .after-grid { margin-top: 40px; font-size: 15px; color: var(--on-text2); }
 .after-grid + .after-grid { margin-top: 14px; color: var(--on-text3); line-height: 1.45; max-width: 62ch; }
 
+/* ---------- who runs it ---------- */
+/* Two portrait cards. The images are square and cropped that way on disk, so
+   object-fit only has to defend against a future replacement that is not. */
+.people-grid { margin-top: 56px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.card.person { display: flex; flex-direction: column; }
+.portrait {
+  display: block; width: 168px; height: 168px; max-width: 100%;
+  object-fit: cover; object-position: center top;
+  border-radius: var(--on-radius-card); border: 1px solid var(--on-hairline);
+  margin-bottom: 22px; background: var(--on-surface3);
+}
+.person-role {
+  font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--on-text3); margin-bottom: 10px;
+}
+/* margin-top:auto keeps the contact line on the card floor, so the two cards
+   agree on where it sits however long the paragraphs above it run. */
+.person-contact { margin-top: auto; padding-top: 18px; font-size: 15px; }
+#people .aph { margin-top: 30px; font-size: 15px; font-weight: 700; color: var(--on-text); }
+
 /* ---------- seats ---------- */
 .seat { display: flex; flex-direction: column; gap: 14px; }
 .seat h3 { font-size: 26px; letter-spacing: -0.035em; font-weight: 600; line-height: 1.04; }
@@ -535,6 +555,8 @@ footer > .wrap { padding: 44px 0 56px; display: grid; grid-template-columns: min
   .status-stamp { font-size: 0.64rem; letter-spacing: 0.16em; }
   .tag { font-size: 0.62rem; }
   .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .people-grid { grid-template-columns: 1fr; }
+  .portrait { width: 132px; height: 132px; margin-bottom: 18px; }
   .seats-grid { grid-template-columns: 1fr; }
   .chip { font-size: 0.6rem; }
   .after-grid { margin-top: 28px; }

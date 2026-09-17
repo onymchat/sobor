@@ -23,6 +23,23 @@ ORIGIN = "https://sobor.io"
 CAL_LINK = "enikeev/sobor"
 CAL_NS = "sobor"
 
+# The venue, the organizer's contact, and how much of the fund has cleared.
+# These are facts, not copy, so they live here rather than three times over in i18n.json.
+VENUE_URL = ("https://www.google.com/maps/place/Montelibero-City/"
+             "@42.0326317,19.1635781,17z/data=!3m1!4b1!4m6!3m5!"
+             "1s0x134e7345408cff31:0x4c5d231719f81f5e!8m2!3d42.0326317!4d19.166153")
+TG_URL = "https://t.me/programyzer"
+TG_HANDLE = "@programyzer"
+
+# Each status item is open until the thing it names is settled. Green tag, not red.
+STATUS_STATE = {"venue": "settled", "arbiter": "settled", "fund": "settled"}
+
+# The meter shows the share of the target that has cleared. There is no published
+# target yet, so there is no share to draw and the meter is left out entirely —
+# a bar at 0% under a non-zero figure would just read as a bug. Set this to the
+# target in euros to bring it back.
+FUND_TARGET = None
+
 # Which chip each seat carries, and which external link (if any) its paragraph ends on.
 CHIPS = ["impl", "review_unwired", "review_noimpl", "impl", "draft", "draft", "draft",
          "draft", "draft", "draft", "draft", "operator", "operator", "operator",
@@ -64,6 +81,19 @@ def line(block, key):
     text = e(block[key])
     tag = block.get(key + "_lang")
     return '<span lang="%s">%s</span>' % (e(tag), text) if tag else text
+
+
+def meter(t):
+    """The fund meter, or nothing at all while no target is published.
+
+    The fill itself is --so-meter in assets/sobor.css, set by hand when the target
+    is decided — the page carries no inline style attribute, and this is not the
+    place to start.
+    """
+    if FUND_TARGET is None:
+        return ""
+    return ('        <div class="meter" role="img" aria-label="%s"><i></i></div>\n'
+            % e(t["fund"]["meter_aria"]))
 
 
 def render(code):
@@ -170,53 +200,9 @@ def render(code):
     </div>
   </div>
 
-  <!-- The three open questions. When one settles, swap .tag.open for .tag.settled in
-       content/i18n.json's label and rewrite the paragraph. Do not soften these. -->
-  <section class="status" id="status">
-    <div class="wrap">
-      <div class="status-stamp">{st_stamp}</div>
-      <div class="status-grid">
-        <div>
-          <span class="tag open">{st_venue_tag}</span>
-          <p>{st_venue_p}</p>
-        </div>
-        <div>
-          <span class="tag open">{st_arbiter_tag}</span>
-          <p>{st_arbiter_p}</p>
-        </div>
-        <div>
-          <span class="tag open">{st_fund_tag}</span>
-          <p>{st_fund_p}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="contest">
-    <div class="wrap">
-      <div class="eyebrow"><span>01</span><b>· {c_eyebrow}</b></div>
-      <h2>{c_h2a}<br>{c_h2b}</h2>
-      <p class="section-lede">{c_lede}</p>
-      <p class="after-grid" id="rules"><a href="#rules">{c_more}</a></p>
-    </div>
-  </section>
-
-  <section class="band" id="seats">
-    <div class="wrap">
-      <div class="eyebrow"><span>02</span><b>· {s_eyebrow}</b></div>
-      <h2>{s_h2a}<br>{s_h2b}</h2>
-      <p class="section-lede">{s_lede}</p>
-      <div class="grid-4 seats-grid">
-{seats}
-      </div>
-      <p class="after-grid"><a href="https://onym.foundation/seats.html">{s_more}</a></p>
-      <p class="after-grid">{s_note}</p>
-    </div>
-  </section>
-
   <section class="band" id="book">
     <div class="wrap">
-      <div class="eyebrow"><span>03</span><b>· {b_eyebrow}</b></div>
+      <div class="eyebrow"><span>01</span><b>· {b_eyebrow}</b></div>
       <h2>{b_h2a}<br>{b_h2b}</h2>
       <p class="section-lede">{b_lede}</p>
       <!-- assets/cal.js mounts the Cal.com inline embed here and reads the event off
@@ -232,23 +218,94 @@ def render(code):
     </div>
   </section>
 
+  <!-- The three questions that were open. A state flips in STATUS_STATE above and the
+       paragraph gets rewritten in content/i18n.json. Do not soften these. -->
+  <section class="status" id="status">
+    <div class="wrap">
+      <div class="status-stamp">{st_stamp}</div>
+      <div class="status-grid">
+        <div>
+          <span class="tag {st_venue_state}">{st_venue_tag}</span>
+          <p>{st_venue_p} <a href="{venue_url}">{st_venue_link}</a></p>
+        </div>
+        <div>
+          <span class="tag {st_arbiter_state}">{st_arbiter_tag}</span>
+          <p>{st_arbiter_p}</p>
+        </div>
+        <div>
+          <span class="tag {st_fund_state}">{st_fund_tag}</span>
+          <p>{st_fund_p}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contest">
+    <div class="wrap">
+      <div class="eyebrow"><span>02</span><b>· {c_eyebrow}</b></div>
+      <h2>{c_h2a}<br>{c_h2b}</h2>
+      <p class="section-lede">{c_lede}</p>
+      <p class="after-grid" id="rules"><a href="#rules">{c_more}</a></p>
+    </div>
+  </section>
+
+  <section class="band" id="seats">
+    <div class="wrap">
+      <div class="eyebrow"><span>03</span><b>· {s_eyebrow}</b></div>
+      <h2>{s_h2a}<br>{s_h2b}</h2>
+      <p class="section-lede">{s_lede}</p>
+      <div class="grid-4 seats-grid">
+{seats}
+      </div>
+      <p class="after-grid"><a href="https://onym.foundation/seats.html">{s_more}</a></p>
+      <p class="after-grid">{s_note}</p>
+    </div>
+  </section>
+
+
   <section class="band">
     <div class="wrap">
       <div class="eyebrow"><span>04</span><b>· {f_eyebrow}</b></div>
       <div class="fund">
         <div class="fund-label">{f_label}</div>
-        <!-- When money clears: replace the amount, change the caption, and set --so-meter. -->
+        <!-- The figure is content/i18n.json fund.amount. The meter beneath it only
+             appears once FUND_TARGET is set; see meter() above. -->
         <div class="fund-figure">
           <b>{f_amount}</b>
           <span>{f_caption}</span>
         </div>
-        <div class="meter" role="img" aria-label="{f_meter_aria}"><i></i></div>
-        <div class="fund-cols">
+{f_meter}        <div class="fund-cols">
           <p>{f_p1}</p>
           <p>{f_p2}</p>
         </div>
         <p class="aph">{f_a}</p>
       </div>
+    </div>
+  </section>
+
+  <section class="band" id="people">
+    <div class="wrap">
+      <div class="eyebrow"><span>05</span><b>· {p_eyebrow}</b></div>
+      <h2>{p_h2a}<br>{p_h2b}</h2>
+      <p class="section-lede">{p_lede}</p>
+      <div class="people-grid">
+        <div class="card person">
+          <img class="portrait" src="/assets/rinat.jpg" width="480" height="480"
+               alt="{p_org_alt}" loading="lazy" decoding="async">
+          <div class="person-role">{p_org_role}</div>
+          <h3>{p_org_name}</h3>
+          <p>{p_org_p}</p>
+          <p class="person-contact"><a href="{tg_url}" rel="me">{tg_handle}</a></p>
+        </div>
+        <div class="card person">
+          <img class="portrait" src="/assets/andy.jpg" width="423" height="423"
+               alt="{p_arb_alt}" loading="lazy" decoding="async">
+          <div class="person-role">{p_arb_role}</div>
+          <h3>{p_arb_name}</h3>
+          <p>{p_arb_p}</p>
+        </div>
+      </div>
+      <p class="aph">{p_aph}</p>
     </div>
   </section>
 
@@ -276,6 +333,7 @@ def render(code):
         <a href="https://onym.app">onym.app</a>
         <a href="https://onym.foundation">onym.foundation</a>
         <a href="https://bsn.expert">bsn.expert</a>
+        <a href="{tg_url}" rel="me">{tg_handle}</a>
       </div>
       <nav class="lang" aria-label="{ft_lang_aria}">
         {lang_btns}
@@ -305,6 +363,9 @@ def render(code):
         hero_eyebrow=e(t["hero"]["eyebrow"]), hero_h1=hero_h1, closing_h2=closing_h2,
         hero_lede=e(t["hero"]["lede"]), hero_cta=e(t["hero"]["cta"]), hero_rules=e(t["hero"]["rules"]),
         st_stamp=e(t["status"]["stamp"]), st_venue_tag=e(t["status"]["venue_tag"]), st_venue_p=e(t["status"]["venue_p"]),
+        st_venue_link=e(t["status"]["venue_link"]), venue_url=e(VENUE_URL),
+        st_venue_state=STATUS_STATE["venue"], st_arbiter_state=STATUS_STATE["arbiter"],
+        st_fund_state=STATUS_STATE["fund"], tg_url=e(TG_URL), tg_handle=e(TG_HANDLE),
         st_arbiter_tag=e(t["status"]["arbiter_tag"]), st_arbiter_p=e(t["status"]["arbiter_p"]),
         st_fund_tag=e(t["status"]["fund_tag"]), st_fund_p=e(t["status"]["fund_p"]),
         c_eyebrow=e(t["contest"]["eyebrow"]), c_h2a=e(t["contest"]["h2a"]), c_h2b=e(t["contest"]["h2b"]),
@@ -316,7 +377,13 @@ def render(code):
         b_phone=e(t["book"]["phone"]), b_note=e(t["book"]["note"]), b_aph=e(t["book"]["aph"]),
         cal_link=e(CAL_LINK), cal_ns=e(CAL_NS),
         f_eyebrow=e(t["fund"]["eyebrow"]), f_label=e(t["fund"]["label"]), f_amount=e(t["fund"]["amount"]),
-        f_caption=e(t["fund"]["caption"]), f_meter_aria=e(t["fund"]["meter_aria"]),
+        f_caption=e(t["fund"]["caption"]), f_meter=meter(t),
+        p_eyebrow=e(t["people"]["eyebrow"]), p_h2a=e(t["people"]["h2a"]), p_h2b=e(t["people"]["h2b"]),
+        p_lede=e(t["people"]["lede"]), p_aph=e(t["people"]["aph"]),
+        p_org_role=e(t["people"]["org_role"]), p_org_name=e(t["people"]["org_name"]),
+        p_org_p=e(t["people"]["org_p"]), p_org_alt=e(t["people"]["org_alt"]),
+        p_arb_role=e(t["people"]["arb_role"]), p_arb_name=e(t["people"]["arb_name"]),
+        p_arb_p=e(t["people"]["arb_p"]), p_arb_alt=e(t["people"]["arb_alt"]),
         f_p1=e(t["fund"]["p1"]), f_p2=e(t["fund"]["p2"]), f_a=e(t["fund"]["a"]),
         cl_when=e(t["closing"]["when"]),
         ft_copy=e(t["footer"]["copy"]), ft_sign=e(t["footer"]["sign"]), ft_lang_aria=e(t["footer"]["lang_aria"]),
