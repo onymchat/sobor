@@ -211,6 +211,10 @@ h2 {
   box-shadow: 0 9px 24px color-mix(in srgb, var(--on-blue) 25%, transparent);
 }
 .btn-primary:hover { color: var(--on-on-accent); filter: brightness(1.06); }
+/* The quiet twin of btn-primary: same box, hairline instead of fill, so the
+   group sits beside the booking CTA without competing with it. */
+.btn-secondary { border-color: var(--on-hairline-strong); color: var(--on-text); }
+.btn-secondary:hover { color: var(--on-text); border-color: var(--on-text3); }
 .btn-pill {
   border: 1px solid var(--on-hairline-strong);
   border-radius: var(--on-radius-pill);
@@ -292,7 +296,8 @@ a.pick.is-on:hover { color: var(--on-surface); }
   max-width: 56ch;
 }
 .hero-actions { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
-.hero-actions a { font-size: 15px; color: var(--on-text2); }
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-actions > a { font-size: 15px; color: var(--on-text2); }
 
 /* ---------- status band: the three open questions ---------- */
 .status {
@@ -498,8 +503,9 @@ footer > .wrap { padding: 44px 0 56px; display: grid; grid-template-columns: min
   .hero h1 { margin-top: 24px; }
   .hero-copy { margin-top: 26px; display: block; }
   .hero-actions { margin-top: 28px; align-items: stretch; }
+  .hero-buttons { flex-direction: column; gap: 10px; }
   .hero-actions .btn { width: 100%; }
-  .hero-actions a { text-align: left; }
+  .hero-actions > a { text-align: left; }
 
   .status > .wrap { padding: 32px 0 36px; }
   .status-grid { margin-top: 26px; grid-template-columns: 1fr; gap: 26px; }

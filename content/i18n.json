@@ -22,6 +22,7 @@
       "h1b": "Homestead it.",
       "lede": "Five days in Montelibero City. Sixteen roles in the Onym network are open to implementation; most have a contract and no code. Pick it, build it, homestead it.",
       "cta": "Book to attend",
+      "tg": "Telegram group",
       "rules": "Read the rules →"
     },
     "status": {
@@ -204,6 +205,7 @@
       "h1b": "Homestead it.",
       "lede": "Пять дней в Montelibero City. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода. Выбери, построй, займи.",
       "cta": "Записаться на участие",
+      "tg": "Телеграм-группа",
       "rules": "Читать правила →",
       "h1b_lang": "en"
     },
@@ -389,6 +391,7 @@
       "h1b": "Zauzmi ga.",
       "lede": "Pet dana u Montelibero Cityju. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod. Izaberi, napravi, zauzmi.",
       "cta": "Prijavi dolazak",
+      "tg": "Telegram grupa",
       "rules": "Pročitaj pravila →"
     },
     "status": {

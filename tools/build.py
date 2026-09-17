@@ -30,6 +30,8 @@ VENUE_URL = ("https://www.google.com/maps/place/Montelibero-City/"
              "1s0x134e7345408cff31:0x4c5d231719f81f5e!8m2!3d42.0326317!4d19.166153")
 TG_URL = "https://t.me/programyzer"
 TG_HANDLE = "@programyzer"
+# The open group, as opposed to TG_URL above, which is the organizer himself.
+TG_GROUP_URL = "https://t.me/onymsobor"
 
 # Each status item is open until the thing it names is settled. Green tag, not red.
 STATUS_STATE = {"venue": "settled", "arbiter": "settled", "fund": "settled"}
@@ -194,7 +196,10 @@ def render(code):
     <div class="hero-copy">
       <p>{hero_lede}</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#book">{hero_cta}</a>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#book">{hero_cta}</a>
+          <a class="btn btn-secondary" href="{tg_group_url}">{hero_tg}</a>
+        </div>
         <a href="#rules">{hero_rules}</a>
       </div>
     </div>
@@ -376,7 +381,8 @@ def render(code):
         st_fund_value=e(t["status"]["fund_value"]), st_fund_label=e(t["status"]["fund_label"]),
         st_venue_link=e(t["status"]["venue_link"]), venue_url=e(VENUE_URL),
         st_venue_state=STATUS_STATE["venue"], st_arbiter_state=STATUS_STATE["arbiter"],
-        st_fund_state=STATUS_STATE["fund"], tg_url=e(TG_URL), tg_handle=e(TG_HANDLE),
+        st_fund_state=STATUS_STATE["fund"], tg_url=e(TG_URL), tg_handle=e(TG_HANDLE), tg_group_url=e(TG_GROUP_URL),
+        hero_tg=e(t["hero"]["tg"]),
         st_arbiter_p=e(t["status"]["arbiter_p"]), st_fund_p=e(t["status"]["fund_p"]),
         c_eyebrow=e(t["contest"]["eyebrow"]), c_h2a=e(t["contest"]["h2a"]), c_h2b=e(t["contest"]["h2b"]),
         c_lede=e(t["contest"]["lede"]), c_more=e(t["contest"]["more"]),
