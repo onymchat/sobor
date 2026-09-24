@@ -132,6 +132,11 @@ def render(code):
         )
     seats = "\n".join(seats)
 
+    # The deadline line names the organizer's Telegram; {tg} in i18n.json is where the
+    # link goes, so the handle is not written a fourth time in three languages.
+    notice_p2 = e(t["notice"]["p2"]).replace(
+        "{tg}", '<a href="%s" rel="me">%s</a>' % (e(TG_URL), e(TG_HANDLE)))
+
     hero_h1 = line(t["hero"], "h1a") + "<br>" + line(t["hero"], "h1b")
     closing_h2 = line(t["closing"], "h2a") + "<br>" + line(t["closing"], "h2b")
     if t["closing"].get("h2c"):
@@ -171,6 +176,18 @@ def render(code):
 <link rel="stylesheet" href="/assets/sobor.css"/>
 </head>
 <body>
+
+<!-- The submission deadline. Above the nav and not sticky: it is the first thing
+     read, not a thing that follows you down the page. -->
+<div class="notice">
+  <div class="wrap">
+    <div class="notice-label">{n_label}</div>
+    <div class="notice-body">
+      <p>{n_p1}</p>
+      <p>{n_p2}</p>
+    </div>
+  </div>
+</div>
 
 <header class="nav">
   <div class="wrap">
@@ -373,6 +390,7 @@ def render(code):
         og_alt=e("%s %s — %s" % (t["hero"]["h1a"], t["hero"]["h1b"], t["hero"]["eyebrow"])),
         nav_home=e(t["nav"]["home"]), nav_contest=e(t["nav"]["contest"]), nav_seats=e(t["nav"]["seats"]),
         nav_rules=e(t["nav"]["rules"]), nav_status=e(t["nav"]["status"]), nav_book=e(t["nav"]["book"]),
+        n_label=e(t["notice"]["label"]), n_p1=e(t["notice"]["p1"]), n_p2=notice_p2,
         hero_eyebrow=e(t["hero"]["eyebrow"]), hero_h1=hero_h1, closing_h2=closing_h2,
         hero_lede=e(t["hero"]["lede"]), hero_cta=e(t["hero"]["cta"]), hero_rules=e(t["hero"]["rules"]),
         st_stamp=e(t["status"]["stamp"]), st_venue_p=e(t["status"]["venue_p"]),

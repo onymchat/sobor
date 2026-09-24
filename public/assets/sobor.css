@@ -173,6 +173,38 @@ h2 {
   max-width: 62ch;
 }
 
+/* ---------- deadline notice ---------- */
+/* The strip above the nav. It carries no accent colour — the warm one belongs to the
+   prize fund alone — so it earns its weight from the surface, the rule under it and
+   the type size instead. */
+.notice {
+  background: var(--on-surface2);
+  border-bottom: 1px solid var(--on-hairline-strong);
+}
+.notice > .wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  padding: 20px 0;
+}
+.notice-label {
+  flex: none;
+  font-family: var(--on-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--on-text3);
+}
+.notice-body { display: grid; gap: 6px; }
+.notice p {
+  font-size: clamp(17px, 1.9vw, 24px);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  max-width: 62ch;
+}
+.notice p + p { font-weight: 400; color: var(--on-text2); }
+
 /* ---------- nav ---------- */
 .nav {
   position: sticky;
@@ -492,6 +524,9 @@ footer > .wrap { padding: 44px 0 56px; display: grid; grid-template-columns: min
 /* ---------- 850px ---------- */
 @media (max-width: 850px) {
   .wrap { width: calc(100% - 36px); }
+  .notice > .wrap { display: block; padding: 16px 0; }
+  .notice-label { margin-bottom: 8px; }
+  .notice p { max-width: none; }
   .nav { height: 52px; }
   .nav > .wrap { gap: 0; justify-content: space-between; }
   .nav-links { display: none; }
@@ -562,6 +597,8 @@ footer > .wrap { padding: 44px 0 56px; display: grid; grid-template-columns: min
      sits right on the column edge at the section-heading size — so it gets its own,
      with enough headroom to survive a different font stack. */
   .closing h2 { font-size: clamp(36px, 11.4vw, 66px); }
+  .notice-label { font-size: 0.64rem; letter-spacing: 0.16em; }
+  .notice p { font-size: 17px; }
   .hero-eyebrow { font-size: 0.64rem; letter-spacing: 0.16em; }
   .hero-copy p { font-size: 20px; }
   h2 { font-size: clamp(40px, 12.3vw, 48px); letter-spacing: -0.05em; margin-top: 20px; }

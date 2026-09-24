@@ -8,6 +8,11 @@
     "title": "sobor — Build a seat. Homestead it.",
     "description": "A five-day contest at Montelibero City in Bar, Montenegro, 21–25 September 2026. Sixteen roles in the Onym network are open to implementation. Build one, run it, keep it.",
     "og_description": "Five days in Montelibero City. Sixteen roles in the Onym network are open to implementation; most have a contract and no code.",
+    "notice": {
+      "label": "Deadline",
+      "p1": "Submissions are accepted until 7:00 on Friday morning.",
+      "p2": "Send your artifacts to {tg} before the submission deadline."
+    },
     "nav": {
       "contest": "The contest",
       "seats": "Seats",
@@ -191,6 +196,11 @@
     "title": "sobor — Построй место. Homestead it.",
     "description": "Пятидневный конкурс в Montelibero City, Бар, Черногория, 21–25 сентября 2026. Шестнадцать ролей в сети Onym открыты для реализации. Построй одну, запусти её, оставь себе.",
     "og_description": "Пять дней в Montelibero City. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода.",
+    "notice": {
+      "label": "Дедлайн",
+      "p1": "Работы принимаются до 7:00 утра пятницы.",
+      "p2": "Присылайте артефакты на {tg} до дедлайна."
+    },
     "nav": {
       "contest": "Конкурс",
       "seats": "Места",
@@ -377,6 +387,11 @@
     "title": "sobor — Napravi mjesto. Zauzmi ga.",
     "description": "Petodnevno takmičenje u Montelibero Cityju, Bar, Crna Gora, 21–25. septembra 2026. Šesnaest uloga u Onym mreži otvoreno je za implementaciju. Napravi jednu, pokreni je, zadrži je.",
     "og_description": "Pet dana u Montelibero Cityju. Šesnaest uloga u Onym mreži otvoreno je za implementaciju; većina ima ugovor, a nema kod.",
+    "notice": {
+      "label": "Rok",
+      "p1": "Radovi se primaju do 7:00 u petak ujutro.",
+      "p2": "Pošaljite svoje artefakte na {tg} prije isteka roka."
+    },
     "nav": {
       "contest": "Takmičenje",
       "seats": "Mjesta",
