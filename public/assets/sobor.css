@@ -140,363 +140,74 @@ input { font: inherit; color: inherit; }
 .muted { color: var(--on-text2); }
 
 
-/* ---------- layout ---------- */
-.wrap { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
-.band { border-top: 1px solid var(--on-hairline-strong); }
-.band > .wrap { padding: 120px 0; }
-
-.eyebrow {
+/* ---------- the page ---------- */
+/* Sobor 26 is over, so the site is one screen: the mark, the three lines, and the
+   controls that let you read them in another language or another theme. Everything
+   that served a live event — booking, seats, status, fund — is gone. The token block
+   above is untouched, so whatever comes back for Onym 27 starts from the same system. */
+body {
+  min-height: 100svh;
   display: flex;
-  align-items: baseline;
-  gap: 14px;
-  font-family: var(--on-font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--on-text3);
-}
-.eyebrow b { font-weight: inherit; color: var(--on-text2); }
-
-h2 {
-  margin-top: 26px;
-  font-size: clamp(48px, 6.5vw, 88px);
-  line-height: 0.95;
-  letter-spacing: -0.055em;
-  font-weight: 600;
-  max-width: 900px;
-}
-.section-lede {
-  margin-top: 28px;
-  font-size: 20px;
-  line-height: 1.45;
-  color: var(--on-text2);
-  max-width: 62ch;
+  flex-direction: column;
+  padding: 44px max(24px, calc((100% - 1180px) / 2)) 40px;
 }
 
-/* ---------- deadline notice ---------- */
-/* The strip above the nav. It carries no accent colour — the warm one belongs to the
-   prize fund alone — so it earns its weight from the surface, the rule under it and
-   the type size instead. */
-.notice {
-  background: var(--on-surface2);
-  border-bottom: 1px solid var(--on-hairline-strong);
-}
-.notice > .wrap {
-  display: flex;
-  align-items: baseline;
-  gap: 22px;
-  padding: 20px 0;
-}
-.notice-label {
-  flex: none;
-  font-family: var(--on-font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--on-text3);
-}
-.notice-body { display: grid; gap: 6px; }
-.notice p {
-  font-size: clamp(17px, 1.9vw, 24px);
-  line-height: 1.3;
-  letter-spacing: -0.025em;
-  font-weight: 600;
-  max-width: 62ch;
-}
-.notice p + p { font-weight: 400; color: var(--on-text2); }
-
-/* ---------- nav ---------- */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  height: 58px;
-  background: var(--nav-bg);
-  backdrop-filter: saturate(160%) blur(16px);
-  -webkit-backdrop-filter: saturate(160%) blur(16px);
-  border-bottom: 1px solid var(--on-hairline);
-}
-.nav > .wrap { height: 100%; display: flex; align-items: center; gap: 40px; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; align-self: flex-start; }
 .brand svg { display: block; color: var(--on-text); }
 .brand span { font-size: 19px; font-weight: 600; letter-spacing: -0.04em; }
-.nav-links { display: flex; gap: 28px; font-size: 14.5px; color: var(--on-text2); }
-.nav-links a { text-decoration: none; }
-.nav-cta { margin-left: auto; }
 
-/* ---------- buttons ---------- */
-.btn {
-  display: inline-flex;
-  align-items: center;
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  min-height: 44px;
-  padding: 0 20px;
-  border-radius: var(--on-radius-card);
-  font-size: 15px;
+  padding: 72px 0;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(44px, 7.6vw, 104px);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
   font-weight: 600;
-  border: 1px solid transparent;
-  text-decoration: none;
+  text-wrap: balance;
 }
-.btn-primary {
-  background: var(--on-blue);
-  color: var(--on-on-accent);
-  box-shadow: 0 9px 24px color-mix(in srgb, var(--on-blue) 25%, transparent);
-}
-.btn-primary:hover { color: var(--on-on-accent); filter: brightness(1.06); }
-/* The quiet twin of btn-primary: same box, hairline instead of fill, so the
-   group sits beside the booking CTA without competing with it. */
-.btn-secondary { border-color: var(--on-hairline-strong); color: var(--on-text); }
-.btn-secondary:hover { color: var(--on-text); border-color: var(--on-text3); }
-.btn-pill {
-  border: 1px solid var(--on-hairline-strong);
-  border-radius: var(--on-radius-pill);
-  padding: 7px 16px;
-  font-size: 13.5px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-.btn-pill:hover { border-color: var(--on-text); }
+/* The third line looks forward instead of back, so it steps down rather than
+   starting a second headline. */
+h1 .ahead { color: var(--on-text3); }
 
-/* selectable pill — the language switcher renders these as anchors */
+/* ---------- foot: language and theme, nothing else ---------- */
+footer {
+  display: flex;
+  align-items: center;
+  gap: 20px 28px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid var(--on-hairline-strong);
+}
+.foot-copy { font-size: 13.5px; color: var(--on-text3); margin-right: auto; }
+
+.lang { display: flex; gap: 6px; font-family: var(--on-font-mono); }
+.lang .pick { letter-spacing: 0.1em; }
 .pick {
   padding: 6px 14px;
   border-radius: var(--on-radius-pill);
   font-size: 12.5px;
   background: transparent;
   border: 1px solid var(--on-hairline-strong);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
-.pick:hover { border-color: var(--on-text); }
-.pick[aria-pressed="true"],
+.pick:hover { border-color: var(--on-text); color: inherit; }
 .pick.is-on {
   background: var(--on-text);
   color: var(--on-surface);
   border-color: var(--on-text);
 }
-/* the language switcher renders .pick as anchors */
-a.pick { text-decoration: none; display: inline-flex; align-items: center; }
-a.pick:hover { color: inherit; }
-a.pick.is-on:hover { color: var(--on-surface); }
+.pick.is-on:hover { color: var(--on-surface); }
 
-/* ---------- card ---------- */
-.card {
-  background: var(--on-surface2);
-  border: 1px solid var(--on-hairline);
-  border-radius: var(--on-radius-card);
-  padding: 22px;
-}
-.card h3 { font-size: 30px; letter-spacing: -0.035em; font-weight: 600; line-height: 1.02; }
-.card p { font-size: 15px; line-height: 1.48; color: var(--on-text2); max-width: 44ch; }
-
-/* ---------- hero ---------- */
-.hero {
-  width: min(1180px, calc(100% - 48px));
-  margin: 0 auto;
-  min-height: 842px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 96px 0 88px;
-}
-.hero-eyebrow {
-  font-family: var(--on-font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--on-text3);
-  line-height: 1.6;
-}
-.hero h1 {
-  margin-top: 34px;
-  font-size: clamp(64px, 10vw, 138px);
-  line-height: 0.88;
-  letter-spacing: -0.065em;
-  font-weight: 600;
-  max-width: 1100px;
-}
-.hero-copy {
-  margin-top: 56px;
-  display: grid;
-  grid-template-columns: minmax(0, 620px) auto;
-  gap: 48px;
-  align-items: end;
-}
-.hero-copy p {
-  font-size: clamp(20px, 2.3vw, 30px);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  color: var(--on-text2);
-  max-width: 56ch;
-}
-.hero-actions { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
-.hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
-.hero-actions > a { font-size: 15px; color: var(--on-text2); }
-
-/* ---------- status band: the three open questions ---------- */
-.status {
-  border-top: 1px solid var(--on-hairline-strong);
-  border-bottom: 1px solid var(--on-hairline-strong);
-  background: var(--on-bg);
-}
-.status > .wrap { padding: 52px 0 56px; }
-.status-stamp {
-  font-family: var(--on-font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--on-text3);
-}
-.status-grid {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 48px 40px;
-}
-/* The fact carries the weight; the reasoning underneath is deliberately quiet.
-   Venue and prize are the two people scan for, so they are set at display size. */
-.fact-value {
-  font-size: clamp(30px, 3.4vw, 46px);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
-  font-weight: 600;
-  color: var(--on-text);
-}
-.fact-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 14px;
-  font-family: var(--on-font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--on-text3);
-}
-/* The open/settled signal, reduced to the dot the pill used to carry. */
-.dot { width: 7px; height: 7px; border-radius: 50%; flex: none; background: var(--on-red); }
-.dot.settled { background: var(--on-green); }
-.status-grid p { margin-top: 14px; font-size: 15px; line-height: 1.5; color: var(--on-text2); max-width: 36ch; }
-.fact-link { margin-top: 12px; font-size: 15px; }
-.fact-warm .fact-value { color: var(--so-warm); }
-
-
-/* ---------- grids ---------- */
-.grid-4 { margin-top: 56px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
-.after-grid { margin-top: 40px; font-size: 15px; color: var(--on-text2); }
-.after-grid + .after-grid { margin-top: 14px; color: var(--on-text3); line-height: 1.45; max-width: 62ch; }
-
-/* ---------- who runs it ---------- */
-/* Two portrait cards. The images are square and cropped that way on disk, so
-   object-fit only has to defend against a future replacement that is not. */
-.people-grid {
-  margin-top: 52px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 40px;
-}
-/* Portrait beside the text, not above it: stacked, each person used the top-left
-   corner of a half-width column and left the rest of it empty. */
-.person { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 22px; align-items: start; }
-.portrait {
-  display: block; width: 96px; height: 96px;
-  object-fit: cover; object-position: center top;
-  border-radius: 50%; background: var(--on-surface3);
-}
-.person h3 { font-size: 30px; letter-spacing: -0.04em; font-weight: 600; line-height: 1.05; }
-.person-role {
-  font-family: var(--on-font-mono);
-  font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--on-text3); margin-bottom: 8px;
-}
-.person p { margin-top: 12px; font-size: 15px; line-height: 1.5; color: var(--on-text2); }
-.person-contact { margin-top: 14px; font-size: 15px; }
-#people .aph { margin-top: 44px; font-size: 15px; font-weight: 700; color: var(--on-text); }
-
-/* ---------- seats ---------- */
-.seat { display: flex; flex-direction: column; gap: 14px; }
-.seat h3 { font-size: 26px; letter-spacing: -0.035em; font-weight: 600; line-height: 1.04; }
-.seat p { font-size: 15px; line-height: 1.48; color: var(--on-text2); max-width: none; }
-.chip {
-  margin-top: auto;
-  align-self: flex-start;
-  font-family: var(--on-font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--on-text2);
-  background: var(--on-surface3);
-  border-radius: var(--on-radius-pill);
-  padding: 5px 11px;
-  line-height: 1.45;
-  text-wrap: balance;
-}
-.chip.green { background: color-mix(in srgb, var(--on-green) 14%, transparent); }
-.chip.amber { background: color-mix(in srgb, var(--on-accent-yellow) 14%, transparent); }
-.chip.blue  { background: color-mix(in srgb, var(--on-blue) 14%, transparent); }
-
-/* ---------- booking: the Cal.com inline embed ---------- */
-/* The embed sizes itself once loaded and reports its height over postMessage.
-   min-height is only what the page reserves in the meantime, so the sections
-   below do not jump when the calendar arrives.
-
-   Do not put a min-height here. Cal's own <cal-inline> takes min-height from
-   this element with `min-height: inherit`, and then the iframe is pinned to it
-   and the month view is clipped at the bottom. Reserving space is not worth a
-   cut-off calendar; the embed ships its own loading skeleton anyway.
-
-   Deliberately unstyled otherwise: Cal draws its own hairline card, and putting
-   a second border and surface under it reads as a frame inside a frame. The
-   embed is told the theme in assets/cal.js, so it matches without help here. */
-.cal-mount {
-  margin-top: 56px;
-  width: 100%;
-}
-.book-aph { margin-top: 30px; font-size: 15px; font-weight: 700; color: var(--on-text); }
-
-/* ---------- prize fund: the one warm card ---------- */
-.fund {
-  margin-top: 34px;
-  border: 1px solid var(--so-warm-line);
-  border-radius: var(--on-radius-card);
-  background: linear-gradient(180deg, var(--so-warm-fill) 0%, var(--on-surface2) 70%);
-  padding: 44px;
-  font-family: var(--on-font-mono);
-}
-.fund-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--on-text2); }
-.fund-figure { margin-top: 18px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-.fund-figure b { font-size: 70px; line-height: 0.98; letter-spacing: -0.05em; font-weight: 600; }
-.fund-figure span { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--on-text2); }
-.meter { margin-top: 26px; height: 8px; border-radius: var(--on-radius-pill); background: var(--on-surface3); overflow: hidden; }
-/* --so-meter is the share of the target actually cleared. It stays 0 until money lands. */
-.meter > i { display: block; height: 100%; width: var(--so-meter, 0%); background: var(--so-warm); }
-.fund-cols { margin-top: 34px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; font-size: 14px; line-height: 1.5; color: var(--on-text2); }
-.fund-cols p { max-width: 52ch; }
-.fund .aph { margin-top: 30px; font-size: 15px; font-weight: 700; color: var(--on-text); }
-
-/* ---------- closing ---------- */
-.closing { border-top: 1px solid var(--on-hairline-strong); text-align: center; }
-.closing > div { width: min(820px, calc(100% - 48px)); margin: 0 auto; padding: 150px 0; }
-.closing h2 { margin-top: 0; max-width: none; }
-.closing-actions { margin-top: 40px; display: flex; justify-content: center; gap: 14px; align-items: center; flex-wrap: wrap; }
-.closing-actions a { font-size: 15px; color: var(--on-text2); }
-.closing .when { margin-top: 28px; font-size: 15px; color: var(--on-text3); font-family: var(--on-font-mono); letter-spacing: 0.04em; line-height: 1.6; }
-
-/* ---------- footer ---------- */
-footer { border-top: 1px solid var(--on-hairline-strong); background: var(--on-bg); }
-footer > .wrap { padding: 44px 0 56px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: start; }
-.foot-l { display: flex; flex-direction: column; gap: 18px; }
-.foot-r { display: flex; flex-direction: column; align-items: flex-end; gap: 20px; }
-.foot-copy { font-size: 14px; color: var(--on-text2); }
-.foot-sign { font-family: var(--on-font-mono); font-size: 13px; letter-spacing: 0.02em; color: var(--on-text); }
-.foot-links { display: flex; gap: 22px; font-size: 14px; color: var(--on-text2); flex-wrap: wrap; }
-.lang { display: flex; gap: 6px; font-family: var(--on-font-mono); }
-.lang .pick { letter-spacing: 0.1em; }
-
-/* ---------- theme toggle ---------- */
+/* Not fixed any more: on a one-screen page there is nothing to float over. */
 .theme {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 60;
   display: flex;
   gap: 2px;
   padding: 4px;
@@ -516,105 +227,18 @@ footer > .wrap { padding: 44px 0 56px; display: grid; grid-template-columns: min
   background: color-mix(in srgb, var(--on-text) 13%, transparent);
   box-shadow: inset 0 1px 0 var(--on-glass-hi);
 }
-@media (max-width: 850px) {
-  /* sits in the footer instead of floating over whatever you happen to be reading */
-  .theme { position: static; align-self: flex-start; }
-}
-
-/* ---------- 850px ---------- */
-@media (max-width: 850px) {
-  .wrap { width: calc(100% - 36px); }
-  .notice > .wrap { display: block; padding: 16px 0; }
-  .notice-label { margin-bottom: 8px; }
-  .notice p { max-width: none; }
-  .nav { height: 52px; }
-  .nav > .wrap { gap: 0; justify-content: space-between; }
-  .nav-links { display: none; }
-  .nav-cta { margin-left: 0; }
-  .brand span { font-size: 18px; }
-  .band > .wrap { padding: 90px 0; }
-
-  .hero { width: calc(100% - 36px); min-height: 0; padding: 56px 0 52px; display: block; }
-  .hero h1 { margin-top: 24px; }
-  .hero-copy { margin-top: 26px; display: block; }
-  .hero-actions { margin-top: 28px; align-items: stretch; }
-  .hero-buttons { flex-direction: column; gap: 10px; }
-  .hero-actions .btn { width: 100%; }
-  .hero-actions > a { text-align: left; }
-
-  .status > .wrap { padding: 32px 0 36px; }
-  .status-grid { margin-top: 26px; grid-template-columns: 1fr; gap: 26px; }
-  .status-grid p { font-size: 15px; line-height: 1.45; margin-top: 12px; max-width: none; }
-
-  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 32px; }
-
-  .card { padding: 18px; }
-  .card h3 { font-size: 22px; line-height: 1.05; margin-top: 12px; }
-  .card p { font-size: 14px; line-height: 1.45; max-width: none; }
-
-  .seat h3 { font-size: 24px; margin-top: 0; }
-  .seat { gap: 10px; }
-  .chip { margin-top: 4px; }
-
-  /* Tried an auto-fill grid here to even out the ragged rows; at 297px of usable
-     width it collapsed to one column and doubled the block to 640px. Wrapping flex
-     packs the sixteen labels far tighter, so the ragged right edge stays. */
-
-  .cal-mount { margin-top: 32px; }
-
-  .fund { margin-top: 24px; padding: 24px; }
-  .fund-figure { display: block; }
-  .fund-figure b { font-size: 52px; }
-  .fund-figure span { display: block; margin-top: 8px; font-size: 0.62rem; letter-spacing: 0.16em; }
-  .meter { margin-top: 20px; }
-  .fund-cols { margin-top: 22px; grid-template-columns: 1fr; gap: 12px; font-size: 13px; }
-  .fund-cols p { max-width: none; }
-  .fund .aph { margin-top: 20px; font-size: 14px; }
-
-  .closing > div { width: calc(100% - 36px); padding: 96px 0; }
-  .closing-actions { margin-top: 28px; flex-direction: column; align-items: stretch; }
-  .closing-actions .btn { width: 100%; }
-  .closing .when { margin-top: 20px; font-size: 12px; }
-
-  footer > .wrap { padding: 32px 0 96px; grid-template-columns: 1fr; gap: 20px; }
-  .foot-l { order: 2; gap: 20px; }
-  .foot-r { order: 1; align-items: flex-start; gap: 20px; }
-  .foot-links { gap: 18px; font-size: 13.5px; }
-  .foot-copy { font-size: 13.5px; }
-  .foot-sign { font-size: 12.5px; }
-
-  .theme { font-size: 10.5px; letter-spacing: 0.1em; }
-  .theme button { padding: 6px 10px; }
-}
 
 /* ---------- 560px ---------- */
 @media (max-width: 560px) {
-  /* Sized so every headline line holds on one line in all three languages.
-     The binding string is Russian "Построй место.", which needs <=54px in the
-     354px mobile column; 13.2vw stays under that from 320px up to 560px. */
-  .hero h1 { font-size: clamp(38px, 12.5vw, 76px); letter-spacing: -0.06em; }
-  /* The closing block is three lines in Russian and its longest, "Возьми ноутбук.",
-     sits right on the column edge at the section-heading size — so it gets its own,
-     with enough headroom to survive a different font stack. */
-  .closing h2 { font-size: clamp(36px, 11.4vw, 66px); }
-  .notice-label { font-size: 0.64rem; letter-spacing: 0.16em; }
-  .notice p { font-size: 17px; }
-  .hero-eyebrow { font-size: 0.64rem; letter-spacing: 0.16em; }
-  .hero-copy p { font-size: 20px; }
-  h2 { font-size: clamp(40px, 12.3vw, 48px); letter-spacing: -0.05em; margin-top: 20px; }
-  .eyebrow { font-size: 0.64rem; letter-spacing: 0.16em; gap: 12px; }
-  .section-lede { font-size: 17px; margin-top: 20px; }
-  .status-stamp { font-size: 0.64rem; letter-spacing: 0.16em; }
-  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .people-grid { grid-template-columns: 1fr; gap: 36px; }
-  .person { grid-template-columns: 72px minmax(0, 1fr); gap: 18px; }
-  .portrait { width: 72px; height: 72px; }
-  .person h3 { font-size: 26px; }
-  .status-grid { gap: 36px; }
-  .seats-grid { grid-template-columns: 1fr; }
-  .chip { font-size: 0.6rem; }
-  .after-grid { margin-top: 28px; }
-  .after-grid + .after-grid { margin-top: 12px; font-size: 14px; }
+  body { padding: 28px 22px 26px; }
+  main { padding: 48px 0; }
+  /* The binding line is Russian "Победители награждены." — one word per line is fine,
+     but it must not break inside a word in the 276px column. */
+  h1 { font-size: clamp(32px, 9.6vw, 44px); letter-spacing: -0.045em; }
+  footer { gap: 16px; padding-top: 22px; }
+  .foot-copy { width: 100%; margin-right: 0; order: 3; }
+  .theme { font-size: 10.5px; letter-spacing: 0.1em; }
+  .theme button { padding: 6px 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -80,34 +80,37 @@ def card(code):
     f_word = sans(38 * SS, "Semibold")
     write(d, (pad + 64 * SS + 20 * SS, pad + 8 * SS), "sobor", f_word, INK, -1.2 * SS)
 
-    # eyebrow, mono and widely tracked like the page
-    f_eye = mono(19 * SS)
-    write(d, (pad, pad + 118 * SS), t["hero"]["eyebrow"].upper(), f_eye, FAINT, 3.4 * SS)
-
-    # headline — two lines, auto-fitted so the longest one always clears the margin
-    lines = [t["hero"]["h1a"], t["hero"]["h1b"]]
-    size = 108 * SS
-    while size > 40 * SS:
-        f = sans(size, "Bold")
-        track = -0.055 * size
-        if max(width(d, ln, f, track) for ln in lines) <= inner:
-            break
-        size -= 2 * SS
-    f_head = sans(size, "Bold")
-    track = -0.055 * size
-    y = pad + 188 * SS
-    for ln in lines:
-        write(d, (pad, y), ln, f_head, INK, track)
-        y += size * 0.92
-
-    # footer rule, domain, and the fact the page leads with
+    # footer rule and the domain — drawn first, because the headline is fitted to
+    # the space left between the wordmark and this rule
     ry = H * SS - pad - 52 * SS
     d.rectangle([pad, ry, W * SS - pad, ry + 1 * SS], fill=RULE)
     f_foot = mono(19 * SS)
     write(d, (pad, ry + 22 * SS), "sobor.io", f_foot, DIM, 1.6 * SS)
-    tail = t["status"]["venue_tag"].upper()
-    tw = width(d, tail, f_foot, 1.6 * SS)
-    write(d, (W * SS - pad - tw, ry + 22 * SS), tail, f_foot, FAINT, 1.6 * SS)
+
+    # headline — the page's three lines, fitted to both the column and the gap above
+    # the rule, then centred in that gap. Three lines is enough that height binds
+    # before width does; the loop checks both so either can.
+    lines = [t["hero"]["h1a"], t["hero"]["h1b"], t["hero"]["h1c"]]
+    top, bottom = pad + 152 * SS, ry - 44 * SS
+    room = bottom - top
+    step = 0.96
+    size = 92 * SS
+    while size > 30 * SS:
+        f = sans(size, "Bold")
+        track = -0.055 * size
+        fits_wide = max(width(d, ln, f, track) for ln in lines) <= inner
+        fits_tall = size * step * (len(lines) - 1) + size <= room
+        if fits_wide and fits_tall:
+            break
+        size -= 2 * SS
+    f_head = sans(size, "Bold")
+    track = -0.055 * size
+    block = size * step * (len(lines) - 1) + size
+    y = top + (room - block) / 2
+    for i, ln in enumerate(lines):
+        # the forward-looking line steps down, as it does on the page
+        write(d, (pad, y), ln, f_head, FAINT if i == 2 else INK, track)
+        y += size * step
 
     return img.resize((W, H), Image.LANCZOS)
 

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>sobor — Построй место. Homestead it.</title>
-<meta name="description" content="Пятидневный конкурс в Montelibero City, Бар, Черногория, 21–25 сентября 2026. Шестнадцать ролей в сети Onym открыты для реализации. Построй одну, запусти её, оставь себе."/>
+<title>sobor — Sobor 26 завершён. Победители награждены.</title>
+<meta name="description" content="Sobor 26 завершён. Победители награждены. Следите за Onym 27."/>
 <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)"/>
 <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)"/>
 <link rel="canonical" href="https://sobor.io/ru/"/>
@@ -17,13 +17,13 @@
 <meta property="og:url" content="https://sobor.io/ru/"/>
 <meta property="og:site_name" content="sobor"/>
 <meta property="og:locale" content="ru"/>
-<meta property="og:title" content="sobor — Построй место. Homestead it."/>
-<meta property="og:description" content="Пять дней в Montelibero City. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода."/>
+<meta property="og:title" content="sobor — Sobor 26 завершён. Победители награждены."/>
+<meta property="og:description" content="Sobor 26 завершён. Победители награждены. Следите за Onym 27."/>
 <meta property="og:image" content="https://sobor.io/og-ru.png"/>
 <meta property="og:image:type" content="image/png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Построй место. Homestead it. — MTL City · Черногория · 21–25 сентября 2026"/>
+<meta property="og:image:alt" content="Sobor 26 завершён. Победители награждены. Следите за Onym 27."/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://sobor.io/og-ru.png"/>
 <link rel="icon" href="/favicon.ico" sizes="48x48"/>
@@ -36,22 +36,8 @@
 </head>
 <body>
 
-<!-- The submission deadline. Above the nav and not sticky: it is the first thing
-     read, not a thing that follows you down the page. -->
-<div class="notice">
-  <div class="wrap">
-    <div class="notice-label">Дедлайн</div>
-    <div class="notice-body">
-      <p>Работы принимаются до 7:00 утра пятницы.</p>
-      <p>Присылайте артефакты на <a href="https://t.me/programyzer" rel="me">@programyzer</a> до дедлайна.</p>
-    </div>
-  </div>
-</div>
-
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="/ru/" aria-label="sobor — на главную">
-      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+<a class="brand" href="/ru/" aria-label="sobor — на главную">
+  <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
         <rect x=".5" y=".5" width="27" height="27" rx="6.2" fill="none" stroke="var(--on-hairline-strong)"></rect>
         <g transform="rotate(45 14 14)" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
           <path d="M14 5.2A8.8 8.8 0 0 1 22.8 14"></path>
@@ -64,274 +50,27 @@
           <circle cx="14" cy="9.4" r="1.15"></circle><circle cx="17.25" cy="10.75" r="1.15"></circle>
         </g>
       </svg>
-      <span>sobor</span>
-    </a>
-    <nav class="nav-links">
-      <a href="#contest">Конкурс</a>
-      <a href="#seats">Места</a>
-      <a href="#rules">Правила</a>
-      <a href="#status">Статус</a>
-    </nav>
-    <div class="nav-cta"><a class="btn-pill" href="#book">Участвовать</a></div>
-  </div>
-</header>
+  <span>sobor</span>
+</a>
 
 <main id="main">
-
-  <div class="hero">
-    <div class="hero-eyebrow">MTL City · Черногория · 21–25 сентября 2026</div>
-    <h1>Построй место.<br><span lang="en">Homestead it.</span></h1>
-    <div class="hero-copy">
-      <p>Пять дней в Montelibero City. Шестнадцать ролей в сети Onym открыты для реализации; у большинства есть контракт и нет кода. Выбери, построй, займи.</p>
-      <div class="hero-actions">
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#book">Записаться на участие</a>
-          <a class="btn btn-secondary" href="https://t.me/onymsobor">Телеграм-группа</a>
-        </div>
-        <a href="#rules">Читать правила →</a>
-      </div>
-    </div>
-  </div>
-
-  <section class="band" id="book">
-    <div class="wrap">
-      <div class="eyebrow"><span>01</span><b>· Запись</b></div>
-      <h2>Лично.<br>В Montelibero City.</h2>
-      <p class="section-lede">Запись — это и есть участие. Выберите время, и мы встретимся вживую в Montelibero City в Баре: кто вы, какое место вам интересно и стоит ли вам приезжать. Без списка гостей, без токена, без взноса и без очереди, в которой вас ранжируют.</p>
-      <!-- assets/cal.js mounts the Cal.com inline embed here and reads the event off
-           these data attributes, so content/build.py stays the only place the link is
-           written. The link underneath is not a fallback that JS removes: it stays, so
-           the booking page is reachable with the embed blocked or failing to load. -->
-      <div class="cal-mount" id="cal-mount"
-           data-cal-link="enikeev/sobor" data-cal-namespace="sobor"></div>
-      <p class="after-grid">Форма просит телефон. Подойдёт любой номер.</p>
-      <p class="after-grid"><a href="https://cal.com/enikeev/sobor">Открыть страницу записи →</a></p>
-      <p class="after-grid">Форма работает на Cal.com. Выбрав время, вы передаёте им имя, почту и то, что вписали в поле телефона, а встреча попадает в наш календарь — больше ничего не записывается.</p>
-      <p class="aph book-aph">Разговор — это не отбор.</p>
-    </div>
-  </section>
-
-  <section class="band" id="people">
-    <div class="wrap">
-      <div class="eyebrow"><span>02</span><b>· Кто это делает</b></div>
-      <h2>Один организатор.<br>Один арбитр.</h2>
-      <p class="section-lede">Два имени, две работы и стена между ними. Организатор снимает площадку и собирает фонд. Арбитр решает, кто победил, и обязан объяснить почему.</p>
-      <div class="people-grid">
-        <div class="person">
-          <img class="portrait" src="/assets/rinat.jpg" width="480" height="480"
-               alt="Ринат, организатор" loading="lazy" decoding="async">
-          <div>
-            <div class="person-role">Организатор</div>
-            <h3>Ринат</h3>
-            <p>Снимает площадку, собирает фонд и встречается с теми, кто записался. Не судит и не голосует.</p>
-            <p class="person-contact"><a href="https://t.me/programyzer" rel="me">@programyzer</a></p>
-          </div>
-        </div>
-        <div class="person">
-          <img class="portrait" src="/assets/andy.jpg" width="423" height="423"
-               alt="Энди, арбитр" loading="lazy" decoding="async">
-          <div>
-            <div class="person-role">Арбитр</div>
-            <h3>Энди</h3>
-            <p>Читает присланное и публикует решение по каждой работе с обоснованием: сначала соответствие контракту, потом живучесть. Отказы публикуются тоже.</p>
-          </div>
-        </div>
-      </div>
-      <p class="aph">Кто платит — тот не судит.</p>
-    </div>
-  </section>
-
-  <!-- The three questions that were open. A state flips in STATUS_STATE above and the
-       paragraph gets rewritten in content/i18n.json. Do not soften these. -->
-  <section class="status" id="status">
-    <div class="wrap">
-      <div class="status-stamp">Статус · обновлено 17 сентября 2026</div>
-      <div class="status-grid">
-        <div class="fact">
-          <div class="fact-value">Montelibero City</div>
-          <div class="fact-label"><i class="dot settled"></i>Площадка · Бар, Черногория</div>
-          <p>Неделя была назначена всегда. Теперь назначена и площадка.</p>
-          <p class="fact-link"><a href="https://www.google.com/maps/place/Montelibero-City/@42.0326317,19.1635781,17z/data=!3m1!4b1!4m6!3m5!1s0x134e7345408cff31:0x4c5d231719f81f5e!8m2!3d42.0326317!4d19.166153">Открыть на карте →</a></p>
-        </div>
-        <div class="fact">
-          <div class="fact-value">Энди</div>
-          <div class="fact-label"><i class="dot settled"></i>Арбитр · назван</div>
-          <p>Назван потому, что фонд собран, — в том порядке, в каком это было обещано. Он не организатор, а организатор не голосует.</p>
-        </div>
-        <div class="fact fact-warm">
-          <div class="fact-value">€1 000</div>
-          <div class="fact-label"><i class="dot settled"></i>Призовой фонд · собран</div>
-          <p>Поступили и лежат на счету. Цель, к которой они идут, пока не опубликована.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="contest">
-    <div class="wrap">
-      <div class="eyebrow"><span>03</span><b>· Конкурс</b></div>
-      <h2>Пять дней.<br>По одному месту.</h2>
-      <p class="section-lede">Команда любого размера берёт одну открытую роль и реализует её по опубликованному контракту. Ни треков, ни темы, ни питчей. Место занято, когда что-то работает и кто-то посторонний может направить туда свой клиент.</p>
-      <p class="after-grid" id="rules"><a href="#rules">Читать правила целиком →</a></p>
-    </div>
-  </section>
-
-  <section class="band" id="seats">
-    <div class="wrap">
-      <div class="eyebrow"><span>04</span><b>· Места</b></div>
-      <h2>Шестнадцать контрактов.<br>У семи есть код.</h2>
-      <p class="section-lede">Статус указан так, как его указывает Фонд: контракт в репозитории — ещё не реализация, а один заменяемый вариант по умолчанию — ещё не рынок. Все шестнадцать — ниже.</p>
-      <div class="grid-4 seats-grid">
-        <div class="card seat">
-          <h3>Каталог</h3>
-          <p>Занято — значит есть указатель, который находит совместимые экземпляры всех остальных мест. <a href="https://github.com/onymchat/onym-discovery">Эталонная реализация →</a></p>
-          <span class="chip green">Есть эталонная реализация</span>
-        </div>
-        <div class="card seat">
-          <h3>Имена и удостоверения</h3>
-          <p>Занято — значит кто-то выдаёт имена и отвечает за выдачу.</p>
-          <span class="chip amber">На рассмотрении · не подключено</span>
-        </div>
-        <div class="card seat">
-          <h3>Банк и платежи</h3>
-          <p>Занято — значит платёж проходит, ни разу не узнав содержания сообщения.</p>
-          <span class="chip amber">На рассмотрении · нет открытой реализации</span>
-        </div>
-        <div class="card seat">
-          <h3>Резервная копия</h3>
-          <p>Занято — значит восстановление работает, а seed-фраза остаётся только у владельца. <a href="https://github.com/onymchat/onym-backup">Эталонная реализация →</a></p>
-          <span class="chip green">Есть эталонная реализация</span>
-        </div>
-        <div class="card seat">
-          <h3>Аудит и аттестация</h3>
-          <p>Занято — значит опубликована проверка, под которой кто-то подписался своим именем.</p>
-          <span class="chip blue">Черновик спецификации</span>
-        </div>
-        <div class="card seat">
-          <h3>Доверенный для восстановления</h3>
-          <p>Занято — значит у доверенного опубликованы тарифы, профили и отказы.</p>
-          <span class="chip blue">Черновик спецификации</span>
-        </div>
-        <div class="card seat">
-          <h3>Арбитраж</h3>
-          <p>Занято — значит споры решает тот, у кого нет интереса ни на одной стороне.</p>
-          <span class="chip blue">Черновик спецификации</span>
-        </div>
-        <div class="card seat">
-          <h3>Подбор участников</h3>
-          <p>Занято — значит наём внутри сети оплачивается по этапам, а не за доступ.</p>
-          <span class="chip blue">Черновик спецификации</span>
-        </div>
-        <div class="card seat">
-          <h3>Привлечение</h3>
-          <p>Занято — значит покупка совершается от имени пользователя, по одному заказу, не удерживая сам заказ.</p>
-          <span class="chip blue">Черновик спецификации</span>
-        </div>
-        <div class="card seat">
-          <h3>Дистрибуция</h3>
-          <p>Занято — значит кампания доходит только до тех, кто сам попросил.</p>
-          <span class="chip blue">Черновик спецификации</span>
-        </div>
-        <div class="card seat">
-          <h3>Благотворительность</h3>
-          <p>Занято — значит пожертвования маршрутизируются, подтверждаются и публично учитываются.</p>
-          <span class="chip blue">Черновик спецификации</span>
-        </div>
-        <div class="card seat">
-          <h3>Курьер</h3>
-          <p>Занято ещё раз — значит появился второй курьер и умолчание стало выбором. Работает на обычном Nostr: подойдёт любой совместимый релей.</p>
-          <span class="chip green">Есть эталонный оператор</span>
-        </div>
-        <div class="card seat">
-          <h3>Хранилище медиа</h3>
-          <p>Занято ещё раз — значит долговечные файлы хранит тот, кто не может их прочитать. Работает на обычном Blossom: подойдёт любой совместимый сервер.</p>
-          <span class="chip green">Есть эталонный оператор</span>
-        </div>
-        <div class="card seat">
-          <h3>Нотариус</h3>
-          <p>Занято ещё раз — значит появился второй проверяющий, которому по-прежнему не виден список участников. Контракты Stellar опубликованы. <a href="https://github.com/onymchat/onym-contracts">onym-contracts →</a></p>
-          <span class="chip green">Есть эталонный оператор</span>
-        </div>
-        <div class="card seat">
-          <h3>Интерфейс</h3>
-          <p>Занято ещё раз — значит появился клиент, сделанный не нами. Окно — не контролёр: форкай, улучшай, владей.</p>
-          <span class="chip green">Работает на iOS и Android</span>
-        </div>
-        <div class="card seat">
-          <h3>Модерационная инстанция</h3>
-          <p>Занято — значит инстанция разбирает жалобы и никогда не исполняет решения сама. <a href="https://github.com/onymchat/onym-moderation">Эталонная реализация на Rust →</a></p>
-          <span class="chip green">Работает на iOS · Android в черновике</span>
-        </div>
-      </div>
-      <p class="after-grid"><a href="https://onym.foundation/seats.html">Все контракты мест на onym.foundation →</a></p>
-      <p class="after-grid">Личность — не место, она остаётся у человека. Чего не хватает, можно предложить как новое.</p>
-    </div>
-  </section>
-
-
-  <section class="band">
-    <div class="wrap">
-      <div class="eyebrow"><span>05</span><b>· Призовой фонд</b></div>
-      <div class="fund">
-        <div class="fund-label">Обеспечено на сегодня</div>
-        <!-- The figure is content/i18n.json fund.amount. The meter beneath it only
-             appears once FUND_TARGET is set; see meter() above. -->
-        <div class="fund-figure">
-          <b>€1 000</b>
-          <span>из цели, которая пока не опубликована</span>
-        </div>
-        <div class="fund-cols">
-          <p>Обещано только то, что поступило. €1 000 на счету; обещание, которое не поступило, — не цифра на этой странице.</p>
-          <p>Арбитр называется, когда фонд собран, и ни днём раньше. Он собран — и арбитр назван: Энди. Арбитр не организатор, а организатор не голосует.</p>
-        </div>
-        <p class="aph">Необеспеченный приз — это слух.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="closing">
-    <div>
-      <h2>Возьми ноутбук.<br>Построй место.<br><span lang="en">Homestead it!</span></h2>
-      <div class="closing-actions">
-        <a class="btn btn-primary" href="#book">Записаться на участие</a>
-        <a href="#rules">Читать правила →</a>
-      </div>
-      <p class="when">21–25 сентября 2026 · Montelibero City, Бар, Черногория</p>
-    </div>
-  </section>
-
+  <h1>Sobor 26 завершён.<br>Победители награждены.<br><span class="ahead">Следите за Onym 27.</span></h1>
 </main>
 
 <footer>
-  <div class="wrap">
-    <div class="foot-l">
-      <div class="foot-copy">© 2026 · sobor.io · событие Onym</div>
-      <div class="foot-sign">Место не выдают. Его занимают.</div>
-    </div>
-    <div class="foot-r">
-      <div class="foot-links">
-        <a href="https://onym.app">onym.app</a>
-        <a href="https://onym.foundation">onym.foundation</a>
-        <a href="https://bsn.expert">bsn.expert</a>
-        <a href="https://t.me/programyzer" rel="me">@programyzer</a>
-      </div>
-      <nav class="lang" aria-label="Язык">
+  <div class="foot-copy">© 2026 · sobor.io · событие Onym</div>
+  <nav class="lang" aria-label="Язык">
         <a class="pick" href="/" lang="en" hreflang="en" data-lang="en" title="English">EN</a>
         <a class="pick is-on" href="/ru/" lang="ru" hreflang="ru" data-lang="ru" title="Русский" aria-current="true">RU</a>
         <a class="pick" href="/cnr/" lang="cnr" hreflang="cnr" data-lang="cnr" title="Crnogorski">CNR</a>
-      </nav>
-      <!-- Lives in the footer so that on a narrow screen it can simply sit there
-           instead of floating over the text. Above 850px it is fixed again. -->
-      <div class="theme" role="group" aria-label="Цветовая тема">
-        <button type="button" data-theme-set="auto" aria-pressed="true">АВТО</button>
-        <button type="button" data-theme-set="light" aria-pressed="false">СВЕТЛАЯ</button>
-        <button type="button" data-theme-set="dark" aria-pressed="false">ТЁМНАЯ</button>
-      </div>
-    </div>
+  </nav>
+  <div class="theme" role="group" aria-label="Цветовая тема">
+    <button type="button" data-theme-set="auto" aria-pressed="true">АВТО</button>
+    <button type="button" data-theme-set="light" aria-pressed="false">СВЕТЛАЯ</button>
+    <button type="button" data-theme-set="dark" aria-pressed="false">ТЁМНАЯ</button>
   </div>
 </footer>
 
 <script src="/assets/sobor.js" defer></script>
-<script src="/assets/cal.js" defer></script>
 </body>
 </html>

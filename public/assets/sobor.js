@@ -1,8 +1,7 @@
 /* sobor.io — site theme.
    One job: the AUTO | LIGHT | DARK capsule in the footer, remembered across visits.
    The pre-paint half lives in assets/theme.js; this is the part that reacts to a
-   click. The booking embed is in assets/cal.js, and nothing else here talks to a
-   network. */
+   click. Nothing here talks to a network. */
 (function () {
   'use strict';
 

@@ -3,7 +3,15 @@
 Static site for **sobor** — a five-day contest in Bar, Montenegro, 21–25 September 2026,
 to implement open seats in the [Onym](https://onym.foundation) network.
 
-Implemented from the Claude Design canvas `Sobor Site.dc.html`
+**The contest is over.** Sobor 26 ran 21–25 September 2026, the winners were awarded, and
+on 25 September the site was cut down to a single screen: the mark, three lines, and the
+language and theme controls. Everything that served a live event — the booking calendar,
+the sixteen seats, the status band, the prize fund, the team, the submission deadline —
+was removed. The generator, the token block, the icons and the locale routing all stayed,
+so whatever the site becomes for Onym 27 starts from the same system rather than a blank
+file. The removed markup is one `git show` away.
+
+Originally implemented from the Claude Design canvas `Sobor Site.dc.html`
 (project `3c76e8b2-8add-48eb-8519-b6ae7106f818`), which contains two artboards:
 Home at 1440 dark and Home at 390 light. Both are one page, so the build is one
 responsive document rather than two.
@@ -15,17 +23,16 @@ responsive document rather than two.
 | `content/i18n.json` | **Every string on the site, in all three languages. Edit here.** |
 | `tools/build.py` | Renders the pages from `i18n.json`. Python stdlib only. |
 | `tools/favicon.py` | Redraws the icons from the mark's geometry. Needs Pillow. |
+| `tools/og.py` | Redraws the three Open Graph cards from the headline. Needs Pillow. |
 | `tools/lang-test.js` | 27 locale-routing cases against a stubbed browser. |
 | `public/{,ru/,cnr/}index.html` | **Generated — do not edit by hand.** |
 | `public/sitemap.xml`, `robots.txt` | Generated too. |
-| `public/assets/sobor.css` | Tokens + every component. Dark by default. |
+| `public/assets/sobor.css` | The token block, then the one screen. Dark by default. |
 | `public/assets/sobor.js` | The theme capsule. That is now its only job. |
-| `public/assets/cal.js` | The Cal.com booking embed. The only third party on the page. |
 | `public/assets/theme.js` | Pre-paint theme. Blocking `<script src>` in `<head>`. |
 | `public/assets/lang.js` | Pre-paint locale routing. Same rule: blocking, never deferred. |
 | `public/favicon.*`, `apple-touch-icon.png`, `icon-512.png` | **Generated** by `tools/favicon.py`. |
-| `public/assets/{rinat,andy}.jpg` | The two portraits. Square, EXIF stripped. |
-| `design-prompt.md` | The brief the canvas was drafted from. |
+| `design-prompt.md` | The brief the canvas was drafted from. Describes the event site. |
 | `.design/Sobor Site.dc.html` | The canvas source, decoded, for reference. |
 
 No framework, no bundler, no dependencies — the same idiom as `onym.app`. The generator
@@ -56,27 +63,6 @@ the larger sizes are faithful.
 Pillow is needed only to regenerate. The output is committed, so a normal checkout and
 deploy needs nothing.
 
-## Portraits
-
-`assets/rinat.jpg` (480²) and `assets/andy.jpg` (423²) are the two faces in the
-**Who runs it** band, which sits second, directly under the booking calendar. They are
-drawn as circles beside the text rather than above it, with no card around them — a
-border and a fill would be two more lines on a page whose argument is that there is
-nothing between you and the thing, and stacking left each person in the top-left corner
-of a half-width column with the rest of it empty. Both are cropped square on disk rather than by CSS, so the file
-that ships is the crop that shows; `object-fit: cover` is only there to defend against
-a replacement that is not square.
-
-Both were stripped of EXIF, XMP and Photoshop blocks before committing — a phone photo
-carries a camera model, a timestamp and sometimes GPS, and none of that belongs on a
-public page. Two things to know if you replace one:
-
-- **Strip the metadata, then check the picture is still the right way up.** Orientation
-  often lives *in* the EXIF that gets stripped, so an image that looked correct in
-  Preview can land upside down once it is clean. Bake the rotation into the pixels
-  (`sips -r 180`, say) rather than relying on the tag.
-- Keep them square and keep them small; they are drawn at 96px, 72px on mobile.
-
 ## Languages
 
 English at `/`, Russian at `/ru/`, Montenegrin at `/cnr/`. Every page carries `hreflang`
@@ -106,19 +92,16 @@ counter caps redirects at two hops, so no storage quirk can trap a reader in a l
 Montenegrin browsers rarely send `cnr`; the tags that actually arrive from the region are
 `sr`, `sr-Latn-ME`, `bs`, `hr`, `sh` and `me`, and all of them map to `/cnr/`.
 
-Russian terminology follows `onym.app/ru` deliberately — **Курьер** for message carriage,
-**Нотариус** for group verification, **Личность** for identity. Keep it consistent with
-the sibling site rather than re-coining terms here.
+Russian terminology followed `onym.app/ru` deliberately — **Курьер** for message
+carriage, **Нотариус** for group verification, **Личность** for identity. None of those
+words appear on the one-screen site, but keep them if the site grows back, rather than
+re-coining terms here.
 
-The Russian headline uses **Гомстед его.** — the libertarian loanword, which Montelibero
-readers will know from the homesteading principle. The rest of the Russian copy still
-renders "homestead" as *занять / занимать* (`Выбери, построй, займи`, `Займи место`,
-`Место не выдают. Его занимают.`). That is a live inconsistency: decide whether Гомстед
-is the term throughout, or only the headline's one hard stress.
+The brand stays Latin in all three languages — **Sobor 26**, not *Собор 26* — because it
+names the event, not the word. `Onym 27` likewise.
 
 > **The RU and CNR copy is a first pass and has not been reviewed by a native speaker.**
-> Have both read before the event, particularly the arbiter and prize-fund wording, where
-> the exact promise matters.
+> It is three lines now, so this is cheap to fix: have both read.
 
 ## Design system
 
@@ -184,104 +167,22 @@ Zone:DNS:Edit and Zone:Zone:Read on `sobor.io` only).
 
 ## Content rules — keep these
 
-The status band carries three facts and says exactly where each one stands. All three
-are now settled: the **venue** is Montelibero City, the **arbiter** is Andy and is not
-the organizer, and the **prize fund** is €1,000 secured. Do not soften these into
-"coming soon" or a countdown, and do not re-open one in words while the tag stays green.
-Each fact is set at display size with a quiet label under it, because the venue and the
-prize are what people scan the page for. State lives in `STATUS_STATE` in
-`tools/build.py` and colours the dot on the label — red `.dot`, green `.dot.settled`;
-the value, the label and the paragraph are `content/i18n.json` (`*_value`, `*_label`,
-`*_p`).
+The page states two facts in the past tense and one expectation. Sobor 26 **finished**
+and the winners **were awarded** — do not soften either into a countdown, a "results
+coming soon", or a re-opened call for submissions. The third line looks forward to Onym
+27 and is deliberately the only forward-looking thing on the site: it carries no date,
+because there is none, and it steps down in colour rather than starting a second
+headline. Add a date to it only when there is one to add.
 
-The order matters and is a promise the page keeps: the arbiter is named **because** the
-fund is secured, which is what the fund section says it would take. Naming an arbiter
-over an empty fund would make that paragraph a lie.
-
-The prize figure reads what has actually cleared. A pledge that has not cleared is not
-a number on that page. The meter beneath it draws a *share of a target*, so it renders
-only once `FUND_TARGET` is set in `tools/build.py` — with no published target there is
-no share, and a bar sitting at 0% under a non-zero figure just reads as a bug.
-
-## Booking
-
-Participants book a slot through **Cal.com** — event `enikeev/sobor`, embedded inline in
-the page's first section, directly under the hero, with the team band right beneath it. There is no form of our own, no database, and no account of
-ours anyone has to trust with anything beyond what Cal.com already holds.
-
-```
-link        enikeev/sobor          (tools/build.py — CAL_LINK)
-namespace   sobor                  (tools/build.py — CAL_NS)
-mount       <div id="cal-mount">   layout month_view, slots view when narrow
-```
-
-`build.py` writes the link and namespace onto `#cal-mount` as data attributes, and
-`assets/cal.js` reads them back. That keeps the Cal link in exactly one place; changing
-the event means editing `CAL_LINK` and rebuilding, not touching the JavaScript.
-
-**The `cal.com/enikeev/sobor` link under the embed stays.** It is not a fallback that
-JavaScript removes — it is the path for a reader with the iframe blocked, with the embed
-failing to load, or with JavaScript off entirely. Do not hide it when the embed works.
-
-Cal publishes its embed as an inline `<script>` snippet, and also as an
-`@calcom/embed-react` package. Neither is used verbatim: there is no bundler here, and
-the CSP has no `'unsafe-inline'` for script, so the vendor loader lives in
-`assets/cal.js` as a normal file fetched from `'self'`. The loader itself is copied
-unchanged from Cal's snippet — keep it that way, so it can be re-synced from their docs.
-
-The embed does not inherit the page's colours, so `cal.js` passes the theme explicitly
-and re-passes it when the footer capsule is clicked. `auto` is Cal's own name for
-following the OS, which is what this site means by no stored choice.
-
-### What the CSP had to give up
-
-Three additions, and one real concession:
-
-| Directive | Why |
-|---|---|
-| `script-src https://app.cal.com` | `cal.js` appends `app.cal.com/embed/embed.js`. |
-| `frame-src https://app.cal.com` | The booking iframe is served from there. |
-| `font-src https://cal.com` | `@font-face` in the stylesheet `embed.js` injects. |
-| `style-src 'unsafe-inline'` | **The concession.** See below. |
-
-`embed.js` does `document.head.appendChild(document.createElement("style")).innerHTML =
-…` in the parent document, unconditionally. A hash cannot cover it, because the CSS
-changes with the embed version. So `style-src` carries `'unsafe-inline'` where it used
-to carry `'self'` alone.
-
-`script-src` does **not** have `'unsafe-inline'` and must not get it — that is the
-directive that matters, and the no-inline-`<script>` rule for the generated pages still
-holds. The inline `style=` attribute rule also still holds: nothing in `index.html`
-carries one, and the fund meter still takes its width from `--so-meter` in the
-stylesheet rather than from a `style=` attribute the generator writes.
-
-If the concession is ever unacceptable, the fix is to drop the inline embed and keep only
-the link to `cal.com/enikeev/sobor`, which needs no CSP changes at all.
-
-### What replaced what
-
-The RSVP used to be a **Stellar payment carrying a text memo** — no form, no database,
-the ledger as the register. That flow is gone, along with `tools/register.py`,
-`content/rsvp.json`, `content/register.json`, the SEP-7 wallet button, the sixteen-bit
-seat mask, and `public/.well-known/stellar.txt` (SEP-1), which existed only to name the
-account that received the payments.
-
-**One RSVP was on the ledger when it was removed** — `GCR3GN73U3G4CHAHPINTWZGH2ZIRTVZ4WNHWYSB3FZOU63W22IGRINAT`,
-in person, seat Interface, pre-approved. The ledger still has it; the site no longer
-reads it. If that person should be carried over, they have to be asked to book a slot,
-because nothing about a Cal.com booking can be derived from a Stellar transaction. The
-history is recoverable from git if the flow is ever wanted back.
-
-The account `GB4SFOGWLZNETGEWCQVD4A6BVE3CAEAKLJXNXJDHZR2KVTP3VOUSOBOR` is unchanged and
-still holds nothing. It is simply no longer mentioned on the site.
+The three lines live in `content/i18n.json` under `hero` (`h1a`, `h1b`, `h1c`) and are
+drawn twice — once by `tools/build.py` into the page, once by `tools/og.py` into the
+Open Graph cards. Change a line and run both, or the link preview keeps saying the old
+thing.
 
 ## Not done yet
 
-- **RU and CNR are unreviewed.** See the warning above — the booking copy is new and
-  unreviewed too.
-- **The Cal.com event's own settings are not in this repo.** Availability, duration,
-  questions and confirmation mail live in the Cal.com dashboard; the repo only knows the
-  link. A change there is invisible to `--check`.
-- **`style-src 'unsafe-inline'`** is the price of the inline embed. See above.
-- **Only the Home page exists.** `#rules` and `#status` are in-page anchors, not separate
-  pages.
+- **RU and CNR are unreviewed.** See the warning above.
+- **Only the Home page exists**, and now it is the whole site. There are no in-page
+  anchors left to link to.
+- **`design-prompt.md` and `.design/` still describe the event site.** They are kept as
+  the record of what was built, not as a description of what is served.
